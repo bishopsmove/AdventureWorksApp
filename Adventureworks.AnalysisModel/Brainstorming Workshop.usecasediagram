@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="47f10720-a1e9-457f-aab6-37207c53a49e" name="Brainstorming Workshop" linkedPackageId="e1576569-2f5e-416c-89ab-320341018463" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="2caf3f63-1d17-4032-9b38-972ec03c3604">
+      <elementDefinition Id="5d14e0a5-7fe4-4613-8a90-5316d7ccfc56" />
+      <body>Constraints:
+1. Web based solution to achieve ubiquitous reach.</body>
+    </comment>
+    <comment Id="a34b9d1e-0727-41c6-b951-f654c005d7f3">
+      <elementDefinition Id="1a3facf7-1c3b-43b1-b742-8972a095ac8d" />
+      <body>Shop for products
+- Browse products
+- View product details
+- Read reviews of product
+- Add product to shopping cart
+- Chect out
+Rate for products
+Write review for products</body>
+    </comment>
+    <comment Id="cd7de9f4-a4d1-412a-b66c-dfea091070cf">
+      <elementDefinition Id="7abe6b7e-3b42-478d-83e4-709e796ae0d7" />
+      <body>Manage product (CRUD)
+Delete invalid reviews of product</body>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="b28450ec-c48b-47c0-8933-030fb90be0e4" name="Adventureworks Bycicles" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <ownedCommentsInternal>
+          <comment Id="97252234-aa4e-4179-bf18-30c6a64ae603">
+            <elementDefinition Id="db47f241-fb7d-4331-8e71-dbc1978655a8" />
+            <body>Vision Statement:
+Adventureworks Bycicles is an online shop to sell bycicles and accessories.</body>
+          </comment>
+        </ownedCommentsInternal>
+        <elementDefinition Id="b535c54f-0af8-4e49-a455-9fab92a48fe7" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="d7d74e27-4401-4e48-87ff-6035693691ae" name="Customer" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2534405b-7299-4346-9450-e79c4a66fada" />
+        <targetEnds>
+          <association Id="ed40ac15-269c-412b-b4e0-925943efd96a" isDerived="false" sourceEndRoleName="Customer" targetEndRoleName="Adventureworks Bycicles" isLeaf="false" isAbstract="false">
+            <subsystemMoniker Id="b28450ec-c48b-47c0-8933-030fb90be0e4" LastKnownName="Adventureworks Bycicles" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="07cc0535-701b-4c73-b957-9e878fca8284" name="Customer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a2637a2c-3b36-488b-acfe-73baca10a5cc" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8e8f775d-5fc9-4ff6-b60e-e1063cebed9a" name="Adventureworks Bycicles" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="55425477-0afd-41ad-99b3-54ce57fb2481" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="130bf67e-c528-4b9a-b812-eeba3a69fa93" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="2ab623bb-2d44-435e-afd5-298fcdd746bb" name="Site Admin" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="51211f74-5696-4a5e-acf0-8c274926e5cf" />
+        <targetEnds>
+          <association Id="039f6ec3-8688-41d7-94a8-50b35a06326d" isDerived="false" sourceEndRoleName="Site Admin" targetEndRoleName="Adventureworks Bycicles" isLeaf="false" isAbstract="false">
+            <subsystemMoniker Id="b28450ec-c48b-47c0-8933-030fb90be0e4" LastKnownName="Adventureworks Bycicles" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5b125ff8-b21c-4be9-9665-be42da7127ab" name="Site Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c2fd0b25-42b5-4ddb-9043-d2a3a4a80c67" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="100dc8cb-ff44-49e0-bcef-08ba57821697" name="Adventureworks Bycicles" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="93ae1017-e578-4f79-8025-40f20fc200e2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="01b09d92-c752-4a9c-955c-17163a552e92" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="e1576569-2f5e-416c-89ab-320341018463" name="Adventureworks.AnalysisModel">
+    <elementDefinition Id="f4efcb1c-1168-4258-b7a6-eefbcd431798" />
+    <profileInstances>
+      <packageHasProfileInstances Id="01bbb012-68eb-4bc2-9cc5-22b846debcb5">
+        <profileInstance Id="e4c89dad-8922-41f8-a9c0-6c3bbad5b612" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="1229b3df-8e7c-4445-8053-63623ae3c58e">
+        <profileInstance Id="6f8ebcbe-44e1-4a1d-94c1-7e0f288641e4" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

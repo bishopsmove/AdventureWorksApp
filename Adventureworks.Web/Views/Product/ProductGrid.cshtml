@@ -1,0 +1,57 @@
+﻿@using Adventureworks.Domain;
+@model IEnumerable<Product>
+           
+<div class="product-list1">
+    @foreach (var product in Model)
+    { 
+        <div class="item-box">
+           @* <table border="0">
+                <tr>
+                    <td style="width: 25px;">
+                        &nbsp
+                    </td>
+                    <td style="vertical-align: middle; text-align: right;">
+                        <a href='/Product/Details/@product.ProductID'>
+                            <img src='@VirtualPathUtility.ToAbsolute("~/Image/ProductThumbnail?productPhotoID=" + product.ProductProductPhotoes.FirstOrDefault<ProductProductPhoto>().ProductPhotoID)'
+                                             width="80" height="49" border="0" alt="">
+                        </a>&nbsp;&nbsp;
+                    </td>
+                    <td style="width: 250px; vertical-align: middle;">
+                        <a href='/Product/Details/@product.ProductID'><span class="ProductListHead">@product.Name</span>
+                        </a>
+                        <br>
+                        <span class="ProductListItem"><b>Special Price: </b>@product.ListPrice.ToString("c")</span>
+                        <br>
+                        @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = product.ProductID }, "")
+                    </td>
+                </tr>
+            </table>*@
+            <div class="product-item">
+                <h2 class="product-title">
+                    <a href="/Product/Details/@product.ProductID">@product.Name</a>
+                </h2>
+                <div class="picture">
+                    <a href="/Product/Details/@product.ProductID" title="Show details for @product.Name">
+                        <img style="border-width: 0px;" alt="Picture of HP Pavilion G60-230US 16.0-Inch Laptop" 
+                             src="@VirtualPathUtility.ToAbsolute("~/Image/ProductThumbnail?productPhotoID=" + product.ProductProductPhotoes.FirstOrDefault<ProductProductPhoto>().ProductPhotoID)" 
+                             title="Show details for @product.Name">
+                    </a>
+                </div>
+                <div class="description">
+                    @product.ProductModel.ProductModelProductDescriptionCultures.First().ProductDescription.Description
+                </div>
+                <div class="prices-wrapper">
+                    <div class="prices">
+                        <br>
+                        <span class="productPrice">@product.ListPrice.ToString("c") (USD)</span>
+                    </div>
+                    <div class="buttons">
+                        <input type="button" class="productlistproductdetailbutton" value="Details">
+                        <br>
+                        <input type="button" class="productlistaddtocartbutton" value="Add to cart" id="@product.ProductID">
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,6 @@
+D:\Repos\GitRepo2\AdventureWorksApp\Adventureworks.Domain\bin\Debug\Adventureworks.Domain.dll.config
+D:\Repos\GitRepo2\AdventureWorksApp\Adventureworks.Domain\bin\Debug\Adventureworks.Domain.dll
+D:\Repos\GitRepo2\AdventureWorksApp\Adventureworks.Domain\bin\Debug\Adventureworks.Domain.pdb
+D:\Repos\GitRepo2\AdventureWorksApp\Adventureworks.Domain\obj\Debug\Adventureworks.Domain.dll
+D:\Repos\GitRepo2\AdventureWorksApp\Adventureworks.Domain\obj\Debug\Adventureworks.Domain.pdb
+D:\Repos\GitRepo2\AdventureWorksApp\Adventureworks.Domain\obj\Debug\Adventureworks.Domain.csprojResolveAssemblyReference.cache

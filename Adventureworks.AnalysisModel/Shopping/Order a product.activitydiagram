@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="c89138b0-c8df-460c-baf1-cbeb55179376" name="Order a product" linkedPackageId="c491f970-a434-4c2e-b453-954d3f886c32" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="a1bacf74-5773-4777-ac5f-95c40c495060">
+      <profileInstance Id="f554ba68-9849-4606-87d4-21b7eec0b978" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="5c3b2a94-38f5-4e63-81f3-253a71764b78">
+      <profileInstance Id="2a6588a8-ed99-4850-9910-9178fc0199a5" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="09f84173-2edd-4889-b155-e19d86010f7a" name="Order a product" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="9139a6ca-bf51-4686-9ef1-dc81681386a2" />
+        <nodes>
+          <initialNode Id="6ce4ca18-b0f0-4884-a335-c842c8460008" name="Initial1" isLeaf="false">
+            <elementDefinition Id="bdec67f5-db70-4d9d-9bf5-adc665ca9272" />
+            <flowNodeTargets>
+              <controlFlow Id="a5e567bf-7129-465e-a05a-3accb8cd22bc" isLeaf="false">
+                <opaqueActionMoniker Id="c7761fb2-6960-48fe-9eab-c6be9b262eed" LastKnownName="Browse products by category" />
+                <elementDefinition Id="be2934ce-209b-4be1-b0a4-880965a6baf3" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <activityFinalNode Id="0feabc67-0fa5-4c00-bf4c-e6df04dc3680" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="cc7881e5-11a3-44a9-a492-e5a8d312334a" />
+          </activityFinalNode>
+          <opaqueAction Id="c7761fb2-6960-48fe-9eab-c6be9b262eed" name="Browse products by category" isLeaf="false">
+            <elementDefinition Id="e0f94e8c-77fe-422f-837c-30a30c166c69" />
+            <flowNodeTargets>
+              <controlFlow Id="af92495b-10c0-40d1-8cdf-a8a61f3856af" isLeaf="false">
+                <opaqueActionMoniker Id="8f4f0d96-f5e9-42af-b101-479206896ea9" LastKnownName="View product details" />
+                <elementDefinition Id="ba1697d8-3d60-4283-9ac1-c84067482f11" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="8f4f0d96-f5e9-42af-b101-479206896ea9" name="View product details" isLeaf="false">
+            <elementDefinition Id="a01cd9d4-8b19-481e-87d6-ae43d4a7dbde" />
+            <flowNodeTargets>
+              <controlFlow Id="62dae535-528e-43b1-b741-04a8bb8b6404" isLeaf="false">
+                <opaqueActionMoniker Id="851d40c3-cb24-422b-b8ca-c9e29d493625" LastKnownName="Add to shopping cart" />
+                <elementDefinition Id="bf0f4d3f-3e14-47df-811a-4489a45421fe" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="851d40c3-cb24-422b-b8ca-c9e29d493625" name="Add to shopping cart" isLeaf="false">
+            <elementDefinition Id="4dd9dc02-500b-47b6-8556-63e3d9b4ab16" />
+            <flowNodeTargets>
+              <controlFlow Id="5f0c949e-44bb-491e-8293-2d412bb3307e" isLeaf="false">
+                <decisionNodeMoniker Id="e615f95c-ac37-4607-ad8e-ad65bd7518ee" LastKnownName="Decision1" />
+                <elementDefinition Id="073cb009-0627-48ab-bf15-f4f7905860c3" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="e615f95c-ac37-4607-ad8e-ad65bd7518ee" name="Decision1" isLeaf="false">
+            <elementDefinition Id="c842ebeb-f39d-4b3d-a375-19aba0365c2f" />
+            <flowNodeTargets>
+              <controlFlow Id="59b9bfd2-698a-40d8-8ba7-8a3e9dd8efcf" guard="done shopping" isLeaf="false">
+                <callBehaviorActionMoniker Id="f87e723e-4d79-4114-bdbf-eb5dd79969f9" LastKnownName="Check out" />
+                <elementDefinition Id="5130fc30-37bd-49bd-a560-d1ded51a3a70" />
+              </controlFlow>
+              <controlFlow Id="1391ace7-0e25-4628-9a35-dfceb55fe508" guard="shop for more products" isLeaf="false">
+                <opaqueActionMoniker Id="c7761fb2-6960-48fe-9eab-c6be9b262eed" LastKnownName="Browse products by category" />
+                <elementDefinition Id="9e818b3c-acb9-4a9f-9de9-8f0d4b777da6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <callBehaviorAction Id="f87e723e-4d79-4114-bdbf-eb5dd79969f9" name="Check out" isLeaf="false">
+            <elementDefinition Id="746c72c1-b455-454d-b0cf-aa78ea7a239b" />
+            <flowNodeTargets>
+              <controlFlow Id="ec94b58f-9732-438b-b42a-a392b4ad65c0" isLeaf="false">
+                <activityFinalNodeMoniker Id="0feabc67-0fa5-4c00-bf4c-e6df04dc3680" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="8a306614-44ea-4980-8188-5c898b668858" />
+              </controlFlow>
+            </flowNodeTargets>
+          </callBehaviorAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="c491f970-a434-4c2e-b453-954d3f886c32" name="Adventureworks.AnalysisModel">
+    <elementDefinition Id="f4efcb1c-1168-4258-b7a6-eefbcd431798" />
+  </package>
+</activityRootModel>

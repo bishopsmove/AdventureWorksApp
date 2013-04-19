@@ -1,0 +1,3129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+  dslVersion="1.0.0.0"
+  Id="fe7dcf9e-7524-4095-96be-838c2d3b2ca3"
+  name="Adventureworks.DesignModel" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="993e5304-75af-4a15-8f34-6e84a11acf76">
+      <body>IOC/DI framework will handle repository instantiation via DI during construction.
+</body>
+      <annotatedElements>
+        <classMoniker
+          Id="35092896-3701-44aa-ba5b-60478eabdb41"
+          LastKnownName="HomeController"
+          LastKnownLocation="Package1_1421.uml" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <component
+        Id="aee5dbff-4067-43a5-9759-cef8fdc8106f"
+        name="Web"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="bec2c49c-1c13-4617-8c30-aed4a4b5c811">
+            <componentMoniker
+              Id="e99c2b1d-00d1-4cb7-bdc6-4a2911456af7"
+              LastKnownName="Repository"
+              LastKnownLocation="Adventureworks.DesignModel.uml" />
+          </dependency>
+          <dependency
+            Id="3c38a505-7872-46ee-9cfe-54f5f76f967b">
+            <componentMoniker
+              Id="b2c98362-58c7-49fa-98c4-454f20c9fb24"
+              LastKnownName="Model"
+              LastKnownLocation="Adventureworks.DesignModel.uml" />
+          </dependency>
+          <dependency
+            Id="b20fd7f6-f794-4c73-a43f-169c87501ad3">
+            <componentMoniker
+              Id="c315cfea-38e1-41b7-b551-3000c4bb5248"
+              LastKnownName="Infrastructure"
+              LastKnownLocation="Adventureworks.DesignModel.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="e99c2b1d-00d1-4cb7-bdc6-4a2911456af7"
+        name="Repository"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="b189bfe6-40a0-4b49-850b-8c18290a7888">
+            <componentMoniker
+              Id="402fcaf2-c8bf-4bb3-933f-100bf0b04f5c"
+              LastKnownName="Database"
+              LastKnownLocation="Adventureworks.DesignModel.uml" />
+          </dependency>
+          <dependency
+            Id="176a343d-d467-42d3-ac6f-c7856b2e33a5">
+            <componentMoniker
+              Id="b2c98362-58c7-49fa-98c4-454f20c9fb24"
+              LastKnownName="Model"
+              LastKnownLocation="Adventureworks.DesignModel.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <requiredInterface
+            Id="0d537557-e1f5-44db-9d89-db1a95282e21"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <suppliersInternal>
+              <dependency
+                Id="2762f065-3135-47b4-b6ad-e24a865a0de3">
+                <providedInterfaceMoniker
+                  Id="2cc42b16-4858-47d3-94d0-0c0996175670"
+                  LastKnownName="Port1"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </dependency>
+            </suppliersInternal>
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="5488cf0b-423d-4a7d-87ac-e1350d8289b2"
+                LastKnownName="ADO.Net"
+                LastKnownLocation="Package_1420.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="b2c98362-58c7-49fa-98c4-454f20c9fb24"
+        name="Model"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="feb7dc5d-51bc-4718-96bd-2bb131bdbf10">
+            <componentMoniker
+              Id="c315cfea-38e1-41b7-b551-3000c4bb5248"
+              LastKnownName="Infrastructure"
+              LastKnownLocation="Adventureworks.DesignModel.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="402fcaf2-c8bf-4bb3-933f-100bf0b04f5c"
+        name="Database"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <providedInterface
+            Id="2cc42b16-4858-47d3-94d0-0c0996175670"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="ee164f6e-8884-46fb-8343-403e61aaed8a"
+                LastKnownName="ADO.Net"
+                LastKnownLocation="Package_1420.uml" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="c315cfea-38e1-41b7-b551-3000c4bb5248"
+        name="Infrastructure"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <interaction
+        Id="258d5b28-e111-42b7-8fed-bbd70a508550"
+        name="Basic Flow"
+        collapseFragmentsFlag="false"
+        isActiveClass="false"
+        isAbstract="false"
+        isLeaf="false"
+        isReentrant="false">
+        <ownedCommentsInternal>
+          <comment
+            Id="12a5d5c5-057e-4da1-9d5b-6189d8442ac2">
+            <body>Basic Flow
+
+1. The use case starts when the Customer navigates to the application.
+
+2. System presents a list of product categories to choose from.
+
+3. Customer selects a product category.
+
+4. System displays a list of products for the selected product category.
+
+5. Customer selects a product.
+
+6. Perform View Product Details (S1) to display the detailed information for the selected product.
+
+7. The use case ends.
+</body>
+          </comment>
+        </ownedCommentsInternal>
+        <fragments>
+          <messageOccurrenceSpecification
+            Id="d739b715-a5db-4c56-8484-64ce1688a8e7"
+            name="MessageOccurrenceSpecification20">
+            <covered>
+              <lifelineMoniker
+                Id="b17ad898-e119-4ff9-9fb9-a33838bce014"
+                LastKnownName="Customer"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="bb974ead-7620-4d84-b962-43d52760ffed"
+            name="MessageOccurrenceSpecification3">
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="289b8bf2-39e2-4cb2-b39e-51839b18d58c"
+            name="MessageOccurrenceSpecification18">
+            <event>
+              <receiveOperationEventMoniker
+                Id="d5cb509d-e104-4f13-b775-b79de1347129"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="998de8a5-8724-4966-9c23-0f2d4ccd298f"
+            name="MessageOccurrenceSpecification19">
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="6c6bce4f-a0c2-49b8-a4da-98372ed36ef8"
+            name="MessageOccurrenceSpecification17">
+            <event>
+              <sendOperationEventMoniker
+                Id="d48b5d94-11c1-4a11-99b9-82571d46e186"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="b17ad898-e119-4ff9-9fb9-a33838bce014"
+                LastKnownName="Customer"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="e70efd92-6836-44ed-9b02-152e7017f8f8"
+            name="MessageOccurrenceSpecification35">
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="6090d8a5-6041-486d-80c4-787c1bcfb7b6"
+            name="MessageOccurrenceSpecification29">
+            <event>
+              <sendOperationEventMoniker
+                Id="bf7f2471-39f1-4dcb-b892-a507fc5d6a5b"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="02ba215e-3168-4610-aade-21a4dcddf1f2"
+            name="MessageOccurrenceSpecification31">
+            <covered>
+              <lifelineMoniker
+                Id="83d7aa83-4943-4d82-8e51-115762b94779"
+                LastKnownName="Home.aspx"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="b0d67781-477c-4658-89b2-4e234cda1a39"
+            name="MessageOccurrenceSpecification4">
+            <covered>
+              <lifelineMoniker
+                Id="b17ad898-e119-4ff9-9fb9-a33838bce014"
+                LastKnownName="Customer"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="037d9dc9-2fd2-4df3-a9f2-0c45c6c106ba"
+            name="MessageOccurrenceSpecification32">
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="5e80ff44-de1a-48fe-bdbc-5a56c0eb2655"
+            name="MessageOccurrenceSpecification39">
+            <covered>
+              <lifelineMoniker
+                Id="ff504f0b-88d2-427c-a2df-bac22b175977"
+                LastKnownName="ProductList.aspx"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="125ad040-a823-477d-a19f-960de074a16a"
+            name="MessageOccurrenceSpecification38">
+            <event>
+              <receiveOperationEventMoniker
+                Id="08578624-b2e1-4a26-860a-e8c59f90de5d"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="ff504f0b-88d2-427c-a2df-bac22b175977"
+                LastKnownName="ProductList.aspx"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="92ce2b20-ecf9-431d-b2be-d270250d02e8"
+            name="MessageOccurrenceSpecification33">
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="c1e85ba4-3b22-4cb6-b1ba-b6d3ce993c0a"
+            name="MessageOccurrenceSpecification37">
+            <event>
+              <sendOperationEventMoniker
+                Id="30d28c3f-1374-46fe-8537-cca76512418c"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="d1860d45-e3e8-4a88-b2ad-b629872dca90"
+            name="MessageOccurrenceSpecification36">
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="df8f9317-a15c-4e72-b3db-9113b9495a44"
+            name="MessageOccurrenceSpecification34">
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="1a736783-821f-4b65-a2a3-fa4c679f2960"
+            name="MessageOccurrenceSpecification22">
+            <event>
+              <receiveOperationEventMoniker
+                Id="5f592086-807a-43e5-a431-033eb4462edb"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="0361d593-6076-4e37-bce0-ce7244f68538"
+                LastKnownName="_productRepository : IProductRepository"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="8d13491b-8e55-44cd-8296-1126621e1fbe"
+            name="MessageOccurrenceSpecification21">
+            <event>
+              <sendOperationEventMoniker
+                Id="6b26137f-bbee-4eef-a1d9-ae98125276af"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="6df2afa5-13cc-42e5-9080-2fc500b0dae4"
+            name="MessageOccurrenceSpecification23">
+            <covered>
+              <lifelineMoniker
+                Id="0361d593-6076-4e37-bce0-ce7244f68538"
+                LastKnownName="_productRepository : IProductRepository"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="78639f61-e7a3-4c25-a90f-7bef56ba0246"
+            name="MessageOccurrenceSpecification40">
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="ac741d9d-8de6-436c-9fb2-73b2a1029ae0"
+            name="MessageOccurrenceSpecification24">
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="1b9353bb-7c06-49ec-9a8e-9d25c0a897fe"
+            name="MessageOccurrenceSpecification7">
+            <covered>
+              <lifelineMoniker
+                Id="0361d593-6076-4e37-bce0-ce7244f68538"
+                LastKnownName="_productRepository : IProductRepository"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="0ff8ef56-c7c1-4249-99e3-a1d546db1612"
+            name="MessageOccurrenceSpecification8">
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="47a34225-f819-4bb8-8ee0-d2e9290ef9d2"
+            name="MessageOccurrenceSpecification26">
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="bca4fba4-ca1a-47d6-8124-4d16c1cfc16a"
+            name="MessageOccurrenceSpecification6">
+            <event>
+              <receiveOperationEventMoniker
+                Id="b259a0da-4d16-4853-8fe2-679253ce673a"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="0361d593-6076-4e37-bce0-ce7244f68538"
+                LastKnownName="_productRepository : IProductRepository"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="b5def8f3-945b-4f7f-be96-bfb6fe811e28"
+            name="MessageOccurrenceSpecification5">
+            <event>
+              <sendOperationEventMoniker
+                Id="10f2aeb5-5252-45e5-bc05-dbf819f205d6"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="339691a3-70ae-4bd1-86c7-742acf25fade"
+            name="MessageOccurrenceSpecification1">
+            <event>
+              <sendOperationEventMoniker
+                Id="35d6aa46-5009-41c2-b245-e82e9f1c60f3"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="b17ad898-e119-4ff9-9fb9-a33838bce014"
+                LastKnownName="Customer"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="ca6f3423-fcfc-4edf-a086-8d1d9b76f9e0"
+            name="MessageOccurrenceSpecification30">
+            <event>
+              <receiveOperationEventMoniker
+                Id="cd80c4f5-2ddb-4117-a5a4-e1809ea7a493"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="83d7aa83-4943-4d82-8e51-115762b94779"
+                LastKnownName="Home.aspx"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="d003f76e-4958-4b16-b7ee-4978384cfe8b"
+            name="MessageOccurrenceSpecification27">
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="5ffdc4d2-4cce-41c5-a7a6-9c94e76f2209"
+            name="MessageOccurrenceSpecification28">
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="03cb437c-53be-4a29-86b5-a24a80ee89bc"
+            name="MessageOccurrenceSpecification2">
+            <event>
+              <receiveOperationEventMoniker
+                Id="2fee1060-f18a-43de-95d6-7d05138e7764"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="436736b2-941c-4bb5-ad8e-880439e35bde"
+            name="MessageOccurrenceSpecification25">
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="d74512b0-fa82-4470-9a99-a9e206787160"
+            name="BehaviorExecutionSpecification1">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="4012da5b-122a-425d-8159-50519aba69b7"
+                LastKnownName="ExecutionOccurrenceSpecification2"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="b9720991-87c9-4252-b553-48196d30b7f5"
+                LastKnownName="ExecutionOccurrenceSpecification1"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="03cb437c-53be-4a29-86b5-a24a80ee89bc"
+                LastKnownName="MessageOccurrenceSpecification2"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="b5def8f3-945b-4f7f-be96-bfb6fe811e28"
+                LastKnownName="MessageOccurrenceSpecification5"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="0ff8ef56-c7c1-4249-99e3-a1d546db1612"
+                LastKnownName="MessageOccurrenceSpecification8"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="436736b2-941c-4bb5-ad8e-880439e35bde"
+                LastKnownName="MessageOccurrenceSpecification25"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="02cc5af7-84ee-42f5-a966-cb86a03306f6"
+                LastKnownName="ExecutionOccurrenceSpecification15"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="b6c1c7a2-4eef-48b2-8d4e-72b633f7a4dd"
+                LastKnownName="ExecutionOccurrenceSpecification16"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="d003f76e-4958-4b16-b7ee-4978384cfe8b"
+                LastKnownName="MessageOccurrenceSpecification27"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="bf9a29b2-d5bc-43e0-8ea3-daf7d70980d9"
+                LastKnownName="ExecutionOccurrenceSpecification17"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="1db549d7-bdfb-4df9-b8bd-825e0393538c"
+                LastKnownName="ExecutionOccurrenceSpecification18"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="bb974ead-7620-4d84-b962-43d52760ffed"
+                LastKnownName="MessageOccurrenceSpecification3"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="b9720991-87c9-4252-b553-48196d30b7f5"
+            name="ExecutionOccurrenceSpecification1">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="40a4394d-e32e-4136-9468-b3c794131d46"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="838e15bc-5b4b-4f8e-8b09-4bccf66a5a9d"
+            name="BehaviorExecutionSpecification2">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="0361d593-6076-4e37-bce0-ce7244f68538"
+                LastKnownName="_productRepository : IProductRepository"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="939b1598-3d10-498e-b521-7240cd9b01ee"
+                LastKnownName="ExecutionOccurrenceSpecification4"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="420f7ae2-8b9f-4f9a-8540-afb913d97950"
+                LastKnownName="ExecutionOccurrenceSpecification3"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="bca4fba4-ca1a-47d6-8124-4d16c1cfc16a"
+                LastKnownName="MessageOccurrenceSpecification6"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="1b9353bb-7c06-49ec-9a8e-9d25c0a897fe"
+                LastKnownName="MessageOccurrenceSpecification7"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="420f7ae2-8b9f-4f9a-8540-afb913d97950"
+            name="ExecutionOccurrenceSpecification3">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="b0f68d6d-051d-4478-9e8b-d40acb3af249"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="0361d593-6076-4e37-bce0-ce7244f68538"
+                LastKnownName="_productRepository : IProductRepository"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="939b1598-3d10-498e-b521-7240cd9b01ee"
+            name="ExecutionOccurrenceSpecification4">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="60c8f205-dc83-4541-b71e-7f8481a83eba"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="0361d593-6076-4e37-bce0-ce7244f68538"
+                LastKnownName="_productRepository : IProductRepository"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="9d8984f9-01ca-470d-8ec2-acbc13718a5c"
+            name="BehaviorExecutionSpecification8">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="b6c1c7a2-4eef-48b2-8d4e-72b633f7a4dd"
+                LastKnownName="ExecutionOccurrenceSpecification16"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="02cc5af7-84ee-42f5-a966-cb86a03306f6"
+                LastKnownName="ExecutionOccurrenceSpecification15"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="47a34225-f819-4bb8-8ee0-d2e9290ef9d2"
+                LastKnownName="MessageOccurrenceSpecification26"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="02cc5af7-84ee-42f5-a966-cb86a03306f6"
+            name="ExecutionOccurrenceSpecification15">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="a2ada3b0-91f6-4f1b-bc83-fbe9d91bfb87"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="b6c1c7a2-4eef-48b2-8d4e-72b633f7a4dd"
+            name="ExecutionOccurrenceSpecification16">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="223c9cfc-4f44-439d-b0cb-534af43da375"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="e01fcd5c-5cdc-4fbd-91a9-dc341cb1bb4c"
+            name="BehaviorExecutionSpecification9">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="1db549d7-bdfb-4df9-b8bd-825e0393538c"
+                LastKnownName="ExecutionOccurrenceSpecification18"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="bf9a29b2-d5bc-43e0-8ea3-daf7d70980d9"
+                LastKnownName="ExecutionOccurrenceSpecification17"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="5ffdc4d2-4cce-41c5-a7a6-9c94e76f2209"
+                LastKnownName="MessageOccurrenceSpecification28"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="6090d8a5-6041-486d-80c4-787c1bcfb7b6"
+                LastKnownName="MessageOccurrenceSpecification29"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="037d9dc9-2fd2-4df3-a9f2-0c45c6c106ba"
+                LastKnownName="MessageOccurrenceSpecification32"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="bf9a29b2-d5bc-43e0-8ea3-daf7d70980d9"
+            name="ExecutionOccurrenceSpecification17">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="4c53363b-ba0c-4440-9d13-28e050b45e7f"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="3a3ac2e6-e0a1-4494-af0a-74c1e2e5596c"
+            name="BehaviorExecutionSpecification10">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="83d7aa83-4943-4d82-8e51-115762b94779"
+                LastKnownName="Home.aspx"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="a7359e58-0724-408a-8d3d-67936812759a"
+                LastKnownName="ExecutionOccurrenceSpecification20"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="d9876562-7ac5-43e6-be3e-64495281c62d"
+                LastKnownName="ExecutionOccurrenceSpecification19"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="ca6f3423-fcfc-4edf-a086-8d1d9b76f9e0"
+                LastKnownName="MessageOccurrenceSpecification30"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="02ba215e-3168-4610-aade-21a4dcddf1f2"
+                LastKnownName="MessageOccurrenceSpecification31"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="d9876562-7ac5-43e6-be3e-64495281c62d"
+            name="ExecutionOccurrenceSpecification19">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="2a59e125-3227-4fa1-b928-022b558953a9"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="83d7aa83-4943-4d82-8e51-115762b94779"
+                LastKnownName="Home.aspx"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="a7359e58-0724-408a-8d3d-67936812759a"
+            name="ExecutionOccurrenceSpecification20">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="491886d4-5a6e-427a-b919-20139c99e098"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="83d7aa83-4943-4d82-8e51-115762b94779"
+                LastKnownName="Home.aspx"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="1db549d7-bdfb-4df9-b8bd-825e0393538c"
+            name="ExecutionOccurrenceSpecification18">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="ed027555-8db8-4c51-a721-6947cc4e1e5c"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="4012da5b-122a-425d-8159-50519aba69b7"
+            name="ExecutionOccurrenceSpecification2">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="d4d5e532-3c37-4853-be8c-b4628f7d3b63"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="31369564-7401-4cce-bad2-113fb6dce822"
+            name="BehaviorExecutionSpecification6">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="2de2ba10-c98d-4134-b25e-aa82f84b43f5"
+                LastKnownName="ExecutionOccurrenceSpecification12"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="b37162f1-eaf5-4ec2-8b8f-31eb3a51b248"
+                LastKnownName="ExecutionOccurrenceSpecification11"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="289b8bf2-39e2-4cb2-b39e-51839b18d58c"
+                LastKnownName="MessageOccurrenceSpecification18"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="8d13491b-8e55-44cd-8296-1126621e1fbe"
+                LastKnownName="MessageOccurrenceSpecification21"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="ac741d9d-8de6-436c-9fb2-73b2a1029ae0"
+                LastKnownName="MessageOccurrenceSpecification24"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="92ce2b20-ecf9-431d-b2be-d270250d02e8"
+                LastKnownName="MessageOccurrenceSpecification33"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="d76aa493-7a95-4a9e-9450-56d97bc01d73"
+                LastKnownName="ExecutionOccurrenceSpecification21"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="470172b9-5c74-4271-8bcb-a3cbcdf19617"
+                LastKnownName="ExecutionOccurrenceSpecification22"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="e70efd92-6836-44ed-9b02-152e7017f8f8"
+                LastKnownName="MessageOccurrenceSpecification35"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="91bc9303-a8ea-4960-91f2-caa99ba83977"
+                LastKnownName="ExecutionOccurrenceSpecification23"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="690c24d7-e2ec-44bd-92b1-6d4b91d20c4e"
+                LastKnownName="ExecutionOccurrenceSpecification24"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="998de8a5-8724-4966-9c23-0f2d4ccd298f"
+                LastKnownName="MessageOccurrenceSpecification19"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="b37162f1-eaf5-4ec2-8b8f-31eb3a51b248"
+            name="ExecutionOccurrenceSpecification11">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="920002a9-9e0a-4888-b150-962c7e7a7977"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="8046399f-1d70-4227-b607-a3a24ab9afcb"
+            name="BehaviorExecutionSpecification7">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="0361d593-6076-4e37-bce0-ce7244f68538"
+                LastKnownName="_productRepository : IProductRepository"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="78d5ea0a-828d-4b01-92a4-bfe72dafb025"
+                LastKnownName="ExecutionOccurrenceSpecification14"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="f81f82a6-720b-4ae3-86b0-76c610cd3f51"
+                LastKnownName="ExecutionOccurrenceSpecification13"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="1a736783-821f-4b65-a2a3-fa4c679f2960"
+                LastKnownName="MessageOccurrenceSpecification22"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="6df2afa5-13cc-42e5-9080-2fc500b0dae4"
+                LastKnownName="MessageOccurrenceSpecification23"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="f81f82a6-720b-4ae3-86b0-76c610cd3f51"
+            name="ExecutionOccurrenceSpecification13">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="fee95e77-257f-4449-9bbe-6e652b062be7"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="0361d593-6076-4e37-bce0-ce7244f68538"
+                LastKnownName="_productRepository : IProductRepository"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="78d5ea0a-828d-4b01-92a4-bfe72dafb025"
+            name="ExecutionOccurrenceSpecification14">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="13a84e92-7475-4c65-a6a2-ffe406759757"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="0361d593-6076-4e37-bce0-ce7244f68538"
+                LastKnownName="_productRepository : IProductRepository"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="506b7d59-d7ab-4361-91ae-8ee9e8d082f5"
+            name="BehaviorExecutionSpecification11">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="470172b9-5c74-4271-8bcb-a3cbcdf19617"
+                LastKnownName="ExecutionOccurrenceSpecification22"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="d76aa493-7a95-4a9e-9450-56d97bc01d73"
+                LastKnownName="ExecutionOccurrenceSpecification21"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="df8f9317-a15c-4e72-b3db-9113b9495a44"
+                LastKnownName="MessageOccurrenceSpecification34"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="d76aa493-7a95-4a9e-9450-56d97bc01d73"
+            name="ExecutionOccurrenceSpecification21">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="60b1c5f1-80c7-47cf-a096-52a1bd0bfa7c"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="470172b9-5c74-4271-8bcb-a3cbcdf19617"
+            name="ExecutionOccurrenceSpecification22">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="e389698c-1945-44ea-8c92-64c80ccd4dd7"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="a06795bf-7532-4ddb-89e6-7678f2809489"
+            name="BehaviorExecutionSpecification12">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="690c24d7-e2ec-44bd-92b1-6d4b91d20c4e"
+                LastKnownName="ExecutionOccurrenceSpecification24"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="91bc9303-a8ea-4960-91f2-caa99ba83977"
+                LastKnownName="ExecutionOccurrenceSpecification23"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="d1860d45-e3e8-4a88-b2ad-b629872dca90"
+                LastKnownName="MessageOccurrenceSpecification36"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="c1e85ba4-3b22-4cb6-b1ba-b6d3ce993c0a"
+                LastKnownName="MessageOccurrenceSpecification37"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="78639f61-e7a3-4c25-a90f-7bef56ba0246"
+                LastKnownName="MessageOccurrenceSpecification40"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="91bc9303-a8ea-4960-91f2-caa99ba83977"
+            name="ExecutionOccurrenceSpecification23">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="183eb9b4-71a3-44cc-8478-2b96677665fe"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="45dbfd7a-b57c-474a-bcea-f4fcea358770"
+            name="BehaviorExecutionSpecification13">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="ff504f0b-88d2-427c-a2df-bac22b175977"
+                LastKnownName="ProductList.aspx"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="00a4e9f5-cc12-4eb7-bbca-ef9f788a2104"
+                LastKnownName="ExecutionOccurrenceSpecification26"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="30848eab-2d45-4a4a-b9fc-8e88de6fa3c7"
+                LastKnownName="ExecutionOccurrenceSpecification25"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="125ad040-a823-477d-a19f-960de074a16a"
+                LastKnownName="MessageOccurrenceSpecification38"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="5e80ff44-de1a-48fe-bdbc-5a56c0eb2655"
+                LastKnownName="MessageOccurrenceSpecification39"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="30848eab-2d45-4a4a-b9fc-8e88de6fa3c7"
+            name="ExecutionOccurrenceSpecification25">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="30b3dec4-2d2a-4742-b30b-d7e05b84fce3"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="ff504f0b-88d2-427c-a2df-bac22b175977"
+                LastKnownName="ProductList.aspx"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="00a4e9f5-cc12-4eb7-bbca-ef9f788a2104"
+            name="ExecutionOccurrenceSpecification26">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="d21a1364-4f4b-4139-8161-ba2bb76b9e22"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="ff504f0b-88d2-427c-a2df-bac22b175977"
+                LastKnownName="ProductList.aspx"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="690c24d7-e2ec-44bd-92b1-6d4b91d20c4e"
+            name="ExecutionOccurrenceSpecification24">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="86458040-1202-40a8-beb6-429625731891"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="2de2ba10-c98d-4134-b25e-aa82f84b43f5"
+            name="ExecutionOccurrenceSpecification12">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="d675f5ab-16e2-4ef9-bcf8-46338bf583d0"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <interactionUse
+            Id="7dc5611b-4cd9-49b1-b2c3-c851158e25db"
+            name="S1. View Product Details">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="b17ad898-e119-4ff9-9fb9-a33838bce014"
+                LastKnownName="Customer"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </coveredLifelines>
+            <interactionUseOccurrenceSpecifications>
+              <interactionUseOccurrenceSpecificationMoniker
+                Id="88b5a8de-3db3-433b-b64c-7d9f75dace75"
+                LastKnownName="InteractionUseOccurrenceSpecification1"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <interactionUseOccurrenceSpecificationMoniker
+                Id="ec4babd7-baba-409a-a7e0-bf8ab3354cf7"
+                LastKnownName="InteractionUseOccurrenceSpecification2"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </interactionUseOccurrenceSpecifications>
+          </interactionUse>
+          <interactionUseOccurrenceSpecification
+            Id="88b5a8de-3db3-433b-b64c-7d9f75dace75"
+            name="InteractionUseOccurrenceSpecification1">
+            <covered>
+              <lifelineMoniker
+                Id="b17ad898-e119-4ff9-9fb9-a33838bce014"
+                LastKnownName="Customer"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </interactionUseOccurrenceSpecification>
+          <interactionUseOccurrenceSpecification
+            Id="ec4babd7-baba-409a-a7e0-bf8ab3354cf7"
+            name="InteractionUseOccurrenceSpecification2">
+            <covered>
+              <lifelineMoniker
+                Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </interactionUseOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline
+            Id="b17ad898-e119-4ff9-9fb9-a33838bce014"
+            name="Customer"
+            isActor="true"
+            lifelineDisplayName="Customer">
+            <represents>
+              <propertyMoniker
+                Id="fd1f8ee6-cf66-4bab-97b8-cffbffe244aa"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </represents>
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="339691a3-70ae-4bd1-86c7-742acf25fade"
+                LastKnownName="MessageOccurrenceSpecification1"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="b0d67781-477c-4658-89b2-4e234cda1a39"
+                LastKnownName="MessageOccurrenceSpecification4"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="6c6bce4f-a0c2-49b8-a4da-98372ed36ef8"
+                LastKnownName="MessageOccurrenceSpecification17"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="d739b715-a5db-4c56-8484-64ce1688a8e7"
+                LastKnownName="MessageOccurrenceSpecification20"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <interactionUseOccurrenceSpecificationMoniker
+                Id="88b5a8de-3db3-433b-b64c-7d9f75dace75"
+                LastKnownName="InteractionUseOccurrenceSpecification1"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="be9ac9ca-3ee4-4117-90c0-44350f7579f1"
+            name="HomeController"
+            isActor="false"
+            lifelineDisplayName="HomeController">
+            <represents>
+              <propertyMoniker
+                Id="64030a4e-e7c2-404a-a8de-2c9242e99dae"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </represents>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="b9720991-87c9-4252-b553-48196d30b7f5"
+                LastKnownName="ExecutionOccurrenceSpecification1"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="4012da5b-122a-425d-8159-50519aba69b7"
+                LastKnownName="ExecutionOccurrenceSpecification2"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="b37162f1-eaf5-4ec2-8b8f-31eb3a51b248"
+                LastKnownName="ExecutionOccurrenceSpecification11"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="2de2ba10-c98d-4134-b25e-aa82f84b43f5"
+                LastKnownName="ExecutionOccurrenceSpecification12"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <interactionUseOccurrenceSpecificationMoniker
+                Id="ec4babd7-baba-409a-a7e0-bf8ab3354cf7"
+                LastKnownName="InteractionUseOccurrenceSpecification2"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="0361d593-6076-4e37-bce0-ce7244f68538"
+            name="_productRepository : IProductRepository"
+            isActor="false"
+            lifelineDisplayName="_productRepository : IProductRepository">
+            <represents>
+              <propertyMoniker
+                Id="4f0495f3-1083-4e70-84e5-6272f3eeaf08"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </represents>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="420f7ae2-8b9f-4f9a-8540-afb913d97950"
+                LastKnownName="ExecutionOccurrenceSpecification3"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="939b1598-3d10-498e-b521-7240cd9b01ee"
+                LastKnownName="ExecutionOccurrenceSpecification4"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="f81f82a6-720b-4ae3-86b0-76c610cd3f51"
+                LastKnownName="ExecutionOccurrenceSpecification13"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="78d5ea0a-828d-4b01-92a4-bfe72dafb025"
+                LastKnownName="ExecutionOccurrenceSpecification14"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="83d7aa83-4943-4d82-8e51-115762b94779"
+            name="Home.aspx"
+            isActor="false"
+            lifelineDisplayName="Home.aspx">
+            <represents>
+              <propertyMoniker
+                Id="37264d77-3c12-48fe-a1ff-b24382244b87"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </represents>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="d9876562-7ac5-43e6-be3e-64495281c62d"
+                LastKnownName="ExecutionOccurrenceSpecification19"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="a7359e58-0724-408a-8d3d-67936812759a"
+                LastKnownName="ExecutionOccurrenceSpecification20"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="ff504f0b-88d2-427c-a2df-bac22b175977"
+            name="ProductList.aspx"
+            isActor="false"
+            lifelineDisplayName="ProductList.aspx">
+            <represents>
+              <propertyMoniker
+                Id="8999bf30-1a69-4069-b13b-e37bbc73ee8e"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </represents>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="30848eab-2d45-4a4a-b9fc-8e88de6fa3c7"
+                LastKnownName="ExecutionOccurrenceSpecification25"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="00a4e9f5-cc12-4eb7-bbca-ef9f788a2104"
+                LastKnownName="ExecutionOccurrenceSpecification26"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message
+            Id="8c27ac8e-9bf9-403a-82e7-36ba8b432ba9"
+            name="/Home"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false"
+            signatureText="+ Index()">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="339691a3-70ae-4bd1-86c7-742acf25fade"
+                LastKnownName="MessageOccurrenceSpecification1"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="03cb437c-53be-4a29-86b5-a24a80ee89bc"
+                LastKnownName="MessageOccurrenceSpecification2"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="eb0d1940-4dc5-47bf-b1e1-4c36c256ff26"
+            name="viewResult"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="bb974ead-7620-4d84-b962-43d52760ffed"
+                LastKnownName="MessageOccurrenceSpecification3"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="b0d67781-477c-4658-89b2-4e234cda1a39"
+                LastKnownName="MessageOccurrenceSpecification4"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="17a51c25-1551-4055-b28d-b38573ffe0b0"
+            name="GetProductCategories"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false"
+            signatureText="+ GetProductCategories()">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="b5def8f3-945b-4f7f-be96-bfb6fe811e28"
+                LastKnownName="MessageOccurrenceSpecification5"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="bca4fba4-ca1a-47d6-8124-4d16c1cfc16a"
+                LastKnownName="MessageOccurrenceSpecification6"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="58a50ba0-3609-4f18-b890-b33312c98a48"
+            name="productCategoryList"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="1b9353bb-7c06-49ec-9a8e-9d25c0a897fe"
+                LastKnownName="MessageOccurrenceSpecification7"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="0ff8ef56-c7c1-4249-99e3-a1d546db1612"
+                LastKnownName="MessageOccurrenceSpecification8"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="259cf0f8-e688-4c00-98ec-6a119699a436"
+            name="/Home/Category/{categoryName}"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false"
+            signatureText="+ Category(categoryName : String)">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="6c6bce4f-a0c2-49b8-a4da-98372ed36ef8"
+                LastKnownName="MessageOccurrenceSpecification17"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="289b8bf2-39e2-4cb2-b39e-51839b18d58c"
+                LastKnownName="MessageOccurrenceSpecification18"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="6b288694-3133-4d13-a1f3-3618ec4626bd"
+            name="viewResult"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="998de8a5-8724-4966-9c23-0f2d4ccd298f"
+                LastKnownName="MessageOccurrenceSpecification19"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="d739b715-a5db-4c56-8484-64ce1688a8e7"
+                LastKnownName="MessageOccurrenceSpecification20"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="ab946222-3d71-46d2-b321-32e8bae4b6a2"
+            name="GetProductsForCategory(categoryName)"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false"
+            signatureText="+ GetProductsForCategory(categoryName)">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="8d13491b-8e55-44cd-8296-1126621e1fbe"
+                LastKnownName="MessageOccurrenceSpecification21"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="1a736783-821f-4b65-a2a3-fa4c679f2960"
+                LastKnownName="MessageOccurrenceSpecification22"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="7d253416-a241-44f2-a20b-739a1c12dc4f"
+            name="productList"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="6df2afa5-13cc-42e5-9080-2fc500b0dae4"
+                LastKnownName="MessageOccurrenceSpecification23"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="ac741d9d-8de6-436c-9fb2-73b2a1029ae0"
+                LastKnownName="MessageOccurrenceSpecification24"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="3cc62846-a759-49fc-a68d-e2fd5b3e6627"
+            name="this.ViewData[&quot;ProductCategories&quot;] = productCategoryList"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="true">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="436736b2-941c-4bb5-ad8e-880439e35bde"
+                LastKnownName="MessageOccurrenceSpecification25"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="47a34225-f819-4bb8-8ee0-d2e9290ef9d2"
+                LastKnownName="MessageOccurrenceSpecification26"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="2ed8c098-5383-4e03-9cd3-b0aad06c755b"
+            name="this.View(&quot;Home&quot;)"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="true">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="d003f76e-4958-4b16-b7ee-4978384cfe8b"
+                LastKnownName="MessageOccurrenceSpecification27"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="5ffdc4d2-4cce-41c5-a7a6-9c94e76f2209"
+                LastKnownName="MessageOccurrenceSpecification28"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="390af997-57dd-493b-a578-5079260323d5"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="6090d8a5-6041-486d-80c4-787c1bcfb7b6"
+                LastKnownName="MessageOccurrenceSpecification29"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="ca6f3423-fcfc-4edf-a086-8d1d9b76f9e0"
+                LastKnownName="MessageOccurrenceSpecification30"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="9e93356f-711d-4ba3-b7c5-525bedacdaf9"
+            name="viewResult"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="02ba215e-3168-4610-aade-21a4dcddf1f2"
+                LastKnownName="MessageOccurrenceSpecification31"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="037d9dc9-2fd2-4df3-a9f2-0c45c6c106ba"
+                LastKnownName="MessageOccurrenceSpecification32"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="b140bcf3-b76a-41f4-88c4-808d3a799d84"
+            name="this.ViewData[&quot;ProductList&quot;] = productList"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="true">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="92ce2b20-ecf9-431d-b2be-d270250d02e8"
+                LastKnownName="MessageOccurrenceSpecification33"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="df8f9317-a15c-4e72-b3db-9113b9495a44"
+                LastKnownName="MessageOccurrenceSpecification34"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="dbe42e4c-94b5-4087-a953-0bcc5e059db1"
+            name="this.View[&quot;ProductList&quot;]"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="true">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="e70efd92-6836-44ed-9b02-152e7017f8f8"
+                LastKnownName="MessageOccurrenceSpecification35"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="d1860d45-e3e8-4a88-b2ad-b629872dca90"
+                LastKnownName="MessageOccurrenceSpecification36"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="9be371a8-8fb3-4e2b-9864-5eb8697f021f"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="c1e85ba4-3b22-4cb6-b1ba-b6d3ce993c0a"
+                LastKnownName="MessageOccurrenceSpecification37"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="125ad040-a823-477d-a19f-960de074a16a"
+                LastKnownName="MessageOccurrenceSpecification38"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="dbdc6d4f-272c-422e-a0d9-a223113f7363"
+            name="viewResult"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="5e80ff44-de1a-48fe-bdbc-5a56c0eb2655"
+                LastKnownName="MessageOccurrenceSpecification39"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="78639f61-e7a3-4c25-a90f-7bef56ba0246"
+                LastKnownName="MessageOccurrenceSpecification40"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </receiveEvent>
+          </message>
+        </messages>
+        <ownedAttributesInternal>
+          <property
+            Id="fd1f8ee6-cf66-4bab-97b8-cffbffe244aa"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <actorMoniker
+                Id="d326067f-64ea-4013-b5c7-ac071b2399b3"
+                LastKnownName="Customer"
+                LastKnownLocation="Package_1422.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="64030a4e-e7c2-404a-a8de-2c9242e99dae"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="35092896-3701-44aa-ba5b-60478eabdb41"
+                LastKnownName="HomeController"
+                LastKnownLocation="Package1_1421.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="4f0495f3-1083-4e70-84e5-6272f3eeaf08"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="6c1074ab-5bd4-4b36-93f8-1c395b73e7ca"
+                LastKnownName="IProductRepository"
+                LastKnownLocation="Package_1422.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="37264d77-3c12-48fe-a1ff-b24382244b87"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="67f65f72-afa8-4f48-ae79-cfffee276f42"
+                LastKnownName="Home.aspx"
+                LastKnownLocation="Package2_1421.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="8999bf30-1a69-4069-b13b-e37bbc73ee8e"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="003633f1-939b-4a9f-927b-ffedccbb2fed"
+                LastKnownName="ProductList.aspx"
+                LastKnownLocation="Package2_1421.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="40a4394d-e32e-4136-9468-b3c794131d46"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="d4d5e532-3c37-4853-be8c-b4628f7d3b63"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="b0f68d6d-051d-4478-9e8b-d40acb3af249"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="60c8f205-dc83-4541-b71e-7f8481a83eba"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="920002a9-9e0a-4888-b150-962c7e7a7977"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="d675f5ab-16e2-4ef9-bcf8-46338bf583d0"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="fee95e77-257f-4449-9bbe-6e652b062be7"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="13a84e92-7475-4c65-a6a2-ffe406759757"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="a2ada3b0-91f6-4f1b-bc83-fbe9d91bfb87"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="223c9cfc-4f44-439d-b0cb-534af43da375"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="4c53363b-ba0c-4440-9d13-28e050b45e7f"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="ed027555-8db8-4c51-a721-6947cc4e1e5c"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="2a59e125-3227-4fa1-b928-022b558953a9"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="491886d4-5a6e-427a-b919-20139c99e098"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="60b1c5f1-80c7-47cf-a096-52a1bd0bfa7c"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="e389698c-1945-44ea-8c92-64c80ccd4dd7"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="183eb9b4-71a3-44cc-8478-2b96677665fe"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="86458040-1202-40a8-beb6-429625731891"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="30b3dec4-2d2a-4742-b30b-d7e05b84fce3"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="d21a1364-4f4b-4139-8161-ba2bb76b9e22"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <interaction
+        Id="f401f508-ed2c-4327-a11f-7b5dd724563c"
+        name="S1. View Product Details"
+        collapseFragmentsFlag="false"
+        isActiveClass="false"
+        isAbstract="false"
+        isLeaf="false"
+        isReentrant="false">
+        <ownedCommentsInternal>
+          <comment
+            Id="59c7c6a4-ee0c-4bd9-aa83-db6450f97a95">
+            <body>S1. View Product Details
+
+1. System displays information about the chosen product including its name, teaser, description, price, and all additional technical details provided by the manufacturer.
+
+2. System displays a list of recommended products similar to the one chosen.
+
+3. Use case flow resumes at the next step.
+</body>
+          </comment>
+        </ownedCommentsInternal>
+        <fragments>
+          <behaviorExecutionSpecification
+            Id="3e216a09-2257-4bff-80f2-8cbad672802e"
+            name="BehaviorExecutionSpecification1">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="77f68db5-c636-4a0b-ab74-74e740fad730"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="313e56ff-20ba-4e02-8a70-5da2b0baf768"
+                LastKnownName="ExecutionOccurrenceSpecification2"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="3a319986-b1f4-4e20-ae96-2c54e7bbf487"
+                LastKnownName="ExecutionOccurrenceSpecification1"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="a23b03ac-7d7f-43dc-9ecd-05bbd9e34323"
+                LastKnownName="MessageOccurrenceSpecification2"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="a91068ce-8c26-4d40-8755-1488f41ef493"
+                LastKnownName="MessageOccurrenceSpecification5"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="d3f9bbe3-1134-4366-a82a-de8a157e9974"
+                LastKnownName="MessageOccurrenceSpecification8"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="58e79704-75c0-49f8-87cf-b94c0fc39943"
+                LastKnownName="MessageOccurrenceSpecification9"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="dae4a9af-46db-4d22-976f-e6e9448aae42"
+                LastKnownName="ExecutionOccurrenceSpecification5"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="3006b165-68ab-43ed-b6da-631a1eacc49f"
+                LastKnownName="ExecutionOccurrenceSpecification6"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="13016de4-bc06-4236-9898-789be01861de"
+                LastKnownName="MessageOccurrenceSpecification11"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="2a87962e-6bfb-485f-84df-b9baffd3f208"
+                LastKnownName="ExecutionOccurrenceSpecification7"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="17c84bc5-0381-4b3e-bbc3-b8c851cfbb61"
+                LastKnownName="ExecutionOccurrenceSpecification8"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="e89d2579-9c4d-40f0-b1fb-5086a70a8abc"
+                LastKnownName="MessageOccurrenceSpecification3"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="3a319986-b1f4-4e20-ae96-2c54e7bbf487"
+            name="ExecutionOccurrenceSpecification1">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="b2b92584-555d-454d-9753-39de76309fd2"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="77f68db5-c636-4a0b-ab74-74e740fad730"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="4a8eb762-bf14-480c-a623-eeb147cc6a10"
+            name="MessageOccurrenceSpecification1">
+            <covered>
+              <lifelineMoniker
+                Id="5262bef5-f19d-4526-ae51-3ee538de110a"
+                LastKnownName="customer : Customer"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="a23b03ac-7d7f-43dc-9ecd-05bbd9e34323"
+            name="MessageOccurrenceSpecification2">
+            <covered>
+              <lifelineMoniker
+                Id="77f68db5-c636-4a0b-ab74-74e740fad730"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="cd1a12fb-782e-4d93-902b-1aa71b5d8d0f"
+            name="BehaviorExecutionSpecification2">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="c5e30806-df96-48b8-951f-6097d7bdb5d5"
+                LastKnownName="_productRepository : IProductRepository"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="190e380d-b171-4a1f-ae8c-62442d611f4b"
+                LastKnownName="ExecutionOccurrenceSpecification4"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="1fbea3e3-0776-46c7-9b9f-88d3240a93c8"
+                LastKnownName="ExecutionOccurrenceSpecification3"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="91749a01-4aa1-4fe5-b8a3-e1885158b057"
+                LastKnownName="MessageOccurrenceSpecification6"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="9e01d047-c10a-4dd6-a700-f2683f10a577"
+                LastKnownName="MessageOccurrenceSpecification7"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="1fbea3e3-0776-46c7-9b9f-88d3240a93c8"
+            name="ExecutionOccurrenceSpecification3">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="c5673547-4d7e-407a-be16-f59e9e536139"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="c5e30806-df96-48b8-951f-6097d7bdb5d5"
+                LastKnownName="_productRepository : IProductRepository"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="a91068ce-8c26-4d40-8755-1488f41ef493"
+            name="MessageOccurrenceSpecification5">
+            <covered>
+              <lifelineMoniker
+                Id="77f68db5-c636-4a0b-ab74-74e740fad730"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="91749a01-4aa1-4fe5-b8a3-e1885158b057"
+            name="MessageOccurrenceSpecification6">
+            <covered>
+              <lifelineMoniker
+                Id="c5e30806-df96-48b8-951f-6097d7bdb5d5"
+                LastKnownName="_productRepository : IProductRepository"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="9e01d047-c10a-4dd6-a700-f2683f10a577"
+            name="MessageOccurrenceSpecification7">
+            <covered>
+              <lifelineMoniker
+                Id="c5e30806-df96-48b8-951f-6097d7bdb5d5"
+                LastKnownName="_productRepository : IProductRepository"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="d3f9bbe3-1134-4366-a82a-de8a157e9974"
+            name="MessageOccurrenceSpecification8">
+            <covered>
+              <lifelineMoniker
+                Id="77f68db5-c636-4a0b-ab74-74e740fad730"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="190e380d-b171-4a1f-ae8c-62442d611f4b"
+            name="ExecutionOccurrenceSpecification4">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="2957af92-41d7-42da-a793-dac789aa534a"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="c5e30806-df96-48b8-951f-6097d7bdb5d5"
+                LastKnownName="_productRepository : IProductRepository"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="58e79704-75c0-49f8-87cf-b94c0fc39943"
+            name="MessageOccurrenceSpecification9">
+            <covered>
+              <lifelineMoniker
+                Id="77f68db5-c636-4a0b-ab74-74e740fad730"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="ab2bb3c7-7b7e-478b-8197-8590f26df8e7"
+            name="BehaviorExecutionSpecification3">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="77f68db5-c636-4a0b-ab74-74e740fad730"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="3006b165-68ab-43ed-b6da-631a1eacc49f"
+                LastKnownName="ExecutionOccurrenceSpecification6"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="dae4a9af-46db-4d22-976f-e6e9448aae42"
+                LastKnownName="ExecutionOccurrenceSpecification5"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="9cf1bdfb-cc0e-4b72-84d1-a71e68144ea0"
+                LastKnownName="MessageOccurrenceSpecification10"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="dae4a9af-46db-4d22-976f-e6e9448aae42"
+            name="ExecutionOccurrenceSpecification5">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="d53b0b8f-6603-420e-b335-57831bfc00b2"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="77f68db5-c636-4a0b-ab74-74e740fad730"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="9cf1bdfb-cc0e-4b72-84d1-a71e68144ea0"
+            name="MessageOccurrenceSpecification10">
+            <covered>
+              <lifelineMoniker
+                Id="77f68db5-c636-4a0b-ab74-74e740fad730"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="3006b165-68ab-43ed-b6da-631a1eacc49f"
+            name="ExecutionOccurrenceSpecification6">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="738af291-1e65-449d-be61-46f4f0f40e9d"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="77f68db5-c636-4a0b-ab74-74e740fad730"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="13016de4-bc06-4236-9898-789be01861de"
+            name="MessageOccurrenceSpecification11">
+            <covered>
+              <lifelineMoniker
+                Id="77f68db5-c636-4a0b-ab74-74e740fad730"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="dc548794-6c93-4574-88cc-0b684c6a8a50"
+            name="BehaviorExecutionSpecification4">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="77f68db5-c636-4a0b-ab74-74e740fad730"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="17c84bc5-0381-4b3e-bbc3-b8c851cfbb61"
+                LastKnownName="ExecutionOccurrenceSpecification8"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="2a87962e-6bfb-485f-84df-b9baffd3f208"
+                LastKnownName="ExecutionOccurrenceSpecification7"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="d35009a2-5e66-4623-8ac8-311beaeeec72"
+                LastKnownName="MessageOccurrenceSpecification12"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="51809e70-a4eb-4db7-bb4d-a85e9a7de49a"
+                LastKnownName="MessageOccurrenceSpecification13"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="ef2f1ba8-9ff3-4884-a200-b3c7c053d328"
+                LastKnownName="MessageOccurrenceSpecification16"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="2a87962e-6bfb-485f-84df-b9baffd3f208"
+            name="ExecutionOccurrenceSpecification7">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="3423525f-4781-488a-a507-6a1b3b4361cc"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="77f68db5-c636-4a0b-ab74-74e740fad730"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="d35009a2-5e66-4623-8ac8-311beaeeec72"
+            name="MessageOccurrenceSpecification12">
+            <covered>
+              <lifelineMoniker
+                Id="77f68db5-c636-4a0b-ab74-74e740fad730"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="8b051e24-54d3-4e7f-ab15-9fbcaed7f501"
+            name="BehaviorExecutionSpecification5">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="32768bc4-5def-49d4-b3d0-d58cdfa3e65f"
+                LastKnownName="Details.aspx"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="53dba9a8-2569-4d7e-be8d-a5c1511b9767"
+                LastKnownName="ExecutionOccurrenceSpecification10"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="6e89da55-6a24-484c-9050-8d252990e9c4"
+                LastKnownName="ExecutionOccurrenceSpecification9"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="4026fa9d-374c-406a-8f1e-2e12bc3884a7"
+                LastKnownName="MessageOccurrenceSpecification14"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="bcf9949a-354c-4cf2-984f-e02e906c2458"
+                LastKnownName="MessageOccurrenceSpecification15"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="6e89da55-6a24-484c-9050-8d252990e9c4"
+            name="ExecutionOccurrenceSpecification9">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="8371cd13-b7e6-4dd6-8e59-22f73f12dc1a"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="32768bc4-5def-49d4-b3d0-d58cdfa3e65f"
+                LastKnownName="Details.aspx"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="4026fa9d-374c-406a-8f1e-2e12bc3884a7"
+            name="MessageOccurrenceSpecification14">
+            <event>
+              <receiveOperationEventMoniker
+                Id="d3feebf3-a881-4646-b69f-21de1292b48b"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="32768bc4-5def-49d4-b3d0-d58cdfa3e65f"
+                LastKnownName="Details.aspx"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="51809e70-a4eb-4db7-bb4d-a85e9a7de49a"
+            name="MessageOccurrenceSpecification13">
+            <event>
+              <sendOperationEventMoniker
+                Id="dd675abd-74da-4ec4-a4e6-9db724987f4d"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="77f68db5-c636-4a0b-ab74-74e740fad730"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="bcf9949a-354c-4cf2-984f-e02e906c2458"
+            name="MessageOccurrenceSpecification15">
+            <covered>
+              <lifelineMoniker
+                Id="32768bc4-5def-49d4-b3d0-d58cdfa3e65f"
+                LastKnownName="Details.aspx"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="ef2f1ba8-9ff3-4884-a200-b3c7c053d328"
+            name="MessageOccurrenceSpecification16">
+            <covered>
+              <lifelineMoniker
+                Id="77f68db5-c636-4a0b-ab74-74e740fad730"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="53dba9a8-2569-4d7e-be8d-a5c1511b9767"
+            name="ExecutionOccurrenceSpecification10">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="888132b0-9119-45c1-909e-e3f33011cafd"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="32768bc4-5def-49d4-b3d0-d58cdfa3e65f"
+                LastKnownName="Details.aspx"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="17c84bc5-0381-4b3e-bbc3-b8c851cfbb61"
+            name="ExecutionOccurrenceSpecification8">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="f003a518-180a-42dd-9893-2e1971f3d98a"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="77f68db5-c636-4a0b-ab74-74e740fad730"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="e89d2579-9c4d-40f0-b1fb-5086a70a8abc"
+            name="MessageOccurrenceSpecification3">
+            <covered>
+              <lifelineMoniker
+                Id="77f68db5-c636-4a0b-ab74-74e740fad730"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="69b12aa6-d78b-444e-bccb-52ccbef54940"
+            name="MessageOccurrenceSpecification4">
+            <covered>
+              <lifelineMoniker
+                Id="5262bef5-f19d-4526-ae51-3ee538de110a"
+                LastKnownName="customer : Customer"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="313e56ff-20ba-4e02-8a70-5da2b0baf768"
+            name="ExecutionOccurrenceSpecification2">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="01f8307d-f344-4a85-bc88-24bdcc853231"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Adventureworks.DesignModel.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="77f68db5-c636-4a0b-ab74-74e740fad730"
+                LastKnownName="HomeController"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline
+            Id="5262bef5-f19d-4526-ae51-3ee538de110a"
+            name="customer : Customer"
+            isActor="true"
+            lifelineDisplayName="customer : Customer">
+            <represents>
+              <propertyMoniker
+                Id="3c658f40-9bb2-4815-9e5f-e45237c57b1e"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </represents>
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="4a8eb762-bf14-480c-a623-eeb147cc6a10"
+                LastKnownName="MessageOccurrenceSpecification1"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="69b12aa6-d78b-444e-bccb-52ccbef54940"
+                LastKnownName="MessageOccurrenceSpecification4"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="77f68db5-c636-4a0b-ab74-74e740fad730"
+            name="HomeController"
+            isActor="false"
+            lifelineDisplayName="HomeController">
+            <represents>
+              <propertyMoniker
+                Id="09e0d068-98cb-4afc-82ff-f4f1a786941e"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </represents>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="3a319986-b1f4-4e20-ae96-2c54e7bbf487"
+                LastKnownName="ExecutionOccurrenceSpecification1"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="313e56ff-20ba-4e02-8a70-5da2b0baf768"
+                LastKnownName="ExecutionOccurrenceSpecification2"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="c5e30806-df96-48b8-951f-6097d7bdb5d5"
+            name="_productRepository : IProductRepository"
+            isActor="false"
+            lifelineDisplayName="_productRepository : IProductRepository">
+            <represents>
+              <propertyMoniker
+                Id="d2f270c1-35b1-4b49-b31d-a10fd737c88d"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </represents>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="1fbea3e3-0776-46c7-9b9f-88d3240a93c8"
+                LastKnownName="ExecutionOccurrenceSpecification3"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="190e380d-b171-4a1f-ae8c-62442d611f4b"
+                LastKnownName="ExecutionOccurrenceSpecification4"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="32768bc4-5def-49d4-b3d0-d58cdfa3e65f"
+            name="Details.aspx"
+            isActor="false"
+            lifelineDisplayName="Details.aspx">
+            <represents>
+              <propertyMoniker
+                Id="ab2754a2-def1-4ef0-9451-790eb2c9c695"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </represents>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="6e89da55-6a24-484c-9050-8d252990e9c4"
+                LastKnownName="ExecutionOccurrenceSpecification9"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="53dba9a8-2569-4d7e-be8d-a5c1511b9767"
+                LastKnownName="ExecutionOccurrenceSpecification10"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message
+            Id="a5a76e52-06d8-4632-b795-081e93b6fc1b"
+            name="/Home/Product/{sku}"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="4a8eb762-bf14-480c-a623-eeb147cc6a10"
+                LastKnownName="MessageOccurrenceSpecification1"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="a23b03ac-7d7f-43dc-9ecd-05bbd9e34323"
+                LastKnownName="MessageOccurrenceSpecification2"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="ce864365-62ea-4862-b841-62044a8220e6"
+            name="viewResult"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="e89d2579-9c4d-40f0-b1fb-5086a70a8abc"
+                LastKnownName="MessageOccurrenceSpecification3"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="69b12aa6-d78b-444e-bccb-52ccbef54940"
+                LastKnownName="MessageOccurrenceSpecification4"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="1f354a93-062f-40f7-ad7d-06c30b20ec5a"
+            name="GetProduct(sku)"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="a91068ce-8c26-4d40-8755-1488f41ef493"
+                LastKnownName="MessageOccurrenceSpecification5"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="91749a01-4aa1-4fe5-b8a3-e1885158b057"
+                LastKnownName="MessageOccurrenceSpecification6"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="24e528a0-a942-40c7-922f-32635590270f"
+            name="product"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="9e01d047-c10a-4dd6-a700-f2683f10a577"
+                LastKnownName="MessageOccurrenceSpecification7"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="d3f9bbe3-1134-4366-a82a-de8a157e9974"
+                LastKnownName="MessageOccurrenceSpecification8"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="d9960e2b-cb7d-456d-9edb-025ce9cd833b"
+            name="this.ViewData[&quot;Product&quot;] = product"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="true">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="58e79704-75c0-49f8-87cf-b94c0fc39943"
+                LastKnownName="MessageOccurrenceSpecification9"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="9cf1bdfb-cc0e-4b72-84d1-a71e68144ea0"
+                LastKnownName="MessageOccurrenceSpecification10"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="723b06ca-cf34-4781-90a1-5f3678ffe56a"
+            name="this.View(&quot;Details&quot;)"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="true">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="13016de4-bc06-4236-9898-789be01861de"
+                LastKnownName="MessageOccurrenceSpecification11"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="d35009a2-5e66-4623-8ac8-311beaeeec72"
+                LastKnownName="MessageOccurrenceSpecification12"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="960a7774-44d2-437d-9dd3-4b919a4dcbb5"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="51809e70-a4eb-4db7-bb4d-a85e9a7de49a"
+                LastKnownName="MessageOccurrenceSpecification13"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="4026fa9d-374c-406a-8f1e-2e12bc3884a7"
+                LastKnownName="MessageOccurrenceSpecification14"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="90822dd3-ca46-497b-841d-6ee0d4f74e55"
+            name="viewResult"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="bcf9949a-354c-4cf2-984f-e02e906c2458"
+                LastKnownName="MessageOccurrenceSpecification15"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="ef2f1ba8-9ff3-4884-a200-b3c7c053d328"
+                LastKnownName="MessageOccurrenceSpecification16"
+                LastKnownLocation="Adventureworks.DesignModel.uml" />
+            </receiveEvent>
+          </message>
+        </messages>
+        <ownedAttributesInternal>
+          <property
+            Id="3c658f40-9bb2-4815-9e5f-e45237c57b1e"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <actorMoniker
+                Id="d326067f-64ea-4013-b5c7-ac071b2399b3"
+                LastKnownName="Customer"
+                LastKnownLocation="Package_1422.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="09e0d068-98cb-4afc-82ff-f4f1a786941e"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="35092896-3701-44aa-ba5b-60478eabdb41"
+                LastKnownName="HomeController"
+                LastKnownLocation="Package1_1421.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="d2f270c1-35b1-4b49-b31d-a10fd737c88d"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="6c1074ab-5bd4-4b36-93f8-1c395b73e7ca"
+                LastKnownName="IProductRepository"
+                LastKnownLocation="Package_1422.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ab2754a2-def1-4ef0-9451-790eb2c9c695"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="b5c90cd9-64ce-4190-8c8c-b8a47b3fb005"
+                LastKnownName="Details.aspx"
+                LastKnownLocation="Package2_1421.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <sendOperationEvent
+        Id="35d6aa46-5009-41c2-b245-e82e9f1c60f3">
+        <operation>
+          <operationMoniker
+            Id="88674d43-5d17-4164-84e2-3afb494daf29"
+            LastKnownName="Index"
+            LastKnownLocation="Package1_1421.uml" />
+        </operation>
+      </sendOperationEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <receiveOperationEvent
+        Id="2fee1060-f18a-43de-95d6-7d05138e7764">
+        <operation>
+          <operationMoniker
+            Id="88674d43-5d17-4164-84e2-3afb494daf29"
+            LastKnownName="Index"
+            LastKnownLocation="Package1_1421.uml" />
+        </operation>
+      </receiveOperationEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <sendOperationEvent
+        Id="d48b5d94-11c1-4a11-99b9-82571d46e186">
+        <operation>
+          <operationMoniker
+            Id="1f4e1845-9c04-4a6e-b60a-625044a5a041"
+            LastKnownName="Category"
+            LastKnownLocation="Package1_1421.uml" />
+        </operation>
+      </sendOperationEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <receiveOperationEvent
+        Id="d5cb509d-e104-4f13-b775-b79de1347129">
+        <operation>
+          <operationMoniker
+            Id="1f4e1845-9c04-4a6e-b60a-625044a5a041"
+            LastKnownName="Category"
+            LastKnownLocation="Package1_1421.uml" />
+        </operation>
+      </receiveOperationEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <sendOperationEvent
+        Id="10f2aeb5-5252-45e5-bc05-dbf819f205d6">
+        <operation>
+          <operationMoniker
+            Id="4510945a-cc12-4eea-89a5-2565c3f8f64f"
+            LastKnownName="GetProductCategories"
+            LastKnownLocation="Package_1422.uml" />
+        </operation>
+      </sendOperationEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <receiveOperationEvent
+        Id="b259a0da-4d16-4853-8fe2-679253ce673a">
+        <operation>
+          <operationMoniker
+            Id="4510945a-cc12-4eea-89a5-2565c3f8f64f"
+            LastKnownName="GetProductCategories"
+            LastKnownLocation="Package_1422.uml" />
+        </operation>
+      </receiveOperationEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <sendOperationEvent
+        Id="6b26137f-bbee-4eef-a1d9-ae98125276af">
+        <operation>
+          <operationMoniker
+            Id="b775de97-4fc2-486d-a404-788de0cb4906"
+            LastKnownName="GetProductsForCategory"
+            LastKnownLocation="Package_1422.uml" />
+        </operation>
+      </sendOperationEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <receiveOperationEvent
+        Id="5f592086-807a-43e5-a431-033eb4462edb">
+        <operation>
+          <operationMoniker
+            Id="b775de97-4fc2-486d-a404-788de0cb4906"
+            LastKnownName="GetProductsForCategory"
+            LastKnownLocation="Package_1422.uml" />
+        </operation>
+      </receiveOperationEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="b2b92584-555d-454d-9753-39de76309fd2"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="01f8307d-f344-4a85-bc88-24bdcc853231"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="c5673547-4d7e-407a-be16-f59e9e536139"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="2957af92-41d7-42da-a793-dac789aa534a"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="d53b0b8f-6603-420e-b335-57831bfc00b2"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="738af291-1e65-449d-be61-46f4f0f40e9d"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="3423525f-4781-488a-a507-6a1b3b4361cc"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="f003a518-180a-42dd-9893-2e1971f3d98a"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="8371cd13-b7e6-4dd6-8e59-22f73f12dc1a"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="888132b0-9119-45c1-909e-e3f33011cafd"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <sendOperationEvent
+        Id="bf7f2471-39f1-4dcb-b892-a507fc5d6a5b">
+        <operation>
+          <operationMoniker
+            Id="20cd8e36-5137-465d-84f4-f2383bfc54a5"
+            LastKnownLocation="Package2_1421.uml" />
+        </operation>
+      </sendOperationEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <receiveOperationEvent
+        Id="cd80c4f5-2ddb-4117-a5a4-e1809ea7a493">
+        <operation>
+          <operationMoniker
+            Id="20cd8e36-5137-465d-84f4-f2383bfc54a5"
+            LastKnownLocation="Package2_1421.uml" />
+        </operation>
+      </receiveOperationEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <sendOperationEvent
+        Id="30d28c3f-1374-46fe-8537-cca76512418c">
+        <operation>
+          <operationMoniker
+            Id="8cae6da0-8729-41de-908f-030f2c53ffdb"
+            LastKnownLocation="Package2_1421.uml" />
+        </operation>
+      </sendOperationEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <receiveOperationEvent
+        Id="08578624-b2e1-4a26-860a-e8c59f90de5d">
+        <operation>
+          <operationMoniker
+            Id="8cae6da0-8729-41de-908f-030f2c53ffdb"
+            LastKnownLocation="Package2_1421.uml" />
+        </operation>
+      </receiveOperationEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <sendOperationEvent
+        Id="dd675abd-74da-4ec4-a4e6-9db724987f4d">
+        <operation>
+          <operationMoniker
+            Id="b1e07431-37ce-4c2a-9ee9-f2471af1848f"
+            LastKnownLocation="Package2_1421.uml" />
+        </operation>
+      </sendOperationEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <receiveOperationEvent
+        Id="d3feebf3-a881-4646-b69f-21de1292b48b">
+        <operation>
+          <operationMoniker
+            Id="b1e07431-37ce-4c2a-9ee9-f2471af1848f"
+            LastKnownLocation="Package2_1421.uml" />
+        </operation>
+      </receiveOperationEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="e4dfc29b-f962-460c-aeaa-f4f0af9f5bed"
+        name="string" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="a447cebe-4912-4b62-9fa5-93e0dc2d573c"
+        LastKnownName="System"
+        LastKnownLocation="Package_1420.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="958126a2-7c20-4361-afda-bdcc4f1135e2"
+        LastKnownName="Adventureworks.Web"
+        LastKnownLocation="Package_1421.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="2f0c8ba2-c615-43b9-a899-66483f4c9c8d"
+        LastKnownName="Adventureworks.Domain"
+        LastKnownLocation="Package_1422.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="0b6bd19e-c82d-4afc-aae4-8c637530741c"
+        LastKnownName="Adventureworks.SQLRepository"
+        LastKnownLocation="Package_1432.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

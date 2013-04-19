@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="949502b2-4c05-4e7e-b7cb-652faf85f729" name="Home Controller" linkedPackageId="5a1cffca-c108-4ce8-98f3-cbd0288598dd" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="b21bde5d-47af-4cec-9ef2-7f54e424cf79">
+      <elementDefinition Id="993e5304-75af-4a15-8f34-6e84a11acf76" />
+      <body>IOC/DI framework will handle repository instantiation via DI during construction.
+</body>
+      <annotatedElements>
+        <classMoniker Id="a8bf8d3b-9635-4512-b198-7ac7f8a8616d" LastKnownName="HomeController" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a8bf8d3b-9635-4512-b198-7ac7f8a8616d" name="HomeController" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="35092896-3701-44aa-ba5b-60478eabdb41" />
+        <suppliersInternal>
+          <dependency Id="469d51b4-46e5-4eb1-872f-a7bead7f151d">
+            <classMoniker Id="ebf8f668-3ed1-43ad-81b8-e8660e8ed9b7" LastKnownName="Home.aspx" />
+            <elementDefinition Id="5e525703-c06a-42d1-83c7-355abfa9c53c" />
+          </dependency>
+          <dependency Id="3e0950ff-4a27-4164-b062-aeb1212f88bf">
+            <classMoniker Id="88f69015-756b-44f8-9bd4-0e0dcfb611fa" LastKnownName="ProductList.aspx" />
+            <elementDefinition Id="a4826980-7056-444b-8b92-d867c543672a" />
+          </dependency>
+          <dependency Id="371a7616-3d0c-4ae4-9d4b-cd47e82139ef">
+            <classMoniker Id="46c638e4-5fc4-4b45-856b-14510283a0e0" LastKnownName="Details.aspx" />
+            <elementDefinition Id="d9616e3e-47c4-4068-82cc-884bdaef5797" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="ffac4815-aa2a-4930-bb7a-68810c9d3dcb" name="_productRepository" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7c175022-a86c-4611-8bd5-8b58121da454" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="568d028e-6e1a-42dc-abea-31faf589f42e" LastKnownName="IProductRepository" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="3d7d4cc6-daf0-4b61-ba4e-d56d8764733a" name="Index" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="88674d43-5d17-4164-84e2-3afb494daf29" />
+          </operation>
+          <operation Id="309e08dc-4c48-4953-8260-0a59b79e987b" name="Category" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1f4e1845-9c04-4a6e-b60a-625044a5a041" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c257444e-42c9-4ead-b054-b16547846c9d" name="categoryName" direction="In">
+                  <elementDefinition Id="91b5a08d-83c5-4c1b-ab9c-61402db9d664" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="4a52d7d4-faf7-4470-9e5e-9a168009e462" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="ab889d7c-10f5-4a04-a36a-ee0fd1380131" name="Product" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bd48fc32-33fd-4aa2-89da-7cfefe25d598" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c4cb5d95-a8e4-4f74-9e65-d8c18342a2aa" name="sku" direction="In" isUnique="false">
+                  <elementDefinition Id="105a2ce8-a5a4-4770-ad69-96fd12245354" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c1895bf4-27ee-4dee-bc0d-677b211da798" LastKnownName="string" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="106f6b32-a162-4074-877e-63ee33e57b29" name="HomeController" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5019cd66-f55e-4ab1-8082-be524ff7e7c4" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f13bd6d6-8ca4-4ab6-9ce1-a924cfbee0f5" name="productRepository" direction="In" isUnique="false">
+                  <elementDefinition Id="fafb28e6-2b29-49d8-a62c-fd166d330a77" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="568d028e-6e1a-42dc-abea-31faf589f42e" LastKnownName="IProductRepository" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ebf8f668-3ed1-43ad-81b8-e8660e8ed9b7" name="Home.aspx" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="67f65f72-afa8-4f48-ae79-cfffee276f42" />
+        <ownedOperationsInternal>
+          <operation Id="ada992cc-774a-4152-adf3-418b05c269f9" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="20cd8e36-5137-465d-84f4-f2383bfc54a5" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="88f69015-756b-44f8-9bd4-0e0dcfb611fa" name="ProductList.aspx" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="003633f1-939b-4a9f-927b-ffedccbb2fed" />
+        <ownedOperationsInternal>
+          <operation Id="c18e5005-8364-4ff3-ac65-41b5acb298d8" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8cae6da0-8729-41de-908f-030f2c53ffdb" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="46c638e4-5fc4-4b45-856b-14510283a0e0" name="Details.aspx" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b5c90cd9-64ce-4190-8c8c-b8a47b3fb005" />
+        <ownedOperationsInternal>
+          <operation Id="a008c12e-20e7-4db3-8c0c-c4b4b2e9a3eb" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b1e07431-37ce-4c2a-9ee9-f2471af1848f" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="4a52d7d4-faf7-4470-9e5e-9a168009e462" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="c1895bf4-27ee-4dee-bc0d-677b211da798" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
+        <elementDefinition Id="e4dfc29b-f962-460c-aeaa-f4f0af9f5bed" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="568d028e-6e1a-42dc-abea-31faf589f42e" name="IProductRepository" isAbstract="false" isLeaf="false" cachedFullName="Adventureworks.DesignModel::IProductRepository">
+        <elementDefinition Id="6c1074ab-5bd4-4b36-93f8-1c395b73e7ca" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="39568001-459b-40ff-9f90-613b01b750a8" name="Adventureworks.DesignModel">
+    <elementDefinition Id="fe7dcf9e-7524-4095-96be-838c2d3b2ca3" />
+    <profileInstances>
+      <packageHasProfileInstances Id="5c820aa6-8732-4e7b-9b2c-362f8cf49cfe">
+        <profileInstance Id="fca15763-e758-442a-b83e-f1a74395ba98" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="7c3c1421-1d62-413a-920d-5dbdba755f53">
+        <profileInstance Id="bcebe920-28b1-4f4f-8486-38f9b04b9571" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+  <package Id="5a1cffca-c108-4ce8-98f3-cbd0288598dd" name="Adventureworks.Web">
+    <elementDefinition Id="958126a2-7c20-4361-afda-bdcc4f1135e2" />
+  </package>
+</logicalClassDesignerModel>

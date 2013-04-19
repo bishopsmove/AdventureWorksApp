@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="c6a81900-233b-40b1-8b33-52a7fbe32454" name="SiteAdmin" linkedPackageId="76297e30-9361-42da-869d-2e4a2c3c98a6" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="36525276-ca5e-4c2c-a840-26a70e43bffd">
+      <profileInstance Id="573b604d-2e2a-4693-9387-90d7b14b62a3" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="50e99fd8-b42f-4b79-88aa-57d3d2dddf7b">
+      <profileInstance Id="f1d6da15-4aa6-499d-b804-e699b3672abe" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="7b29ecd0-f908-49f8-b9e2-e9a0cbfafbe9" name="Site Admin" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="51211f74-5696-4a5e-acf0-8c274926e5cf" />
+        <targetEnds>
+          <association Id="556fe9e7-3204-4678-9a0b-a4d66d6fd7bb" isDerived="false" sourceEndRoleName="Site Admin" targetEndRoleName="Manage products" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="5c01930e-47a9-486d-bb38-3d45a87deacb" LastKnownName="Manage products" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e37b2cbb-b6a0-4bed-9f1a-332f46557f55" name="Site Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2981cc27-04ec-4f14-a0a7-0e5268a73905" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="63cc1bfb-1bfc-476c-9ba2-9bdd36a6000f" name="Manage products" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2a78a9c3-7e41-4433-8a44-6e04ceec1c3c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3c8568d2-fc64-407f-8c3c-5f3a7c118d9d" />
+          </association>
+          <association Id="d088d3c1-d313-45dc-83c9-9683594fed5e" isDerived="false" sourceEndRoleName="Site Admin" targetEndRoleName="Delete invalid reviews of product" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="c2577183-051d-4ab4-9644-815f1466d69f" LastKnownName="Delete invalid reviews of product" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a1d86179-8339-43b8-ac00-18fd1a50a80b" name="Site Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="509a9466-8a59-43ac-a4ba-f28918127c28" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b0b284dc-1702-4c6f-a282-7cc001dfe082" name="Delete invalid reviews of product" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="251e1ecb-25cc-45c5-a78f-ed4d1e1ce79c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a1de4077-947a-483e-a7a9-ced776f89af0" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5c01930e-47a9-486d-bb38-3d45a87deacb" name="Manage products" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="339b270d-12b7-45e0-a3fb-90f19c7cfa00" />
+        <additions>
+          <include Id="0393fad8-5443-4362-8d29-3ec151abc546">
+            <useCaseMoniker Id="f8ccab12-fca7-40b1-86fa-fa1876a63c87" LastKnownName="Browse all products" />
+            <elementDefinition Id="5655bb3c-c593-47a7-9812-85e399d8876d" />
+          </include>
+          <include Id="2a64f0b8-f904-48c5-b432-d96810145445">
+            <useCaseMoniker Id="806a6e5b-caa6-4d1f-a915-cf36976516f3" LastKnownName="Add a new product" />
+            <elementDefinition Id="555001d1-e1a7-43a7-bdef-b46183ce2155" />
+          </include>
+          <include Id="6c1124bf-cb1f-4b7f-a43b-e2d74756e941">
+            <useCaseMoniker Id="98013eb7-57a1-49f7-9de8-3ef3f0dbc764" LastKnownName="Delete an existing product" />
+            <elementDefinition Id="0ce0286d-5a3a-44aa-9061-6f9b53b517ae" />
+          </include>
+          <include Id="51d69bd6-32a8-4e89-a444-651f4f593117">
+            <useCaseMoniker Id="3b99d01c-4ed1-4edd-a991-92677484c66f" LastKnownName="Update an existing product" />
+            <elementDefinition Id="3a67b262-ca29-4137-bca4-e355f1def419" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="c2577183-051d-4ab4-9644-815f1466d69f" name="Delete invalid reviews of product" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ca92b3d9-1f55-47cf-9526-1f121ff1264e" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="806a6e5b-caa6-4d1f-a915-cf36976516f3" name="Add a new product" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="797e5bec-6209-41ee-944b-e178846b0457" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="98013eb7-57a1-49f7-9de8-3ef3f0dbc764" name="Delete an existing product" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="310d3f13-a391-4750-a3c6-ecf298802b9a" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="3b99d01c-4ed1-4edd-a991-92677484c66f" name="Update an existing product" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c5921855-c34b-4158-8057-e1610a4fffab" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="f8ccab12-fca7-40b1-86fa-fa1876a63c87" name="Browse all products" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3b13b50e-95f8-4b71-bc76-383f1afbef1b" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="76297e30-9361-42da-869d-2e4a2c3c98a6" name="Adventureworks.AnalysisModel">
+    <elementDefinition Id="f4efcb1c-1168-4258-b7a6-eefbcd431798" />
+  </package>
+</useCaseModelRoot>

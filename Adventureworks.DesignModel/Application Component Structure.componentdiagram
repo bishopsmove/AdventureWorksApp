@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="fc389c0e-0422-4558-9cdc-f0cae5066ca3" name="Application Component Structure" linkedPackageId="76ec914d-4068-4784-8247-99a880584f58" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="60971406-1390-4680-b3dd-dfe484e18124">
+      <profileInstance Id="986c9544-9454-47e7-a54e-0ad4b75816e7" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="43b0e0f2-0cb3-4823-b15f-a89b8c52763d">
+      <profileInstance Id="46d2865c-ee88-4518-8f99-b4dd7e835460" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <componentModelHasComponents>
+      <component Id="4e584cae-9231-495b-ab0b-4c2888998552" name="Web" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="aee5dbff-4067-43a5-9759-cef8fdc8106f" />
+        <suppliersInternal>
+          <dependency Id="95bffb88-a59b-48b0-b4b8-d2068f137dc3">
+            <componentMoniker Id="a30b8fb0-de7d-4b1d-bbb2-0bf34f6e79ac" LastKnownName="Repository" />
+            <elementDefinition Id="bec2c49c-1c13-4617-8c30-aed4a4b5c811" />
+          </dependency>
+          <dependency Id="a9cf737c-99d7-4422-b0d3-e05d7530c2a8">
+            <componentMoniker Id="b67ec257-869b-4f7b-bd24-e7ec287dccc2" LastKnownName="Model" />
+            <elementDefinition Id="3c38a505-7872-46ee-9cfe-54f5f76f967b" />
+          </dependency>
+          <dependency Id="2309fea3-9039-4925-a410-312dc67c3d68">
+            <componentMoniker Id="b956a519-d35f-4f80-a8f0-3ec9daba4f06" LastKnownName="Infrastructure" />
+            <elementDefinition Id="b20fd7f6-f794-4c73-a43f-169c87501ad3" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="a30b8fb0-de7d-4b1d-bbb2-0bf34f6e79ac" name="Repository" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e99c2b1d-00d1-4cb7-bdc6-4a2911456af7" />
+        <suppliersInternal>
+          <dependency Id="21626f91-5216-4471-9fa6-45fc32acb6fd">
+            <componentMoniker Id="5648a353-ba2a-4189-8073-c840e8dedfa8" LastKnownName="Database" />
+            <elementDefinition Id="b189bfe6-40a0-4b49-850b-8c18290a7888" />
+          </dependency>
+          <dependency Id="15ca54c0-f88e-4db5-b639-62f4f34dc742">
+            <componentMoniker Id="b67ec257-869b-4f7b-bd24-e7ec287dccc2" LastKnownName="Model" />
+            <elementDefinition Id="176a343d-d467-42d3-ac6f-c7856b2e33a5" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <requiredInterface Id="4fb7f8c7-6be2-486e-b2d3-c8e7fa102dac" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="0d537557-e1f5-44db-9d89-db1a95282e21" />
+            <suppliersInternal>
+              <dependency Id="60cbe872-10d9-4fd0-beef-bf103b316318">
+                <providedInterfaceMoniker Id="ae089341-6862-4da9-ba68-69a42b8cd9f0" LastKnownName="Port1" />
+                <elementDefinition Id="2762f065-3135-47b4-b6ad-e24a865a0de3" />
+              </dependency>
+            </suppliersInternal>
+            <type_NamedElement>
+              <interfaceMoniker Id="b8f40dad-26d6-4913-abb0-27740a7095af" LastKnownName="ADO.Net" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="b67ec257-869b-4f7b-bd24-e7ec287dccc2" name="Model" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b2c98362-58c7-49fa-98c4-454f20c9fb24" />
+        <suppliersInternal>
+          <dependency Id="9540aa7a-afc2-4d4b-95bc-140ac4497806">
+            <componentMoniker Id="b956a519-d35f-4f80-a8f0-3ec9daba4f06" LastKnownName="Infrastructure" />
+            <elementDefinition Id="feb7dc5d-51bc-4718-96bd-2bb131bdbf10" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="5648a353-ba2a-4189-8073-c840e8dedfa8" name="Database" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="402fcaf2-c8bf-4bb3-933f-100bf0b04f5c" />
+        <ownedAttributesInternal>
+          <providedInterface Id="ae089341-6862-4da9-ba68-69a42b8cd9f0" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="2cc42b16-4858-47d3-94d0-0c0996175670" />
+            <type_NamedElement>
+              <interfaceMoniker Id="3517a230-3b59-4fb0-b349-711858b28f6e" LastKnownName="ADO.Net" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="b956a519-d35f-4f80-a8f0-3ec9daba4f06" name="Infrastructure" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c315cfea-38e1-41b7-b551-3000c4bb5248" />
+      </component>
+    </componentModelHasComponents>
+    <modelContainsNamedElements>
+      <Interface Id="3517a230-3b59-4fb0-b349-711858b28f6e" name="ADO.Net" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ee164f6e-8884-46fb-8343-403e61aaed8a" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="b8f40dad-26d6-4913-abb0-27740a7095af" name="ADO.Net" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5488cf0b-423d-4a7d-87ac-e1350d8289b2" />
+      </Interface>
+    </modelContainsNamedElements>
+  </packagedElements>
+  <package Id="76ec914d-4068-4784-8247-99a880584f58" name="Adventureworks.DesignModel">
+    <elementDefinition Id="fe7dcf9e-7524-4095-96be-838c2d3b2ca3" />
+  </package>
+</componentModel>

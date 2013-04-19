@@ -1,0 +1,44 @@
+﻿@using Adventureworks.Domain;
+@using System;
+@model IEnumerable<ProductCategory>
+           
+<script type="text/javascript">
+    $(function () {
+        // Accordion
+        var activeIndex = $("div.activeCat").index();
+        $("#accordion").accordion({ header: "h3", autoHeight: false, active: activeIndex });
+    });
+</script>
+
+<div class="title">CATEGORIES</div>
+<div class="clear"></div>
+<div id="accordion" class="listbox" style="padding-left: 0px">
+    @foreach (var prodCat in Model)
+    { 
+        string isCatActive;
+        if(prodCat.ProductCategoryID == int.Parse(ViewBag.CurrentProductCategoryId.ToString())) {
+            isCatActive = "class=activeCat";
+        } else {
+            isCatActive = "";
+        }
+        <div @isCatActive>
+			<h3><a href="#">@prodCat.Name</a></h3>
+			<div>
+                <ul>
+                    @foreach (var prodSubcat in @prodCat.ProductSubcategories)
+                    {
+                        string isSubcatActive;
+                        if (prodSubcat.ProductSubcategoryID == int.Parse(ViewBag.CurrentProductSubcategoryId.ToString()))
+                        {
+                            isSubcatActive = "class=active";
+                        }
+                        else {
+                            isSubcatActive = "class=inactive";
+                        }
+                        <li @isSubcatActive><a href='@Url.Content("~/Product/Index?subcategoryId=" + prodSubcat.ProductSubcategoryID)'>@prodSubcat.Name</a></li>
+                    }
+                </ul>
+            </div>
+		</div>
+    }
+</div>

@@ -1,0 +1,43 @@
+﻿@using Adventureworks.Domain;
+@model IEnumerable<RequestForProposal>
+@{
+    Layout = null;
+}
+
+<h2>
+        Finished</h2>
+<div>
+    <table>
+        <tr class="Header">
+            <td>
+                ID
+            </td>
+            <td>
+                Title
+            </td>
+            <td>
+                Created
+            </td>
+            <td>
+                Status
+            </td>
+        </tr>
+        @foreach (var rfp in Model)
+        {
+            <tr>
+                <td>
+                    @rfp.ID.ToString()
+                </td>
+                <td>
+                    @rfp.Title
+                </td>
+                <td>
+                    @rfp.CreationDate
+                </td>
+                <td>
+                    @rfp.Status
+                </td>
+            </tr>
+        }
+    </table>
+</div>

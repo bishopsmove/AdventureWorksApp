@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="597e583c-6301-42f0-898d-a0028d33532b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:44194/PurchaseProcess.xamlx" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PurchaseProcess.xsd" MetadataType="Schema" ID="05a2bd83-9c13-422b-977c-9c095cc10a9b" SourceId="1" SourceUrl="http://localhost:44194/PurchaseProcess.xamlx?xsd=xsd0" />
+    <MetadataFile FileName="PurchaseProcess.wsdl" MetadataType="Wsdl" ID="888c17c3-3ea3-487d-aaf8-d68ad39d9720" SourceId="1" SourceUrl="http://localhost:44194/PurchaseProcess.xamlx?wsdl=wsdl0" />
+    <MetadataFile FileName="SubmitProposal.wsdl" MetadataType="Wsdl" ID="07c0d8b7-337c-4a17-8a93-8776133de73e" SourceId="1" SourceUrl="http://localhost:44194/PurchaseProcess.xamlx?wsdl" />
+    <MetadataFile FileName="PurchaseProcess1.xsd" MetadataType="Schema" ID="3a2a76f0-3aa0-40b0-a49f-9a9f5fdddcd2" SourceId="1" SourceUrl="http://localhost:44194/PurchaseProcess.xamlx?xsd=xsd3" />
+    <MetadataFile FileName="PurchaseProcess.disco" MetadataType="Disco" ID="36e6ba48-02bd-41f0-a649-d6ce31f89c08" SourceId="1" SourceUrl="http://localhost:44194/PurchaseProcess.xamlx?disco" />
+    <MetadataFile FileName="PurchaseProcess2.xsd" MetadataType="Schema" ID="118ed3ec-1c3a-4856-8d0e-e2e8c44a4415" SourceId="1" SourceUrl="http://localhost:44194/PurchaseProcess.xamlx?xsd=xsd2" />
+    <MetadataFile FileName="PurchaseProcess3.xsd" MetadataType="Schema" ID="a9b455ec-71dd-4254-9681-35df9d540f29" SourceId="1" SourceUrl="http://localhost:44194/PurchaseProcess.xamlx?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

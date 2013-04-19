@@ -1,0 +1,67 @@
+﻿@model Adventureworks.Domain.RequestForProposal
+@{
+    ViewBag.Title = "CreateRfp";
+    Layout = "~/Views/Shared/_CompactLayout.cshtml";
+}
+<h2>
+    CreateRfp</h2>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/ui.dropdownchecklist-1.1-min.js")" type="text/javascript"></script>
+
+<script type="text/javascript">
+    $(function () {
+        $(".vendorList").dropdownchecklist({
+            icon: {
+                placement: 'right',
+                toOpen: 'ui-icon-triangle-1-s',
+                toClose: 'ui-icon-triangle-1-n'
+            },
+            width: 150
+        });
+    });
+</script>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>RequestForProposal</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.InvitedVendors)
+        </div>
+        <div class="editor-field">
+            <select name="InvitedVendors" class="vendorList" multiple="multiple">
+                <option value="1">Vendor 1</option>
+                <option value="2">Vendor 2</option>
+                <option value="3">Vendor 3</option>
+                <option value="4">Vendor 4</option>
+                <option value="5">Vendor 5</option>
+                <option value="6">Vendor 6</option>
+                <option value="7">Vendor 7</option>
+                <option value="8">Vendor 8</option>
+            </select>
+        </div>
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

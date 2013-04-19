@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+  dslVersion="1.0.0.0"
+  Id="2f0c8ba2-c615-43b9-a899-66483f4c9c8d"
+  name="Adventureworks.Domain" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="5e70e462-43c0-421a-86b7-4580e46fe3c6"
+        name="Product"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="5b939cec-9815-40d1-b891-6165958778a4"
+            isDerived="false"
+            sourceEndRoleName="Product"
+            targetEndRoleName="Product Model"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="60c5e476-433d-4349-96cb-3fbba3f4ea1b"
+              LastKnownName="Product Model"
+              LastKnownLocation="Package_1422.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7ebb2eb0-b373-45a4-b221-264218447b7e"
+                  name="Product"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4ca72f9d-4768-4f37-9330-901903aec191"
+                  name="Product Model"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="20911f96-da14-4e0f-aeba-d2bd39b48148"
+            isDerived="false"
+            sourceEndRoleName="Product"
+            targetEndRoleName="Product Category"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="0b3854be-f96d-4ab7-af11-31141d45e029"
+              LastKnownName="Product Category"
+              LastKnownLocation="Package_1422.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2a3f8526-4795-42bc-adb3-667aa35d67a7"
+                  name="Product"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="36941b00-8794-4d66-a725-f8ab9601669d"
+                  name="Product Category"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="60c5e476-433d-4349-96cb-3fbba3f4ea1b"
+        name="Product Model"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="0b3854be-f96d-4ab7-af11-31141d45e029"
+        name="Product Category"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="62faa728-a5a1-4cb7-99a2-c6f80a0823bb"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="0b3854be-f96d-4ab7-af11-31141d45e029"
+              LastKnownName="Product Category"
+              LastKnownLocation="Package_1422.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b5bc6654-e434-431f-8ca1-2c7ce81b1f6f"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e94f9f33-0799-4ad8-890c-265880696329"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="aec08f83-01d4-4d89-b6b8-34de0badba03"
+        name="ProductCategory"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="623513c2-376c-4d7d-acc1-d8a4e43683e6"
+        name="Product Description"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="53852fa3-2848-4db0-8488-0d8fd9cc0bbf"
+            isDerived="false"
+            sourceEndRoleName="Product Description"
+            targetEndRoleName="Product Model"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="60c5e476-433d-4349-96cb-3fbba3f4ea1b"
+              LastKnownName="Product Model"
+              LastKnownLocation="Package_1422.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="cf018460-9dc2-4f44-b23f-12d6d0aed86b"
+                  name="Product Description"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="ba2e7142-3f3b-495f-9cc4-7f01ab37cac7"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="bd74efb0-5852-41e7-a41d-72fb8664459d"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3ad5f43c-9ef9-4bc1-976a-636aeee658f9"
+                  name="Product Model"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="7cf802f7-42d3-448b-b9b0-b2475b0c9fbb"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="64c0609e-0c7e-4da5-a135-505caa859498"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="6c1074ab-5bd4-4b36-93f8-1c395b73e7ca"
+        name="IProductRepository"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="ab2d4f03-5f5a-4589-a064-b2ef3a1c0dd6">
+            <classMoniker
+              Id="5e70e462-43c0-421a-86b7-4580e46fe3c6"
+              LastKnownName="Product"
+              LastKnownLocation="Package_1422.uml" />
+          </dependency>
+          <dependency
+            Id="d74e70c2-7967-4eda-8995-928dd3dd4347">
+            <classMoniker
+              Id="0b3854be-f96d-4ab7-af11-31141d45e029"
+              LastKnownName="Product Category"
+              LastKnownLocation="Package_1422.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperations>
+          <operation
+            Id="4510945a-cc12-4eea-89a5-2565c3f8f64f"
+            name="GetProductCategories"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="b775de97-4fc2-486d-a404-788de0cb4906"
+            name="GetProductsForCategory"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="77bf66d7-1f9e-4121-90ca-ccb12d793aff"
+                  name="categoryName"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="d326067f-64ea-4013-b5c7-ac071b2399b3"
+        name="Customer"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

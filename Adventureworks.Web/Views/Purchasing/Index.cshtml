@@ -1,0 +1,81 @@
+﻿@using Adventureworks.Domain;
+@model IEnumerable<RequestForProposal>
+@{
+    ViewBag.Title = "Index";
+}
+<script language="javascript" type="text/javascript">
+    function showProposal(id) {
+        var combo = document.getElementById('sel_' + id);
+        if (combo.value == '') {
+            document.location = '/Purchasing/VendorProposal?id=' + id;
+        }
+        else {
+            document.location = '/Purchasing/VendorProposal?id=' + id + '&vendorId=' + combo.value;
+        }
+    }
+</script>
+<div>
+    <input type="button" value="Create a new RFP" onclick="document.location='/Purchasing/CreateRfp'" />
+    <input type="button" value="Refresh" onclick="document.location.reload()" />
+    <hr />
+    <br />
+    <h2>
+        Active</h2>
+    <table>
+        <tr class="Header">
+            <td>
+                ID
+            </td>
+            <td>
+                Title
+            </td>
+            <td>
+                Created
+            </td>
+            <td>
+                Status
+            </td>
+            <td>
+                Invited Vendors
+            </td>
+            <td>
+                View as...
+            </td>
+        </tr>
+        @foreach (var rfp in Model)
+        {
+            <tr>
+                <td>
+                    @rfp.ID.ToString()
+                </td>
+                <td>
+                    @rfp.Title
+                </td>
+                <td>
+                    @rfp.CreationDate
+                </td>
+                <td>
+                    @rfp.Status
+                </td>
+                <td>
+                    @rfp.GetInvitedVendorsStatus(true)
+                </td>
+                <td>
+                    <select id="sel_@(rfp.ID.ToString())">
+                        <option value="1">Vendor 1</option>
+                        <option value="2">Vendor 2</option>
+                        <option value="3">Vendor 3</option>
+                        <option value="4">Vendor 4</option>
+                        <option value="5">Vendor 5</option>
+                        <option value="6">Vendor 6</option>
+                        <option value="7">Vendor 7</option>
+                        <option value="8">Vendor 8</option>
+                        <option value="">Requestor</option>
+                    </select><input type="button" value="View" onclick="showProposal('@rfp.ID.ToString()')" />
+                </td>
+            </tr>
+        }
+    </table>
+    <br />
+    @{Html.RenderAction("FinishedProposals", "Purchasing");}
+</div>

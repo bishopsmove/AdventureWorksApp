@@ -1,0 +1,427 @@
+﻿@using System.Web.Optimization
+@{
+	ViewBag.Title = "Index";
+}
+@Scripts.Render("~/Scripts/jquery.template")
+<!-- <script src="@Url.Content("~/Scripts/jquery.tmpl.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.tmplPlus.min.js")" type="text/javascript"></script> -->
+@Styles.Render("~/Content/product")
+<!-- <link href="@Url.Content("~/Content/products.css")" rel="stylesheet" type="text/css" /> -->
+<style>
+	#demo-frame > div.demo
+	{
+		padding: 10px !important;
+	}
+	.scroll-pane
+	{
+		overflow: auto;
+		width: 99%;
+		float: left;
+	}
+	.scroll-content
+	{
+		float: left;
+	}
+	.scroll-content-item
+	{
+		width: 100px;
+		height: 100px;
+		float: left;
+		margin: 10px;
+		font-size: 3em;
+		line-height: 96px;
+		text-align: center;
+	}
+	* html .scroll-content-item
+	{
+		display: inline;
+	}
+	/* IE6 float double margin bug */
+	.scroll-bar-wrap
+	{
+		clear: left;
+		padding: 0 4px 0 2px;
+		margin: 0 -1px -1px -1px;
+	}
+	.scroll-bar-wrap .ui-slider
+	{
+		background: none;
+		border: 0;
+		height: 2em;
+		margin: 0 auto;
+	}
+	.scroll-bar-wrap .ui-handle-helper-parent
+	{
+		position: relative;
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+	}
+	.scroll-bar-wrap .ui-slider-handle
+	{
+		top: .2em;
+		height: 1.5em;
+	}
+	.scroll-bar-wrap .ui-slider-handle .ui-icon
+	{
+		margin: -8px auto 0;
+		position: relative;
+		top: 50%;
+	}
+</style>
+<script id="cartTmpl" type="text/html">
+	<td class="cart-${!!count}" colspan="4">
+		<span class="text">${count} items in Cart...</span>
+		{{if count}}
+			<span id="submit">Checkout</span>
+			<span id="cancel">Remove All</span>
+			{{if count>1}}
+				<span id="sort"><span id="sortBtn">Sort</span>:
+					<select>
+						<option value="0" {{if sortBy==="0"}}selected{{/if}}>Name A-Z</option>
+						<option value="1" {{if sortBy==="1"}}selected{{/if}}>Name Z-A</option>
+						<option value="2" {{if sortBy==="2"}}selected{{/if}}>Date</option>
+					</select>
+				</span>
+			{{/if}}
+			</select>
+		{{/if}}
+	</td>
+</script>
+
+<script id="bookingTitleTmpl" type="text/html">
+	<tr class="bookingTitle${$item.mode}">
+		<td>${product.Name}</td>
+		<td>${formatDate(date)}</td>
+		<td>
+			${quantity}
+			<span class="ui-icon close"></span>
+		</td>
+	</tr>
+</script>
+
+<script id="bookingEditTmpl" type="text/html">
+	{{tmpl($data, {mode: "Edit"}) "#bookingTitleTmpl"}}
+	<tr class="bookingEdit">
+		<td colspan="4">
+			<div class="fields">
+				<table>
+					<tr>
+						<td>product Name:</td>
+						<td><input class="name" type="text" value="${product.Name}" /></td>
+						<td rowspan=3><img src="${product.LargeUrl}" /></td>
+					</tr>
+					<tr>
+						<td>Date: </td>
+						<td><input class="date" type="text" value="${formatDate(date)}" /></td>
+					</tr>
+					<tr>
+						<td>Quantity: </td>
+						<td><input class="quantity" type="text" value="${quantity}" /></td>
+					</tr>
+				<table>
+			</div>
+		</td>
+	</tr>
+</script>
+<script type="text/javascript">
+	$(function () {
+		var pageCount = @(Math.Ceiling(ViewBag.TotalCount / 3.0));
+
+		var scrollbar = $(".scroll-bar").slider( {
+							value: 1,
+							min: 1,
+							max: pageCount,
+							step: 1,
+							slide: function (event, ui) {
+								$.ajax( {
+									type: "Get",
+									url: "/Product/ProductGrid?subcategoryId=@(ViewBag.ProductSubcategoryId)&page=" + ui.value,
+									success: function (data) {
+										$("#count").val("Page " + ui.value + " of " + pageCount);                                             
+
+										$("#productGrid").empty();
+										$("#productGrid").html(data);
+
+										$(".productlistaddtocartbutton").click( function() {
+											var productId = $(this).attr("id");
+											AddProductToCart(productId);
+										});
+									}
+								});
+							}                              
+						});
+
+		//append icon to handle
+		var handleHelper = scrollbar.find( ".ui-slider-handle" )
+		.mousedown(function() {
+			scrollbar.width( handleHelper.width() );
+		})
+		.mouseup(function() {
+			scrollbar.width( "100%" );
+		})
+		.append( "<span class='ui-icon ui-icon-grip-dotted-vertical'></span>" )
+		.wrap( "<div class='ui-handle-helper-parent'></div>" ).parent();		    
+
+		//size scrollbar and handle proportionally to scroll distance
+		function sizeScrollbar() {
+			var handleSize = $("#products").width() / pageCount;
+			scrollbar.find( ".ui-slider-handle" ).css({
+				width: handleSize,
+				"margin-left": -handleSize / 2
+			});
+			handleHelper.width( "" ).width( scrollbar.width() - handleSize );
+		}
+
+		function adjustColWidth() {
+			$("div.master-wrapper-rightside").width(400);
+			$("div.master-wrapper-center").width($(window).width() - 615);
+			$("master-wrapper-cph").width($(window).width() - 640);
+		}
+		
+		//change handle position on window resize
+		$( window ).resize(function() {
+			sizeScrollbar();
+			adjustColWidth();
+		});
+
+		//init scrollbar size
+		setTimeout( sizeScrollbar, 10 );//safari wants a timeout
+
+		adjustColWidth();
+
+		var cart = { bookings: {}, count: 0, sortBy:0 }, bookingTmplItems = [], selectedBooking;
+
+		$( ".cart" )
+		.delegate( "select", "change", sort )
+		.delegate( "#sortBtn", "click", sort )
+		.delegate( "#submit", "click", function() {
+			alert( cart.count + " bookings submitted for payment...");
+			removeBookings();
+		})
+		.delegate( "#cancel", "click", function() {
+			removeBookings();
+		})
+		.empty();
+
+		$( "#cartTmpl" )
+			.tmpl( cart )
+			.appendTo( ".cart", cart );
+
+		var cartTmplItem = $( ".cart td" ).tmplItem();
+
+		$.ajax ({
+			type: "Get",
+			url: "/ShoppingCart/GetCartItems",
+			cache: false,
+			success: function(data) {
+					for ( var item in data ) {
+						buyProducts( data[item] );     
+					}                    
+				}
+		});
+
+		$(".productlistaddtocartbutton").click( function() {
+			var productId = $(this).attr("id");
+			AddProductToCart(productId);
+		});
+
+		function AddProductToCart(productId){
+			$.ajax ({
+				type: "Post",
+				url: "/ShoppingCart/JsonAddToCart",
+				data: "id=" + productId,
+				success: function(data) {
+					buyProducts( { product: data, date: new Date(), quantity: 1 } );     
+				}
+			});
+		}
+	
+		function buyProducts( productBooking ) {
+			// Add item to cart
+			var booking = cart.bookings[productBooking.product.Id];
+			if ( booking ) {
+				booking.quantity++;
+			} else {
+				cart.count++;
+				cartTmplItem.update();
+				booking = productBooking;
+			}
+			selectBooking( booking );
+		}
+
+		function selectBooking( booking ) {
+			if ( selectedBooking ) {
+				if ( selectedBooking === booking ) {
+					updateBooking( bookingItem( selectedBooking ));
+					return;
+				}
+				// Collapse previously selected booking, and switch to non-edit view
+				var oldSelected = selectedBooking; 
+				$( "div", bookingItem( oldSelected ).nodes ).animate( { height: 0 }, 500, function() {
+					switchView( oldSelected );
+				});
+			}
+			selectedBooking = booking;
+			if ( !booking ) {
+				return;
+			}
+			if ( cart.bookings[booking.product.Id] ) {
+				switchView( booking, true );
+			} else {
+				cart.bookings[booking.product.Id] = booking;
+		
+				var bookingNode = $( "#bookingEditTmpl" )
+		
+					// Render the booking for the chosen product using the bookingEditTemplate
+					.tmpl( booking, { animate: true } ) 
+
+					// Append the rendered booking to the bookings list
+					.appendTo( "#bookingsList" )
+
+					// Get the 2nd <tr> of the appended booking
+					.last()[0];
+
+				// Get the template item for the 2nd <tr>, which is the template item for the "bookingEditTmpl" template
+				var newItem = $.tmplItem( bookingNode );
+				bookingTmplItems.push( newItem );
+
+				// Attach handlers etc. on the rendered template.
+				bookingEditRendered( newItem );
+			}
+		}
+
+		function bookingEditRendered( item ) {
+			var data = item.data, nodes = item.nodes;
+
+			$( nodes[0] ).click( function() {
+				selectBooking();
+			});
+
+			$( ".close", nodes ).click( removeBooking );
+
+			$( ".date", nodes ).change( function() {
+				data.date = $(this).datepicker( "getDate" );
+				updateBooking( item );
+			})
+			.datepicker({ dateFormat: "DD, d MM, yy" });
+
+			$( ".quantity", nodes ).change( function() {
+				data.quantity = $(this).val();
+				updateBooking( item );
+			});
+
+			$( ".name", nodes ).change( function() {
+				data.product.Name = $(this).val();
+				updateBooking( item );
+			});
+
+			if ( item.animate ) {
+				$( "table", nodes ).css( "height", 0 ).animate( { height: 116 }, 500 );
+			}
+		}
+	
+		function bookingRendered( item ) {
+			$( item.nodes ).click( function() {
+				selectBooking( item.data );
+			});
+			$( ".close", item.nodes ).click( removeBooking );
+		}
+
+		function switchView( booking, edit ) {
+			if ( !booking ) {
+				return;
+			}
+			var item = bookingItem( booking ),
+				tmpl = $( edit ? "#bookingEditTmpl" : "#bookingTitleTmpl" ).template();
+			if ( item.tmpl !== tmpl) {
+				item.tmpl = tmpl; 
+				item.update();
+				(edit ? bookingEditRendered : bookingRendered)( item );
+			}
+		}
+
+		function updateBooking( item ) {
+			item.animate = false;
+			item.update();
+			(item.data === selectedBooking ? bookingEditRendered : bookingRendered)( item );
+			item.animate = true;
+		}
+
+		function removeBooking() {
+			var booking = $.tmplItem(this).data;
+			if ( booking === selectedBooking ) {
+				selectedBooking = null;
+			}
+			delete cart.bookings[booking.product.Id];
+			cart.count--;
+			cartTmplItem.update();
+			$.tmplCmd( "remove", booking, bookingTmplItems );
+			return false; 
+		}
+
+		function removeBookings() {
+			$.tmplCmd( "remove", bookingTmplItems );
+			bookingTmplItems = [];
+			cart.count = 0;
+			cart.bookings = {};
+			selectedBooking = null;
+			cartTmplItem.update();
+		}
+
+		function formatDate( date ) {
+			return date.toLocaleDateString();
+		}
+
+		function bookingItem( booking ) {
+			return $.tmplCmd( "find", booking, bookingTmplItems)[0];
+		}
+
+		function sort() {
+			var compare = compareName, reverse = false, data = [];
+			cart.sortBy = $( "#sort select" ).val();
+			switch ( $( "#sort select" ).val() ) {
+				case "1":
+					reverse = true;
+					break;
+				case "2":
+					compare = compareDate;
+					break;
+			} 
+
+			for ( var item in cart.bookings ) {
+				data.push( cart.bookings[item] );
+			}
+			data = data.sort( compare );
+
+			bookingTmplItems = $.tmplCmd( "replace", data, bookingTmplItems );
+
+			function compareName( a, b ) {
+				return a == b ? 0 : (((a.product.Name > b.product.Name) !== reverse) ? 1 : -1);
+			}
+			function compareDate( a, b ) {
+				return a.date - b.date;
+			}
+		}
+	});
+</script>
+
+<h2>@ViewBag.SubcategoryName</h2>
+<table id="products" style="width: 100%">
+	<tr>
+		<td id="productGrid">
+			@{Html.RenderAction("ProductGrid", "Product");}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p>
+				<input type="text" id="count" style="border: 0; color: #f6931f; font-weight: bold;" />
+			</p>
+		</td>
+	</tr>
+</table>
+<div class="scroll-bar-wrap ui-widget-content ui-corner-bottom">
+	<div class="scroll-bar">
+	</div>
+</div>

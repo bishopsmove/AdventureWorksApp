@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="524faad3-23de-4088-a6ba-ad15d8975751" name="Check out" linkedPackageId="3e1f1f06-4696-4858-91c4-733b36433b0a" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="f8ee2430-a933-407a-8247-6de8ed07b99c">
+      <profileInstance Id="5db41709-45d2-4c49-bd4e-3169890ac947" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="63cf7608-989e-4e06-947c-67db490038bf">
+      <profileInstance Id="4172a434-7871-4d82-bdc1-93f1ea54248f" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="9b4eb342-c230-489a-8c7b-916f3849ec52" name="Check out" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="09e3dbaf-4957-492f-a69c-9dcec6986a9d" />
+        <nodes>
+          <initialNode Id="fa5cfca8-1fa3-4c67-91ad-60fb167ed318" name="Initial1" isLeaf="false">
+            <elementDefinition Id="062f7eb5-6bc2-4bc6-a7d4-17cb30cdf20a" />
+            <flowNodeTargets>
+              <controlFlow Id="5835ab91-c480-4b34-b3a0-f344966bea15" isLeaf="false">
+                <opaqueActionMoniker Id="b2604a11-45d1-4bc8-90db-086f1e407a88" LastKnownName="Review cart contents" />
+                <elementDefinition Id="9d972349-d97e-4798-b493-2580344313c2" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <activityFinalNode Id="fba538ce-4fda-40ba-974d-de16dec1c3cc" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="644a25cf-522f-4aef-a1e8-f565ebdfa4c7" />
+          </activityFinalNode>
+          <opaqueAction Id="b2604a11-45d1-4bc8-90db-086f1e407a88" name="Review cart contents" isLeaf="false">
+            <elementDefinition Id="f525a6ee-28f7-44ee-8838-991889537b55" />
+            <flowNodeTargets>
+              <controlFlow Id="0c36d20d-614c-49a9-9420-940ad8222193" isLeaf="false">
+                <opaqueActionMoniker Id="0e47ae47-f7c0-4d9a-8e2a-7ed0ea3afcb7" LastKnownName="Provide payment details" />
+                <elementDefinition Id="c6aae978-ef78-4979-b005-86004ab3a283" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="0e47ae47-f7c0-4d9a-8e2a-7ed0ea3afcb7" name="Provide payment details" isLeaf="false">
+            <elementDefinition Id="f48c7609-9634-4358-b936-a868b7e2a3db" />
+            <flowNodeTargets>
+              <controlFlow Id="63fe06b4-b683-4003-af06-c9ea38c2caff" isLeaf="false">
+                <opaqueActionMoniker Id="ae22d7e3-b4ca-494f-93d4-f44e482d8511" LastKnownName="Provide shipping details" />
+                <elementDefinition Id="a7c2c532-28cb-4778-8a08-525fc25b9dbc" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="ae22d7e3-b4ca-494f-93d4-f44e482d8511" name="Provide shipping details" isLeaf="false">
+            <elementDefinition Id="5a20c624-4ade-474c-8a93-b12df2af8698" />
+            <flowNodeTargets>
+              <controlFlow Id="46d3ea6b-8445-40cf-89c3-1729368e8426" isLeaf="false">
+                <opaqueActionMoniker Id="83ae3f91-f9b3-49e0-89f3-f867288bf01e" LastKnownName="Confirm purchase" />
+                <elementDefinition Id="1f4ee6dd-a47d-4805-bd7f-5bb83bd2ace9" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="83ae3f91-f9b3-49e0-89f3-f867288bf01e" name="Confirm purchase" isLeaf="false">
+            <elementDefinition Id="06227531-e2fc-4a43-8c74-ccc2e362d318" />
+            <flowNodeTargets>
+              <controlFlow Id="e0dc446a-edde-4865-92bb-f70ccc6b7296" isLeaf="false">
+                <opaqueActionMoniker Id="3bbfc633-df78-4d64-bc68-74a27f37f7a4" LastKnownName="View a receipt" />
+                <elementDefinition Id="635873e5-b832-4d72-957e-0019b421684d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="3bbfc633-df78-4d64-bc68-74a27f37f7a4" name="View a receipt" isLeaf="false">
+            <elementDefinition Id="bd0194a5-a064-4f7f-8aea-d3e94a8703b7" />
+            <flowNodeTargets>
+              <controlFlow Id="19aa8438-56ae-4a68-af47-6b1c3235589e" isLeaf="false">
+                <activityFinalNodeMoniker Id="fba538ce-4fda-40ba-974d-de16dec1c3cc" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="ba03d7d0-6773-4766-9771-d11f9e2cbf0d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="3e1f1f06-4696-4858-91c4-733b36433b0a" name="Adventureworks.AnalysisModel">
+    <elementDefinition Id="f4efcb1c-1168-4258-b7a6-eefbcd431798" />
+  </package>
+</activityRootModel>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="a923d656-8957-4daf-9f02-bfafcbda57a1" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <comments>
+    <comment Id="87ffe5ac-f70b-4a50-a5db-9c6ddbf6fe58" name="Comment1">
+      <body>Source: Microsoft Application Architecture Guide, 2nd Edition.
+Refer to "Chapter 21: Designing Web Applications" for more information.
+URL:http://msdn.microsoft.com/en-us/library/ee658099.aspx</body>
+    </comment>
+  </comments>
+  <layers>
+    <layer Id="2f2a0b07-41b5-4d87-a2d9-64918193e544" name="Web Server">
+      <childLayers>
+        <layer Id="2d8410b0-19e1-464d-9ffa-1f80bbc01c59" name="Business Layer">
+          <childLayers>
+            <layer Id="1202d472-1535-4863-87ad-2a54b22db5ec" name="Application Facade" />
+            <layer Id="89892394-b937-43df-942c-e7d3ed686486" name="Business Workflow" />
+            <layer Id="cb54d989-9ca7-4ce6-8ea5-7cf1129507ba" name="Business Components" />
+            <layer Id="25699688-1f3f-4a46-98b4-0497de09ee77" name="Business Entities" />
+          </childLayers>
+        </layer>
+        <layer Id="260bbb32-59db-4164-b44d-4f3fe3574fcb" name="Data Layer">
+          <childLayers>
+            <layer Id="5b97a27c-cbd3-43a2-b398-8ca19e7d2cc3" name="Data Access Components" />
+            <layer Id="90a87d92-42be-43a2-91dc-c2ec91bc2ffc" name="Data Helpers/ Utilities" />
+            <layer Id="a5a2c8f2-ab29-4467-8a1b-636140b730a0" name="Service Agents" />
+          </childLayers>
+        </layer>
+        <layer Id="787bde79-6400-45b6-80d2-faa32ee89840" name="Cross Cutting">
+          <childLayers>
+            <layer Id="227cc3b2-dc78-4f75-a2cd-211931c24604" name="Security" />
+            <layer Id="9f678195-d919-443b-ac70-028691beae33" name="Communication" />
+            <layer Id="bad03df0-f112-4746-bafb-b0abb9f71e4f" name="Operational Management" />
+          </childLayers>
+        </layer>
+        <layer Id="fdcd2de9-5610-4e27-89a1-9643b9dbe772" name="Presentation Layer">
+          <childLayers>
+            <layer Id="1cd36fe6-36f6-42ea-9c28-2e6673c0fdce" name="UI Components" />
+            <layer Id="81216285-4e23-4073-8082-5820c7470fd2" name="UI Process Components" />
+          </childLayers>
+        </layer>
+      </childLayers>
+    </layer>
+    <layer Id="7c2b1df5-e358-4332-bc25-c19a9cdfd256" name="Client">
+      <childLayers>
+        <layer Id="6bc97793-6886-482a-90b6-8caaefd6ea2a" name=" Browser">
+          <childLayers>
+            <layer Id="8fe0b23c-d09c-48c6-90f4-12975941c31d" name="Rendering" />
+          </childLayers>
+        </layer>
+      </childLayers>
+    </layer>
+  </layers>
+</layerModel>

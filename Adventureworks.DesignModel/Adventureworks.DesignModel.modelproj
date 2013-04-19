@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2781ab70-3994-46f8-816a-8c011b89542c}</ProjectGuid>
+    <ArchitectureToolsVersion>1.0.0.0</ArchitectureToolsVersion>
+    <Name>Adventureworks.DesignModel</Name>
+    <RootNamespace>Adventureworks.DesignModel</RootNamespace>
+    <SccProjectName>
+    </SccProjectName>
+    <SccProvider>
+    </SccProvider>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccLocalPath>
+    </SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" />
+  <ItemGroup>
+    <Content Include="ModelDefinition\Package1_1421.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package2_1421.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1420.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1421.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1422.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1432.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Static View\Home Controller.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Static View\Home Controller.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Static View\Home Controller.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Static View\Products.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Static View\Products.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Static View\Products.classdiagram</DependentUpon>
+    </Content>
+    <Folder Include="Dynamic View\UC01 - Order a product" />
+    <Folder Include="ModelDefinition\" />
+    <Content Include="Application Component Structure.componentdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Application Component Structure.componentdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Application Component Structure.componentdiagram</DependentUpon>
+    </Content>
+    <Content Include="Dynamic View\UC01 - Order a product\Basic Flow.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Dynamic View\UC01 - Order a product\Basic Flow.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Dynamic View\UC01 - Order a product\Basic Flow.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Dynamic View\UC01 - Order a product\S1. View Product Details.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Dynamic View\UC01 - Order a product\S1.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Dynamic View\UC01 - Order a product\S1. View Product Details.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="ModelDefinition\Adventureworks.DesignModel.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Folder Include="Dynamic View" />
+    <Folder Include="Static View" />
+  </ItemGroup>
+  <ItemGroup>
+    <Validate Include="Application Architecture.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="Application Architecture.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Application Architecture.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="Application Architecture.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>Application Architecture.layerdiagram</DependentUpon>
+    </Validate>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,71 @@
+﻿@model Adventureworks.Domain.RequestForProposal
+@{
+    ViewBag.Title = "VendorProposal";
+}
+<h2>
+    VendorProposal</h2>
+@using (Html.BeginForm())
+{
+    <input type="hidden" name="ID" value="@Model.ID" />
+    <input type="hidden" name="VendorId" value="@ViewBag.VendorId" />
+    <div>
+        <h1>
+            Purchase Process Sample - Best Vendor Selection</h1>
+        This screen is used by the vendors for submiting proposals to the RFP.
+        <hr />
+        <h2>
+            Introduce your Offer</h2>
+        <h3>
+            RFP Details</h3>
+        <table id="formTable">
+            <tr>
+                <td>
+                    Title
+                </td>
+                <td>
+                    <span id="lblTitle" style="font-family: Calibri,Arial;">test</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Description
+                </td>
+                <td>
+                    <span id="lblDescription" style="font-family: Calibri,Arial;">test description</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Created
+                </td>
+                <td>
+                    <span id="lblCreated" style="font-family: Calibri,Arial;">3/11/2011 2:50:58 PM</span>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <div id="pnlVendorOffer">
+            <h3>
+                Introduce your Proposal</h3>
+            <table>
+                <tr>
+                    <td>
+                        Value
+                    </td>
+                    <td>
+                        <input name="Value" type="text" size="8" id="txtProposal" />
+                        USD
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <br />
+                        <input type="button" value="Go Back" onclick="document.location='default.aspx';" />
+                        <input type="submit" name="btnCreate" value="Submit Offer" id="btnCreate" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br />
+    </div>
+}

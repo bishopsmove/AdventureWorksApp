@@ -1,0 +1,1515 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="f4efcb1c-1168-4258-b7a6-eefbcd431798"
+  name="Adventureworks.AnalysisModel" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="db47f241-fb7d-4331-8e71-dbc1978655a8">
+      <body>Vision Statement:
+Adventureworks Bycicles is an online shop to sell bycicles and accessories.</body>
+    </comment>
+    <comment
+      Id="5d14e0a5-7fe4-4613-8a90-5316d7ccfc56">
+      <body>Constraints:
+1. Web based solution to achieve ubiquitous reach.</body>
+    </comment>
+    <comment
+      Id="1a3facf7-1c3b-43b1-b742-8972a095ac8d">
+      <body>Shop for products
+- Browse products
+- View product details
+- Read reviews of product
+- Add product to shopping cart
+- Chect out
+Rate for products
+Write review for products</body>
+    </comment>
+    <comment
+      Id="7abe6b7e-3b42-478d-83e4-709e796ae0d7">
+      <body>Manage product (CRUD)
+Delete invalid reviews of product</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <subsystem
+        Id="b535c54f-0af8-4e49-a455-9fab92a48fe7"
+        name="Adventureworks Bycicles"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="2534405b-7299-4346-9450-e79c4a66fada"
+        name="Customer"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="130bf67e-c528-4b9a-b812-eeba3a69fa93"
+            isDerived="false"
+            sourceEndRoleName="Customer"
+            targetEndRoleName="Adventureworks Bycicles"
+            isLeaf="false"
+            isAbstract="false">
+            <subsystemMoniker
+              Id="b535c54f-0af8-4e49-a455-9fab92a48fe7"
+              LastKnownName="Adventureworks Bycicles"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a2637a2c-3b36-488b-acfe-73baca10a5cc"
+                  name="Customer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="55425477-0afd-41ad-99b3-54ce57fb2481"
+                  name="Adventureworks Bycicles"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="caaee802-81c1-4e7b-81f9-21e03888bec8"
+            isDerived="false"
+            sourceEndRoleName="Customer"
+            targetEndRoleName="Order a product"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="e466c84a-1ef0-42cf-935d-fe4c747157d9"
+              LastKnownName="Order a product"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="dc01ffd8-2c8c-4984-8df4-89d87c684f20"
+                  name="Customer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6a73b5d6-fa1d-41bd-b5dd-e4a8c24cca07"
+                  name="Order a product"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="51211f74-5696-4a5e-acf0-8c274926e5cf"
+        name="Site Admin"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="01b09d92-c752-4a9c-955c-17163a552e92"
+            isDerived="false"
+            sourceEndRoleName="Site Admin"
+            targetEndRoleName="Adventureworks Bycicles"
+            isLeaf="false"
+            isAbstract="false">
+            <subsystemMoniker
+              Id="b535c54f-0af8-4e49-a455-9fab92a48fe7"
+              LastKnownName="Adventureworks Bycicles"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c2fd0b25-42b5-4ddb-9043-d2a3a4a80c67"
+                  name="Site Admin"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="93ae1017-e578-4f79-8025-40f20fc200e2"
+                  name="Adventureworks Bycicles"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="3c8568d2-fc64-407f-8c3c-5f3a7c118d9d"
+            isDerived="false"
+            sourceEndRoleName="Site Admin"
+            targetEndRoleName="Manage products"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="339b270d-12b7-45e0-a3fb-90f19c7cfa00"
+              LastKnownName="Manage products"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2981cc27-04ec-4f14-a0a7-0e5268a73905"
+                  name="Site Admin"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2a78a9c3-7e41-4433-8a44-6e04ceec1c3c"
+                  name="Manage products"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="a1de4077-947a-483e-a7a9-ced776f89af0"
+            isDerived="false"
+            sourceEndRoleName="Site Admin"
+            targetEndRoleName="Delete invalid reviews of product"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="ca92b3d9-1f55-47cf-9526-1f121ff1264e"
+              LastKnownName="Delete invalid reviews of product"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="509a9466-8a59-43ac-a4ba-f28918127c28"
+                  name="Site Admin"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="251e1ecb-25cc-45c5-a78f-ed4d1e1ce79c"
+                  name="Delete invalid reviews of product"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="64bd61a6-c408-4609-9082-ec95546e0fc6"
+        name="Browse products by category"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="a5b85ec6-e693-429b-9589-521b34e31eaa"
+        name="Registered Customer"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="f850aab0-2952-472e-821b-e9db215d69fd"
+            isSubstitutable="false">
+            <actorMoniker
+              Id="2534405b-7299-4346-9450-e79c4a66fada"
+              LastKnownName="Customer"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="a666dbbb-a5f4-4dc3-840a-e2ac35ccfea2"
+            isDerived="false"
+            sourceEndRoleName="Registered Customer"
+            targetEndRoleName="Rate a product"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="366c43ce-bc16-45b4-875d-dc6f2b52df80"
+              LastKnownName="Rate a product"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="17e5c64b-3d2f-4767-99bb-a561a10b7e36"
+                  name="Registered Customer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5797c269-664b-4917-8c6f-11a190c48b01"
+                  name="Rate a product"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="4e325174-954d-4780-89e2-2a853cf98d34"
+            isDerived="false"
+            sourceEndRoleName="Registered Customer"
+            targetEndRoleName="Write a product review"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="c8582fa4-0745-4233-a493-5ac9de771d1d"
+              LastKnownName="Write a product review"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="38b7e14e-2c2f-4b33-b459-e8a3d0fe6f6a"
+                  name="Registered Customer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f92eebc6-0002-4249-b64a-5875e98b5b5f"
+                  name="Write a product review"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="366c43ce-bc16-45b4-875d-dc6f2b52df80"
+        name="Rate a product"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c8582fa4-0745-4233-a493-5ac9de771d1d"
+        name="Write a product review"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="18e7fdc8-90d4-44b4-984a-26ae917866d6"
+        name="View product details"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="57c422a8-4c06-4225-8d89-8e7e7f6ab659">
+            <useCaseMoniker
+              Id="9253fc6f-a92f-43b6-9cdb-6c47dbec65a9"
+              LastKnownName="Add to shopping cart"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="9253fc6f-a92f-43b6-9cdb-6c47dbec65a9"
+        name="Add to shopping cart"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="db6eff8f-ba3a-43e6-a053-72ea18347a1f">
+            <useCaseMoniker
+              Id="e5fd9e76-1f0c-4b49-803a-1dfa917fecc8"
+              LastKnownName="Login"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="e216a6f4-5693-4a32-8e20-d5de377bd003"
+        name="Check out"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="4ec4d199-de92-4df4-adef-f7c0d82eb082">
+            <useCaseMoniker
+              Id="e5fd9e76-1f0c-4b49-803a-1dfa917fecc8"
+              LastKnownName="Login"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="b1b7e4ed-7d57-45f0-9d72-284c3630225b"
+        name="Actor1"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="e5fd9e76-1f0c-4b49-803a-1dfa917fecc8"
+        name="Login"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="cd98b4f0-15e7-479a-ace0-18a18ed63266"
+        name="Register new user"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="bec847eb-4657-464d-8965-0b9b57cdcc73">
+            <useCaseMoniker
+              Id="e5fd9e76-1f0c-4b49-803a-1dfa917fecc8"
+              LastKnownName="Login"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="339b270d-12b7-45e0-a3fb-90f19c7cfa00"
+        name="Manage products"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="5655bb3c-c593-47a7-9812-85e399d8876d">
+            <useCaseMoniker
+              Id="3b13b50e-95f8-4b71-bc76-383f1afbef1b"
+              LastKnownName="Browse all products"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+          </include>
+          <include
+            Id="555001d1-e1a7-43a7-bdef-b46183ce2155">
+            <useCaseMoniker
+              Id="797e5bec-6209-41ee-944b-e178846b0457"
+              LastKnownName="Add a new product"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+          </include>
+          <include
+            Id="0ce0286d-5a3a-44aa-9061-6f9b53b517ae">
+            <useCaseMoniker
+              Id="310d3f13-a391-4750-a3c6-ecf298802b9a"
+              LastKnownName="Delete an existing product"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+          </include>
+          <include
+            Id="3a67b262-ca29-4137-bca4-e355f1def419">
+            <useCaseMoniker
+              Id="c5921855-c34b-4158-8057-e1610a4fffab"
+              LastKnownName="Update an existing product"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="28f9c613-548b-4549-ac6c-8e56a92b07e2"
+        name="Actor2"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ca92b3d9-1f55-47cf-9526-1f121ff1264e"
+        name="Delete invalid reviews of product"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="797e5bec-6209-41ee-944b-e178846b0457"
+        name="Add a new product"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="310d3f13-a391-4750-a3c6-ecf298802b9a"
+        name="Delete an existing product"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c5921855-c34b-4158-8057-e1610a4fffab"
+        name="Update an existing product"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3b13b50e-95f8-4b71-bc76-383f1afbef1b"
+        name="Browse all products"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="e466c84a-1ef0-42cf-935d-fe4c747157d9"
+        name="Order a product"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="ea85cd2b-efc0-48af-9c6b-492c81188616">
+            <useCaseMoniker
+              Id="64bd61a6-c408-4609-9082-ec95546e0fc6"
+              LastKnownName="Browse products by category"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+          </include>
+          <include
+            Id="8b5118d2-9018-4f83-94c5-430b3615f71b">
+            <useCaseMoniker
+              Id="18e7fdc8-90d4-44b4-984a-26ae917866d6"
+              LastKnownName="View product details"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+          </include>
+          <include
+            Id="688cfd51-8e13-4c89-ae3e-d41fb0079640">
+            <useCaseMoniker
+              Id="e216a6f4-5693-4a32-8e20-d5de377bd003"
+              LastKnownName="Check out"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="9139a6ca-bf51-4686-9ef1-dc81681386a2"
+        name="Order a product"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="bdec67f5-db70-4d9d-9bf5-adc665ca9272"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="be2934ce-209b-4be1-b0a4-880965a6baf3"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="e0f94e8c-77fe-422f-837c-30a30c166c69"
+                  LastKnownName="Browse products by category"
+                  LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <activityFinalNode
+            Id="cc7881e5-11a3-44a9-a492-e5a8d312334a"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <opaqueAction
+            Id="e0f94e8c-77fe-422f-837c-30a30c166c69"
+            name="Browse products by category"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ba1697d8-3d60-4283-9ac1-c84067482f11"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="a01cd9d4-8b19-481e-87d6-ae43d4a7dbde"
+                  LastKnownName="View product details"
+                  LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="a01cd9d4-8b19-481e-87d6-ae43d4a7dbde"
+            name="View product details"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="bf0f4d3f-3e14-47df-811a-4489a45421fe"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="4dd9dc02-500b-47b6-8556-63e3d9b4ab16"
+                  LastKnownName="Add to shopping cart"
+                  LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="4dd9dc02-500b-47b6-8556-63e3d9b4ab16"
+            name="Add to shopping cart"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="073cb009-0627-48ab-bf15-f4f7905860c3"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="c842ebeb-f39d-4b3d-a375-19aba0365c2f"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="c842ebeb-f39d-4b3d-a375-19aba0365c2f"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="5130fc30-37bd-49bd-a560-d1ded51a3a70"
+                guard="done shopping"
+                isLeaf="false">
+                <callBehaviorActionMoniker
+                  Id="746c72c1-b455-454d-b0cf-aa78ea7a239b"
+                  LastKnownName="Check out"
+                  LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="9e818b3c-acb9-4a9f-9de9-8f0d4b777da6"
+                guard="shop for more products"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="e0f94e8c-77fe-422f-837c-30a30c166c69"
+                  LastKnownName="Browse products by category"
+                  LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <callBehaviorAction
+            Id="746c72c1-b455-454d-b0cf-aa78ea7a239b"
+            name="Check out"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8a306614-44ea-4980-8188-5c898b668858"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="cc7881e5-11a3-44a9-a492-e5a8d312334a"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+            <behavior>
+              <activityMoniker
+                Id="09e3dbaf-4957-492f-a69c-9dcec6986a9d"
+                LastKnownName="Check out"
+                LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+            </behavior>
+          </callBehaviorAction>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="09e3dbaf-4957-492f-a69c-9dcec6986a9d"
+        name="Check out"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="062f7eb5-6bc2-4bc6-a7d4-17cb30cdf20a"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="9d972349-d97e-4798-b493-2580344313c2"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="f525a6ee-28f7-44ee-8838-991889537b55"
+                  LastKnownName="Review cart contents"
+                  LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <activityFinalNode
+            Id="644a25cf-522f-4aef-a1e8-f565ebdfa4c7"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <opaqueAction
+            Id="f525a6ee-28f7-44ee-8838-991889537b55"
+            name="Review cart contents"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c6aae978-ef78-4979-b005-86004ab3a283"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="f48c7609-9634-4358-b936-a868b7e2a3db"
+                  LastKnownName="Provide payment details"
+                  LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="f48c7609-9634-4358-b936-a868b7e2a3db"
+            name="Provide payment details"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a7c2c532-28cb-4778-8a08-525fc25b9dbc"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="5a20c624-4ade-474c-8a93-b12df2af8698"
+                  LastKnownName="Provide shipping details"
+                  LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="5a20c624-4ade-474c-8a93-b12df2af8698"
+            name="Provide shipping details"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1f4ee6dd-a47d-4805-bd7f-5bb83bd2ace9"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="06227531-e2fc-4a43-8c74-ccc2e362d318"
+                  LastKnownName="Confirm purchase"
+                  LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="06227531-e2fc-4a43-8c74-ccc2e362d318"
+            name="Confirm purchase"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="635873e5-b832-4d72-957e-0019b421684d"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="bd0194a5-a064-4f7f-8aea-d3e94a8703b7"
+                  LastKnownName="View a receipt"
+                  LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="bd0194a5-a064-4f7f-8aea-d3e94a8703b7"
+            name="View a receipt"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ba03d7d0-6773-4766-9771-d11f9e2cbf0d"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="644a25cf-522f-4aef-a1e8-f565ebdfa4c7"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <artifact
+        Id="4e59d644-d68d-4e21-9110-bd2e78265a1a"
+        name="Order Product activity"
+        isAbstract="false"
+        isLeaf="false"
+        fileName="Adventureworks.AnalysisModel\Shopping\Order a product.activitydiagram">
+        <suppliersInternal>
+          <dependency
+            Id="24b2b91e-94e3-44c8-a404-4f4086f26473">
+            <useCaseMoniker
+              Id="e466c84a-1ef0-42cf-935d-fe4c747157d9"
+              LastKnownName="Order a product"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+          </dependency>
+        </suppliersInternal>
+      </artifact>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c864728c-5493-4b94-b093-6a9dc028a2dd"
+        name="Customer"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="56a166bb-43b6-45ad-9f78-cf313348cb30"
+            isDerived="false"
+            sourceEndRoleName="Customer"
+            targetEndRoleName="Shopping Cart"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="d35e6c44-bd21-4656-8eb8-a8955f8064b6"
+              LastKnownName="Shopping Cart"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4e97ac9b-d3b6-4141-b798-acf5ef1faa10"
+                  name="Customer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d0a2731d-923e-4ea5-9a46-2cbfb30ff95b"
+                  name="Shopping Cart"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="1c476554-895e-4b76-b189-ea4852ffbfa6"
+            isDerived="false"
+            sourceEndRoleName="Customer"
+            targetEndRoleName="Order"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="9343ec5b-6c2b-496f-9810-1e6eccaf4847"
+              LastKnownName="Sales Order Header"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d19098ac-f054-43a7-80cc-8ffc88c6caef"
+                  name="Customer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b5c59502-30a3-4078-b327-bc69a8683fc6"
+                  name="Order"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="8ffab6be-fd59-4db0-918e-9714c9022b95"
+            isDerived="false"
+            sourceEndRoleName="Customer"
+            targetEndRoleName="Address"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="37ae463d-fad9-4b80-8bad-616e333b5270"
+              LastKnownName="Address"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0b3ece5d-5d28-4640-9eb8-5fd890a7435a"
+                  name="Customer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d9bf90b8-7cef-4eb6-8379-55479a3810d4"
+                  name="Address"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="873a14e0-0706-4e7b-a324-d670f56fc438"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="dae3231d-8d7f-456d-9f4b-59373fb0911f"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d35e6c44-bd21-4656-8eb8-a8955f8064b6"
+        name="Shopping Cart"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="5bc3eaee-9202-4b1e-8f2f-b3a73e1ad7c1"
+            isDerived="false"
+            sourceEndRoleName="Shopping Cart"
+            targetEndRoleName="Shopping Cart Item"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="73ebafb7-d7be-4f7a-a1d9-a12601b844ea"
+              LastKnownName="Shopping Cart Item"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3fb9de9b-c97c-4d8b-b6fe-bf5d653209f1"
+                  name="Shopping Cart"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0d3ab13b-5275-4318-8d71-0fc26df09bce"
+                  name="Shopping Cart Item"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="5015630d-40f8-49c2-8da6-e6a4d8819f92"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="f87e7131-3148-46e1-95e4-f684d598667b"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="73ebafb7-d7be-4f7a-a1d9-a12601b844ea"
+        name="Shopping Cart Item"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="1090e2b9-b115-433d-ad0c-1bdfbe04b506"
+            isDerived="false"
+            sourceEndRoleName="Shopping Cart Item"
+            targetEndRoleName="Product"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="b432ec6e-b14e-4fc5-8124-cb35b00cd8fa"
+              LastKnownName="Product"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bac261d3-d8fe-4853-89f6-cf6c04d4822d"
+                  name="Shopping Cart Item"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a65d71f1-2a95-4646-8c09-66c2db2e2f5e"
+                  name="Product"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9343ec5b-6c2b-496f-9810-1e6eccaf4847"
+        name="Sales Order Header"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="ffa44fc1-9c9e-4efe-b1f4-f2e960b31aa5"
+            isDerived="false"
+            sourceEndRoleName="Order"
+            targetEndRoleName="Order Line Item"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="0a7928d1-a070-4343-8a44-f53a0d84b19f"
+              LastKnownName="Sales Order Detail"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7992df88-32dc-412f-b533-ccd8a637b7df"
+                  name="Order"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2a0d731b-6e95-4f92-a164-d4031202b8cb"
+                  name="Order Line Item"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="832a4b9e-52db-4bf2-864c-2df119498f4d"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="4ef51268-635f-45a8-94e7-4ffae2be057a"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="b3d6e8e9-06fe-48cc-b8a6-848c8b9618bf"
+            isDerived="false"
+            sourceEndRoleName="Sales Order Header"
+            targetEndRoleName="Address"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="37ae463d-fad9-4b80-8bad-616e333b5270"
+              LastKnownName="Address"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a81a57a6-6f54-462c-b1e0-36d55e528b07"
+                  name="Sales Order Header"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="645fa9a6-3f86-4fe9-a0c1-f7bf255027d4"
+                  name="Address"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="c63aa78d-c665-4839-91a6-d4cfdd943d9c"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="af60b7e8-84a5-4516-b511-218a559f6fc4"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="0a7928d1-a070-4343-8a44-f53a0d84b19f"
+        name="Sales Order Detail"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="2e937a4e-6058-47b5-88c3-b953f15d01ee"
+            isDerived="false"
+            sourceEndRoleName="Order Line Item"
+            targetEndRoleName="Product"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="b432ec6e-b14e-4fc5-8124-cb35b00cd8fa"
+              LastKnownName="Product"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="239e1f3c-fd51-4d79-b6be-bc976083e8dd"
+                  name="Order Line Item"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2fe88b22-c3fa-4cc4-bd98-4ce656199801"
+                  name="Product"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b432ec6e-b14e-4fc5-8124-cb35b00cd8fa"
+        name="Product"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="12434903-2f21-4225-9db8-0b5f87ce7146"
+            isDerived="false"
+            sourceEndRoleName="Product"
+            targetEndRoleName="Product Category"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="6cf8c24d-ce52-4ede-81d7-d6b2596f89c8"
+              LastKnownName="Product Category"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="cf1a8e45-584b-462d-bbd1-edffd9a7fc0b"
+                  name="Product"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d759bc24-8d51-459a-90f6-efff9116f204"
+                  name="Product Category"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="5b866b3b-5231-4ab2-a3a6-116641ef62f5"
+            isDerived="false"
+            sourceEndRoleName="Product"
+            targetEndRoleName="Product Model"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="09da1aea-38e9-4486-8ae1-ee92d9e216d3"
+              LastKnownName="Product Model"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f5bd84b8-8ef3-4120-b989-43f242761d78"
+                  name="Product"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5e7b1c8d-ddee-4109-bad8-4584b58ff1ec"
+                  name="Product Model"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6cf8c24d-ce52-4ede-81d7-d6b2596f89c8"
+        name="Product Category"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="1aa49d9b-eafc-4c2a-aef5-78c1c3bc3c54"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="6cf8c24d-ce52-4ede-81d7-d6b2596f89c8"
+              LastKnownName="Product Category"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2fc25bbf-0a9c-4dc4-81ba-ffd5c366fa58"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e95873ce-8bbe-479f-a123-66bbb865b85d"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="37ae463d-fad9-4b80-8bad-616e333b5270"
+        name="Address"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="09da1aea-38e9-4486-8ae1-ee92d9e216d3"
+        name="Product Model"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="835b6c11-78bd-46f0-9e94-e2a686a3adae"
+        name="Product Description"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="12fde48d-28bc-4b1c-a309-5f0c2b5baa03"
+            isDerived="false"
+            sourceEndRoleName="Product Description"
+            targetEndRoleName="Product Model"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="09da1aea-38e9-4486-8ae1-ee92d9e216d3"
+              LastKnownName="Product Model"
+              LastKnownLocation="Adventureworks.AnalysisModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f58237cb-ccd5-40d6-a032-b1a277dfbcf5"
+                  name="Product Description"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="dbeb118e-b5b6-4eff-9d5b-d96b1bc5d7e1"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="f3b70a95-c64b-4909-b69c-03487acb5aec"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0cc590a7-c8df-4c0f-b115-372d5ba60343"
+                  name="Product Model"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="b0dddc56-21e7-4d84-b95c-d6d41c667e44"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="388f2a8b-8077-44f1-ad42-0f6cd3f9ce72"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

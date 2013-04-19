@@ -1,0 +1,42 @@
+﻿@using Adventureworks.Domain;
+@model IEnumerable<Product>
+@{
+    ViewBag.Title = "Home Page";
+}
+<h2>@ViewBag.Message</h2>
+<div style="font-size: small">
+    This site is showcasing the power of newest web development techniques like ASP.Net
+    MVC 3, jQuery, css3, html5, etc. A silverlight version with same apperance and function
+    sets will be developed soon to explore the best practices of this kind of hybrid
+    solutions.
+</div>
+<br />
+<br />
+<div class="home-page-product-grid">
+    <div class="boxtitle">
+        Featured Products
+    </div>
+    <div class="clear">
+    </div>
+    <ul class="product-list">
+        @{
+            #if  Full
+                foreach (var product in Model)
+                {
+                <li>
+                    <div class="product-item">
+                        <div class="picture">
+                            <a title="Show details for $25 Virtual Gift Card" href="Product/Details/751">
+                                <img style="border-width: 0px;width:156px;height:97px" alt=""
+                                    src="@VirtualPathUtility.ToAbsolute(product.ProductProductPhotoes.FirstOrDefault().ProductPhoto.PhotoPath)"></a>
+                        </div>
+                        <h2 class="product-title">
+                            <a href="#">@product.Name</a>
+                        </h2>
+                    </div>
+                </li> 
+                }
+            #endif
+        }
+    </ul>
+</div>

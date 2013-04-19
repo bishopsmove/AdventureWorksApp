@@ -1,0 +1,24 @@
+﻿@using Adventureworks.Domain;
+@model Product
+           
+@{
+    ViewBag.Title = "Details";
+}
+<h2>@Model.Name</h2>
+
+<table border="0">
+    <tr>
+        <td style="vertical-align: top;">
+            <img src='@VirtualPathUtility.ToAbsolute("~/Image/ProductPhoto?productPhotoID=" + Model.ProductProductPhotoes.FirstOrDefault<ProductProductPhoto>().ProductPhotoID)'
+                border="0">
+        </td>
+        <td style="vertical-align: top;font-size:large">
+            @Model.ProductModel.ProductModelProductDescriptionCultures.First().ProductDescription.Description<br />
+        </td>
+    </tr>
+</table>
+
+<span class="UnitCost"><b>Your Price:</b>&nbsp;@Model.ListPrice.ToString("c")</span><br />
+<a href='/ShoppingCart/AddToCart/@Model.ProductID' style="border: 0 none white">
+    <img id="Img1" src="/Content/Images/add_to_cart.gif" alt="" style="border-width: 0" />
+</a>

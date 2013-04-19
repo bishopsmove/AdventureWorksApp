@@ -1,0 +1,172 @@
+﻿@model IEnumerable<Adventureworks.Domain.Product>
+
+@{
+    ViewBag.Title = "Browse";
+}
+
+<h2>Browse</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@*<table>
+    <tr>
+        <th></th>
+        <th>
+            Name
+        </th>
+        <th>
+            ProductNumber
+        </th>
+        <th>
+            MakeFlag
+        </th>
+        <th>
+            FinishedGoodsFlag
+        </th>
+        <th>
+            Color
+        </th>
+        <th>
+            SafetyStockLevel
+        </th>
+        <th>
+            ReorderPoint
+        </th>
+        <th>
+            StandardCost
+        </th>
+        <th>
+            ListPrice
+        </th>
+        <th>
+            Size
+        </th>
+        <th>
+            SizeUnitMeasureCode
+        </th>
+        <th>
+            WeightUnitMeasureCode
+        </th>
+        <th>
+            Weight
+        </th>
+        <th>
+            DaysToManufacture
+        </th>
+        <th>
+            ProductLine
+        </th>
+        <th>
+            Class
+        </th>
+        <th>
+            Style
+        </th>
+        <th>
+            ProductSubcategoryID
+        </th>
+        <th>
+            ProductModelID
+        </th>
+        <th>
+            SellStartDate
+        </th>
+        <th>
+            SellEndDate
+        </th>
+        <th>
+            DiscontinuedDate
+        </th>
+        <th>
+            rowguid
+        </th>
+        <th>
+            ModifiedDate
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProductID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProductID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProductID })
+        </td>
+        <td>
+            @item.Name
+        </td>
+        <td>
+            @item.ProductNumber
+        </td>
+        <td>
+            @item.MakeFlag
+        </td>
+        <td>
+            @item.FinishedGoodsFlag
+        </td>
+        <td>
+            @item.Color
+        </td>
+        <td>
+            @item.SafetyStockLevel
+        </td>
+        <td>
+            @item.ReorderPoint
+        </td>
+        <td>
+            @String.Format("{0:F}", item.StandardCost)
+        </td>
+        <td>
+            @String.Format("{0:F}", item.ListPrice)
+        </td>
+        <td>
+            @item.Size
+        </td>
+        <td>
+            @item.SizeUnitMeasureCode
+        </td>
+        <td>
+            @item.WeightUnitMeasureCode
+        </td>
+        <td>
+            @String.Format("{0:F}", item.Weight)
+        </td>
+        <td>
+            @item.DaysToManufacture
+        </td>
+        <td>
+            @item.ProductLine
+        </td>
+        <td>
+            @item.Class
+        </td>
+        <td>
+            @item.Style
+        </td>
+        <td>
+            @item.ProductSubcategoryID
+        </td>
+        <td>
+            @item.ProductModelID
+        </td>
+        <td>
+            @String.Format("{0:g}", item.SellStartDate)
+        </td>
+        <td>
+            @String.Format("{0:g}", item.SellEndDate)
+        </td>
+        <td>
+            @String.Format("{0:g}", item.DiscontinuedDate)
+        </td>
+        <td>
+            @item.rowguid
+        </td>
+        <td>
+            @String.Format("{0:g}", item.ModifiedDate)
+        </td>
+    </tr>
+}
+
+</table>*@
+

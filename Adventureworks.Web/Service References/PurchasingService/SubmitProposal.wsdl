@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://adventureworks.com/purchasing/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://tempuri.org/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SubmitProposal" targetNamespace="http://adventureworks.com/purchasing/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="http://localhost:44194/PurchaseProcess.xamlx?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://adventureworks.com/purchasing/Imports">
+      <xsd:import schemaLocation="http://localhost:44194/PurchaseProcess.xamlx?xsd=xsd1" namespace="http://adventureworks.com/contracts/purchasing" />
+      <xsd:import schemaLocation="http://localhost:44194/PurchaseProcess.xamlx?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:44194/PurchaseProcess.xamlx?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Adventureworks.Domain" />
+      <xsd:import schemaLocation="http://localhost:44194/PurchaseProcess.xamlx?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPurchasingService_SubmitPurchasingProposal_InputMessage">
+    <wsdl:part xmlns:q1="http://adventureworks.com/contracts/purchasing" name="RequestForProposal" element="q1:RequestForProposal" />
+  </wsdl:message>
+  <wsdl:message name="IPurchasingService_SubmitPurchasingProposal_OutputMessage">
+    <wsdl:part xmlns:q2="http://adventureworks.com/contracts/purchasing" name="ResponseForProposal" element="q2:ResponseForProposal" />
+  </wsdl:message>
+  <wsdl:message name="IPurchasingService_SubmitVendorProposal_InputMessage">
+    <wsdl:part xmlns:q3="http://adventureworks.com/contracts/purchasing" name="VendorSubmitProposalRequest" element="q3:VendorSubmitProposalRequest" />
+  </wsdl:message>
+  <wsdl:message name="IPurchasingService_SubmitVendorProposal_OutputMessage">
+    <wsdl:part xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/" name="boolean" element="q4:boolean" />
+  </wsdl:message>
+  <wsdl:portType name="IPurchasingService">
+    <wsdl:operation name="SubmitPurchasingProposal">
+      <wsdl:input wsaw:Action="http://adventureworks.com/purchasing/IPurchasingService/SubmitPurchasingProposal" message="tns:IPurchasingService_SubmitPurchasingProposal_InputMessage" />
+      <wsdl:output wsaw:Action="http://adventureworks.com/purchasing/IPurchasingService/SubmitPurchasingProposalResponse" message="tns:IPurchasingService_SubmitPurchasingProposal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitVendorProposal">
+      <wsdl:input wsaw:Action="http://adventureworks.com/purchasing/IPurchasingService/SubmitVendorProposal" message="tns:IPurchasingService_SubmitVendorProposal_InputMessage" />
+      <wsdl:output wsaw:Action="http://adventureworks.com/purchasing/IPurchasingService/SubmitVendorProposalResponse" message="tns:IPurchasingService_SubmitVendorProposal_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="SubmitProposal">
+    <wsdl:port name="BasicHttpBinding_IPurchasingService" binding="i0:BasicHttpBinding_IPurchasingService">
+      <soap:address location="http://localhost:44194/PurchaseProcess.xamlx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

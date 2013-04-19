@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://adventureworks.com/contracts/purchasing" elementFormDefault="qualified" targetNamespace="http://adventureworks.com/contracts/purchasing" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:44194/PurchaseProcess.xamlx?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:44194/PurchaseProcess.xamlx?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Adventureworks.Domain" />
+  <xs:import schemaLocation="http://localhost:44194/PurchaseProcess.xamlx?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="RequestForProposal">
+    <xs:sequence>
+      <xs:element name="CreationDate" type="xs:dateTime" />
+      <xs:element name="Description" nillable="true" type="xs:string" />
+      <xs:element name="ID" type="ser:guid" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Adventureworks.Domain" name="InvitedVendors" nillable="true" type="q1:ArrayOfVendor" />
+      <xs:element name="Status" nillable="true" type="xs:string" />
+      <xs:element name="Title" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="VendorProposals" nillable="true" type="q2:ArrayOfKeyValueOfintVendorProposalmXS21Xmf" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestForProposal" nillable="true" type="tns:RequestForProposal" />
+  <xs:complexType name="ResponseForProposal">
+    <xs:sequence>
+      <xs:element name="RfpID" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseForProposal" nillable="true" type="tns:ResponseForProposal" />
+  <xs:complexType name="VendorSubmitProposalRequest">
+    <xs:sequence>
+      <xs:element name="ID" type="ser:guid" />
+      <xs:element name="Value" type="xs:double" />
+      <xs:element name="VendorId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VendorSubmitProposalRequest" nillable="true" type="tns:VendorSubmitProposalRequest" />
+</xs:schema>

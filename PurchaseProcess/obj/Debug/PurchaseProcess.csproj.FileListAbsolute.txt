@@ -1,0 +1,11 @@
+D:\Repos\GitRepo2\AdventureWorksApp\PurchaseProcess\bin\PurchaseProcess.dll
+D:\Repos\GitRepo2\AdventureWorksApp\PurchaseProcess\bin\PurchaseProcess.pdb
+D:\Repos\GitRepo2\AdventureWorksApp\PurchaseProcess\bin\Adventureworks.Domain.dll
+D:\Repos\GitRepo2\AdventureWorksApp\PurchaseProcess\bin\PurchasingProcess.Activities.dll
+D:\Repos\GitRepo2\AdventureWorksApp\PurchaseProcess\bin\Adventureworks.FileRepository.dll
+D:\Repos\GitRepo2\AdventureWorksApp\PurchaseProcess\bin\Adventureworks.Domain.pdb
+D:\Repos\GitRepo2\AdventureWorksApp\PurchaseProcess\bin\PurchasingProcess.Activities.pdb
+D:\Repos\GitRepo2\AdventureWorksApp\PurchaseProcess\bin\Adventureworks.FileRepository.pdb
+D:\Repos\GitRepo2\AdventureWorksApp\PurchaseProcess\obj\Debug\PurchaseProcess.csprojResolveAssemblyReference.cache
+D:\Repos\GitRepo2\AdventureWorksApp\PurchaseProcess\obj\Debug\PurchaseProcess.dll
+D:\Repos\GitRepo2\AdventureWorksApp\PurchaseProcess\obj\Debug\PurchaseProcess.pdb

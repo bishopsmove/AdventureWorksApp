@@ -1,0 +1,4 @@
+D:\Repos\GitRepo2\AdventureWorksApp\Adventureworks.Infrastructure\bin\Debug\Adventureworks.Infrastructure.dll
+D:\Repos\GitRepo2\AdventureWorksApp\Adventureworks.Infrastructure\bin\Debug\Adventureworks.Infrastructure.pdb
+D:\Repos\GitRepo2\AdventureWorksApp\Adventureworks.Infrastructure\obj\Debug\Adventureworks.Infrastructure.dll
+D:\Repos\GitRepo2\AdventureWorksApp\Adventureworks.Infrastructure\obj\Debug\Adventureworks.Infrastructure.pdb
