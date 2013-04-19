@@ -1,7 +1,0 @@
-D:\Repos\GitRepo2\AdventureWorksApp\FileRepository\bin\Debug\Adventureworks.FileRepository.dll
-D:\Repos\GitRepo2\AdventureWorksApp\FileRepository\bin\Debug\Adventureworks.FileRepository.pdb
-D:\Repos\GitRepo2\AdventureWorksApp\FileRepository\bin\Debug\Adventureworks.Domain.dll
-D:\Repos\GitRepo2\AdventureWorksApp\FileRepository\bin\Debug\Adventureworks.Domain.pdb
-D:\Repos\GitRepo2\AdventureWorksApp\FileRepository\obj\Debug\Adventureworks.FileRepository.dll
-D:\Repos\GitRepo2\AdventureWorksApp\FileRepository\obj\Debug\Adventureworks.FileRepository.pdb
-D:\Repos\GitRepo2\AdventureWorksApp\FileRepository\obj\Debug\Adventureworks.FileRepository.csprojResolveAssemblyReference.cache

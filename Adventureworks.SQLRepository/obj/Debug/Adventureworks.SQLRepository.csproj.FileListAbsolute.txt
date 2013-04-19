@@ -1,7 +1,0 @@
-D:\Repos\GitRepo2\AdventureWorksApp\Adventureworks.SQLRepository\bin\Debug\Adventureworks.SQLRepository.dll
-D:\Repos\GitRepo2\AdventureWorksApp\Adventureworks.SQLRepository\bin\Debug\Adventureworks.SQLRepository.pdb
-D:\Repos\GitRepo2\AdventureWorksApp\Adventureworks.SQLRepository\bin\Debug\Adventureworks.Domain.dll
-D:\Repos\GitRepo2\AdventureWorksApp\Adventureworks.SQLRepository\bin\Debug\Adventureworks.Domain.pdb
-D:\Repos\GitRepo2\AdventureWorksApp\Adventureworks.SQLRepository\obj\Debug\Adventureworks.SQLRepository.csprojResolveAssemblyReference.cache
-D:\Repos\GitRepo2\AdventureWorksApp\Adventureworks.SQLRepository\obj\Debug\Adventureworks.SQLRepository.dll
-D:\Repos\GitRepo2\AdventureWorksApp\Adventureworks.SQLRepository\obj\Debug\Adventureworks.SQLRepository.pdb

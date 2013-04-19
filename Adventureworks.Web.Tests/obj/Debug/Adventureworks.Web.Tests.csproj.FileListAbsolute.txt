@@ -1,1 +1,0 @@
-D:\Repos\GitRepo2\AdventureWorksApp\Adventureworks.Web.Tests\obj\Debug\Adventureworks.Web.Tests.csprojResolveAssemblyReference.cache
