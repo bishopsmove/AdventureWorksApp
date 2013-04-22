@@ -5,12 +5,12 @@ Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Adventureworks.AnalysisMode
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Adventureworks.DesignModel", "Adventureworks.DesignModel\Adventureworks.DesignModel.modelproj", "{2781AB70-3994-46F8-816A-8C011B89542C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adventureworks.WebMVC3", "Adventureworks.Web\Adventureworks.WebMVC3.csproj", "{5D85154F-1587-4F7A-9DE3-E0C91BDD7A6D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adventureworks.WebMVC3", "Adventureworks.WebMVC3\Adventureworks.WebMVC3.csproj", "{5D85154F-1587-4F7A-9DE3-E0C91BDD7A6D}"
 	ProjectSection(ProjectDependencies) = postProject
 		{EB2C9373-66DB-47A9-8EFA-423911F232E6} = {EB2C9373-66DB-47A9-8EFA-423911F232E6}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adventureworks.WebMVC3.Tests", "Adventureworks.Web.Tests\Adventureworks.WebMVC3.Tests.csproj", "{28821030-B242-46A6-99BA-AEEE3A0060CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adventureworks.WebMVC3.Tests", "Adventureworks.WebMVC3.Tests\Adventureworks.WebMVC3.Tests.csproj", "{28821030-B242-46A6-99BA-AEEE3A0060CD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adventureworks.SQLRepository", "Adventureworks.SQLRepository\Adventureworks.SQLRepository.csproj", "{AFC4C52D-EE8C-4A12-9959-E738DFFEBAB9}"
 EndProject

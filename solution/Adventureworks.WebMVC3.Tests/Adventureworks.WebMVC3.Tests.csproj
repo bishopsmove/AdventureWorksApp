@@ -67,7 +67,7 @@
     <Content Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Adventureworks.Web\Adventureworks.WebMVC3.csproj">
+    <ProjectReference Include="..\Adventureworks.WebMVC3\Adventureworks.WebMVC3.csproj">
       <Project>{5D85154F-1587-4F7A-9DE3-E0C91BDD7A6D}</Project>
       <Name>Adventureworks.WebMVC3</Name>
     </ProjectReference>
