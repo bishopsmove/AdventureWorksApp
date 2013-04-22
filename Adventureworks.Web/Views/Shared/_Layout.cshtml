@@ -3,16 +3,18 @@
 <html>
 <head>
     <title>@ViewBag.Title</title>
+   
+    <!-- <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/themes/ui-darkness/jquery-ui-1.8.9.custom.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui.min.js")" type="text/javascript"></script> -->
+
+    <!-- Switching out link and script calls for Web.Optimization script blocks to make the most of resource request constraints -->
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/ui-darkness")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jquery-ui")
-
-    <!-- <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/Content/themes/ui-darkness/jquery-ui-1.8.9.custom.css")" rel="stylesheet" type="text/css" />
-    <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/jquery-ui.min.js")" type="text/javascript"></script> -->
     
     <script type="text/javascript">
         $(document).ready(function () {
