@@ -1,0 +1,202 @@
+@model Adventureworks.Domain5.Product
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Name)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Name)
+    @Html.ValidationMessageFor(model => model.Name)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.ProductNumber)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.ProductNumber)
+    @Html.ValidationMessageFor(model => model.ProductNumber)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.MakeFlag)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.MakeFlag)
+    @Html.ValidationMessageFor(model => model.MakeFlag)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.FinishedGoodsFlag)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.FinishedGoodsFlag)
+    @Html.ValidationMessageFor(model => model.FinishedGoodsFlag)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Color)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Color)
+    @Html.ValidationMessageFor(model => model.Color)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.SafetyStockLevel)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.SafetyStockLevel)
+    @Html.ValidationMessageFor(model => model.SafetyStockLevel)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.ReorderPoint)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.ReorderPoint)
+    @Html.ValidationMessageFor(model => model.ReorderPoint)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.StandardCost)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.StandardCost)
+    @Html.ValidationMessageFor(model => model.StandardCost)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.ListPrice)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.ListPrice)
+    @Html.ValidationMessageFor(model => model.ListPrice)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Size)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Size)
+    @Html.ValidationMessageFor(model => model.Size)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.SizeUnitMeasureCode)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.SizeUnitMeasureCode)
+    @Html.ValidationMessageFor(model => model.SizeUnitMeasureCode)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.WeightUnitMeasureCode)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.WeightUnitMeasureCode)
+    @Html.ValidationMessageFor(model => model.WeightUnitMeasureCode)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Weight)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Weight)
+    @Html.ValidationMessageFor(model => model.Weight)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.DaysToManufacture)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.DaysToManufacture)
+    @Html.ValidationMessageFor(model => model.DaysToManufacture)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.ProductLine)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.ProductLine)
+    @Html.ValidationMessageFor(model => model.ProductLine)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Class)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Class)
+    @Html.ValidationMessageFor(model => model.Class)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Style)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Style)
+    @Html.ValidationMessageFor(model => model.Style)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.SellStartDate)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.SellStartDate)
+    @Html.ValidationMessageFor(model => model.SellStartDate)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.SellEndDate)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.SellEndDate)
+    @Html.ValidationMessageFor(model => model.SellEndDate)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.DiscontinuedDate)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.DiscontinuedDate)
+    @Html.ValidationMessageFor(model => model.DiscontinuedDate)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.rowguid)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.rowguid)
+    @Html.ValidationMessageFor(model => model.rowguid)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.ModifiedDate)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.ModifiedDate)
+    @Html.ValidationMessageFor(model => model.ModifiedDate)
+</div>
+
+<div class="editor-label">
+    ProductSubcategory
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.ProductSubcategoryID, ((IEnumerable<Adventureworks.Domain5.ProductSubcategory>)ViewBag.PossibleProductSubcategories).Select(option => new SelectListItem {
+        Text = (option == null ? "None" : option.Name), 
+        Value = option.ProductSubcategoryID.ToString(),
+        Selected = (Model != null) && (option.ProductSubcategoryID == Model.ProductSubcategoryID)
+    }), "Choose...")
+    @Html.ValidationMessageFor(model => model.ProductSubcategoryID)
+</div>
+<div class="editor-label">
+    ProductModel
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.ProductModelID, ((IEnumerable<Adventureworks.Domain5.ProductModel>)ViewBag.PossibleProductModels).Select(option => new SelectListItem {
+        Text = (option == null ? "None" : option.Name), 
+        Value = option.ProductModelID.ToString(),
+        Selected = (Model != null) && (option.ProductModelID == Model.ProductModelID)
+    }), "Choose...")
+    @Html.ValidationMessageFor(model => model.ProductModelID)
+</div>

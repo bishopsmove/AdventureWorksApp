@@ -28,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adventureworks.WebMVC4", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adventureworks.WebMVC4.Tests", "Adventureworks.WebMVC4.Tests\Adventureworks.WebMVC4.Tests.csproj", "{C14320CB-D1C3-44BC-860D-C22CEB2ECD15}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adventureworks.Domain5", "AdventureWorks.Domain5\Adventureworks.Domain5.csproj", "{F2205BCA-71E7-4A9C-9919-9AC9DE5118A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -82,6 +84,10 @@ Global
 		{C14320CB-D1C3-44BC-860D-C22CEB2ECD15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C14320CB-D1C3-44BC-860D-C22CEB2ECD15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C14320CB-D1C3-44BC-860D-C22CEB2ECD15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2205BCA-71E7-4A9C-9919-9AC9DE5118A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2205BCA-71E7-4A9C-9919-9AC9DE5118A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2205BCA-71E7-4A9C-9919-9AC9DE5118A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2205BCA-71E7-4A9C-9919-9AC9DE5118A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
