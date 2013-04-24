@@ -8,7 +8,14 @@
                 <h1>@ViewBag.Title.</h1>
                 <h2>@ViewBag.Message</h2>
             </hgroup>
-            @Html.ActionLink("Products Home", "Index", "Products")
+            <ol class="round">
+                <li class="one">
+                     @Html.ActionLink("Products Home", "Index", "Products")
+                </li>
+                <li class="two">
+                    @Html.ActionLink("Vendor Proposal Home", "Index", "VendorProposal")
+                </li>
+            </ol>
         </div>
     </section>
 }

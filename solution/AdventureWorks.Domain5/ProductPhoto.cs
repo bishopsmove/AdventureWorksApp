@@ -11,6 +11,7 @@ namespace Adventureworks.Domain5
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class ProductPhoto
     {
@@ -19,7 +20,8 @@ namespace Adventureworks.Domain5
             this.ProductProductPhotoes = new HashSet<ProductProductPhoto>();
         }
     
-        public int ProductPhotoID { get; set; }
+        [Key]
+		public int ProductPhotoID { get; set; }
         public byte[] ThumbNailPhoto { get; set; }
         public string ThumbnailPhotoFileName { get; set; }
         public byte[] LargePhoto { get; set; }

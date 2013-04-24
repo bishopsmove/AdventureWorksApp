@@ -11,10 +11,12 @@ namespace Adventureworks.Domain5
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class ProductReview
     {
-        public int ProductReviewID { get; set; }
+        [Key]
+		public int ProductReviewID { get; set; }
         public int ProductID { get; set; }
         public string ReviewerName { get; set; }
         public System.DateTime ReviewDate { get; set; }

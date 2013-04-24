@@ -11,6 +11,7 @@ namespace Adventureworks.Domain5
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class CurrencyRate
     {
@@ -19,7 +20,8 @@ namespace Adventureworks.Domain5
             this.SalesOrderHeaders = new HashSet<SalesOrderHeader>();
         }
     
-        public int CurrencyRateID { get; set; }
+        [Key]
+		public int CurrencyRateID { get; set; }
         public System.DateTime CurrencyRateDate { get; set; }
         public string FromCurrencyCode { get; set; }
         public string ToCurrencyCode { get; set; }

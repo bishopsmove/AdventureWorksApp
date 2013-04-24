@@ -11,10 +11,12 @@ namespace Adventureworks.Domain5
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class ShoppingCartItem
     {
-        public int ShoppingCartItemID { get; set; }
+        [Key]
+		public int ShoppingCartItemID { get; set; }
         public string ShoppingCartID { get; set; }
         public int Quantity { get; set; }
         public int ProductID { get; set; }

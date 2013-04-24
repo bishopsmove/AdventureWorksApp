@@ -11,6 +11,7 @@ namespace Adventureworks.Domain5
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class SalesTerritory
     {
@@ -23,7 +24,8 @@ namespace Adventureworks.Domain5
             this.SalesTerritoryHistories = new HashSet<SalesTerritoryHistory>();
         }
     
-        public int TerritoryID { get; set; }
+        [Key]
+		public int TerritoryID { get; set; }
         public string Name { get; set; }
         public string CountryRegionCode { get; set; }
         public string Group { get; set; }

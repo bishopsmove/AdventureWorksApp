@@ -11,6 +11,7 @@ namespace Adventureworks.Domain5
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class StateProvince
     {
@@ -20,7 +21,8 @@ namespace Adventureworks.Domain5
             this.SalesTaxRates = new HashSet<SalesTaxRate>();
         }
     
-        public int StateProvinceID { get; set; }
+        [Key]
+		public int StateProvinceID { get; set; }
         public string StateProvinceCode { get; set; }
         public string CountryRegionCode { get; set; }
         public bool IsOnlyStateProvinceFlag { get; set; }

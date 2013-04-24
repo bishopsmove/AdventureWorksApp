@@ -11,6 +11,7 @@ var	fileManager = EntityFrameworkTemplateFileManager.Create(this);
 var itemCollection = new EdmMetadataLoader(textTransform.Host, textTransform.Errors).CreateEdmItemCollection(inputFile);
 var codeStringGenerator = new CodeStringGenerator(code, typeMapper, ef);
 
+
 if (!typeMapper.VerifyCaseInsensitiveTypeUniqueness(typeMapper.GetAllGlobalItems(itemCollection), inputFile))
 {
     return string.Empty;
@@ -256,6 +257,7 @@ public void EndNamespace(CodeGenerationTools code)
 }
 
 public const string TemplateId = "CSharp_DbContext_Types_EF5";
+public const string annotationNamespace = "http://schemas.microsoft.com/ado/2009/02/edm/annotation";
 
 public class CodeStringGenerator
 {
@@ -276,10 +278,17 @@ public class CodeStringGenerator
 
     public string Property(EdmProperty edmProperty)
     {
+	    string accessor = Accessibility.ForProperty(edmProperty);
+	    MetadataProperty storeGeneratedPatternProperty = null;
+        edmProperty.MetadataProperties.TryGetValue(annotationNamespace + ":StoreGeneratedPattern", false, out storeGeneratedPatternProperty);
+        if (storeGeneratedPatternProperty != null && storeGeneratedPatternProperty.Value.ToString() == "Identity")
+        {
+	        accessor = "[Key]\n\t\t" + accessor;
+		}
         return string.Format(
             CultureInfo.InvariantCulture,
             "{0} {1} {2} {{ {3}get; {4}set; }}",
-            Accessibility.ForProperty(edmProperty),
+            accessor,
             _typeMapper.GetTypeName(edmProperty.TypeUsage),
             _code.Escape(edmProperty),
             _code.SpaceAfter(Accessibility.ForGetter(edmProperty)),
@@ -421,7 +430,7 @@ public class CodeStringGenerator
                 "{0}using System;{1}" +
                 "{2}",
                 inHeader ? Environment.NewLine : "",
-                includeCollections ? (Environment.NewLine + "using System.Collections.Generic;") : "",
+                includeCollections ? (Environment.NewLine + "using System.Collections.Generic;" + Environment.NewLine + "using System.ComponentModel.DataAnnotations;") : "",
                 inHeader ? "" : Environment.NewLine)
             : "";
     }

@@ -11,6 +11,7 @@ namespace Adventureworks.Domain5
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class WorkOrder
     {
@@ -19,7 +20,8 @@ namespace Adventureworks.Domain5
             this.WorkOrderRoutings = new HashSet<WorkOrderRouting>();
         }
     
-        public int WorkOrderID { get; set; }
+        [Key]
+		public int WorkOrderID { get; set; }
         public int ProductID { get; set; }
         public int OrderQty { get; set; }
         public int StockedQty { get; set; }

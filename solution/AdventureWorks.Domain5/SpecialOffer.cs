@@ -11,6 +11,7 @@ namespace Adventureworks.Domain5
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class SpecialOffer
     {
@@ -19,7 +20,8 @@ namespace Adventureworks.Domain5
             this.SpecialOfferProducts = new HashSet<SpecialOfferProduct>();
         }
     
-        public int SpecialOfferID { get; set; }
+        [Key]
+		public int SpecialOfferID { get; set; }
         public string Description { get; set; }
         public decimal DiscountPct { get; set; }
         public string Type { get; set; }

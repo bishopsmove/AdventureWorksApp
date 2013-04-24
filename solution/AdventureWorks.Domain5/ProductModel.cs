@@ -11,6 +11,7 @@ namespace Adventureworks.Domain5
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class ProductModel
     {
@@ -21,7 +22,8 @@ namespace Adventureworks.Domain5
             this.ProductModelProductDescriptionCultures = new HashSet<ProductModelProductDescriptionCulture>();
         }
     
-        public int ProductModelID { get; set; }
+        [Key]
+		public int ProductModelID { get; set; }
         public string Name { get; set; }
         public string CatalogDescription { get; set; }
         public string Instructions { get; set; }

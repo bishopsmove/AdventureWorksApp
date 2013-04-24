@@ -1,4 +1,4 @@
-;(function($){
+;(function ($) {
 /**
  * jqGrid English Translation
  * Tony Tomov tony@trirand.com
@@ -7,7 +7,7 @@
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.gnu.org/licenses/gpl.html
 **/
-$.jgrid = {
+	$.jgrid = {
 	defaults : {
 		recordtext: "View {0} - {1} of {2}",
 		emptyrecords: "No records to view",

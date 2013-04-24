@@ -11,6 +11,7 @@ namespace Adventureworks.Domain5
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Product
     {
@@ -31,7 +32,8 @@ namespace Adventureworks.Domain5
             this.WorkOrders = new HashSet<WorkOrder>();
         }
     
-        public int ProductID { get; set; }
+        [Key]
+		public int ProductID { get; set; }
         public string Name { get; set; }
         public string ProductNumber { get; set; }
         public bool MakeFlag { get; set; }

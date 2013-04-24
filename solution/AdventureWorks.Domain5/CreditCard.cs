@@ -11,6 +11,7 @@ namespace Adventureworks.Domain5
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class CreditCard
     {
@@ -20,7 +21,8 @@ namespace Adventureworks.Domain5
             this.SalesOrderHeaders = new HashSet<SalesOrderHeader>();
         }
     
-        public int CreditCardID { get; set; }
+        [Key]
+		public int CreditCardID { get; set; }
         public string CardType { get; set; }
         public string CardNumber { get; set; }
         public byte ExpMonth { get; set; }

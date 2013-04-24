@@ -11,6 +11,7 @@ namespace Adventureworks.Domain5
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Illustration
     {
@@ -19,7 +20,8 @@ namespace Adventureworks.Domain5
             this.ProductModelIllustrations = new HashSet<ProductModelIllustration>();
         }
     
-        public int IllustrationID { get; set; }
+        [Key]
+		public int IllustrationID { get; set; }
         public string Diagram { get; set; }
         public System.DateTime ModifiedDate { get; set; }
     

@@ -11,6 +11,7 @@ namespace Adventureworks.Domain5
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class SalesOrderHeader
     {
@@ -20,7 +21,8 @@ namespace Adventureworks.Domain5
             this.SalesOrderHeaderSalesReasons = new HashSet<SalesOrderHeaderSalesReason>();
         }
     
-        public int SalesOrderID { get; set; }
+        [Key]
+		public int SalesOrderID { get; set; }
         public byte RevisionNumber { get; set; }
         public System.DateTime OrderDate { get; set; }
         public System.DateTime DueDate { get; set; }

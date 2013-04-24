@@ -11,10 +11,12 @@ namespace Adventureworks.Domain5
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class BillOfMaterial
     {
-        public int BillOfMaterialsID { get; set; }
+        [Key]
+		public int BillOfMaterialsID { get; set; }
         public Nullable<int> ProductAssemblyID { get; set; }
         public int ComponentID { get; set; }
         public System.DateTime StartDate { get; set; }

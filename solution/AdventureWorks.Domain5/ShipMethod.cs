@@ -11,6 +11,7 @@ namespace Adventureworks.Domain5
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class ShipMethod
     {
@@ -20,7 +21,8 @@ namespace Adventureworks.Domain5
             this.SalesOrderHeaders = new HashSet<SalesOrderHeader>();
         }
     
-        public int ShipMethodID { get; set; }
+        [Key]
+		public int ShipMethodID { get; set; }
         public string Name { get; set; }
         public decimal ShipBase { get; set; }
         public decimal ShipRate { get; set; }

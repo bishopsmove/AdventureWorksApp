@@ -165,7 +165,6 @@
     <Content Include="Content\themes\ui-darkness\jquery-ui-1.8.9.custom.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\grid.locale-en.js" />
-    <Content Include="Scripts\jquery-1.5.2-vsdoc.js" />
     <Content Include="Scripts\jquery-1.5.2.js" />
     <Content Include="Scripts\jquery-1.5.2.min.js" />
     <Content Include="Scripts\jquery.cookie.js" />
@@ -184,7 +183,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

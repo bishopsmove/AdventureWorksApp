@@ -11,10 +11,12 @@ namespace Adventureworks.Domain5
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class ErrorLog
     {
-        public int ErrorLogID { get; set; }
+        [Key]
+		public int ErrorLogID { get; set; }
         public System.DateTime ErrorTime { get; set; }
         public string UserName { get; set; }
         public int ErrorNumber { get; set; }

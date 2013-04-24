@@ -11,11 +11,13 @@ namespace Adventureworks.Domain5
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class EmailAddress
     {
         public int BusinessEntityID { get; set; }
-        public int EmailAddressID { get; set; }
+        [Key]
+		public int EmailAddressID { get; set; }
         public string EmailAddress1 { get; set; }
         public System.Guid rowguid { get; set; }
         public System.DateTime ModifiedDate { get; set; }

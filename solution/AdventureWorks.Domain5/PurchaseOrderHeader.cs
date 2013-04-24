@@ -11,6 +11,7 @@ namespace Adventureworks.Domain5
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class PurchaseOrderHeader
     {
@@ -19,7 +20,8 @@ namespace Adventureworks.Domain5
             this.PurchaseOrderDetails = new HashSet<PurchaseOrderDetail>();
         }
     
-        public int PurchaseOrderID { get; set; }
+        [Key]
+		public int PurchaseOrderID { get; set; }
         public byte RevisionNumber { get; set; }
         public byte Status { get; set; }
         public int EmployeeID { get; set; }

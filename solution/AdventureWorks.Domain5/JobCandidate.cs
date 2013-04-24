@@ -11,10 +11,12 @@ namespace Adventureworks.Domain5
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class JobCandidate
     {
-        public int JobCandidateID { get; set; }
+        [Key]
+		public int JobCandidateID { get; set; }
         public Nullable<int> BusinessEntityID { get; set; }
         public string Resume { get; set; }
         public System.DateTime ModifiedDate { get; set; }

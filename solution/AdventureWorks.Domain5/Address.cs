@@ -11,6 +11,7 @@ namespace Adventureworks.Domain5
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Address
     {
@@ -21,7 +22,8 @@ namespace Adventureworks.Domain5
             this.SalesOrderHeaders1 = new HashSet<SalesOrderHeader>();
         }
     
-        public int AddressID { get; set; }
+        [Key]
+		public int AddressID { get; set; }
         public string AddressLine1 { get; set; }
         public string AddressLine2 { get; set; }
         public string City { get; set; }

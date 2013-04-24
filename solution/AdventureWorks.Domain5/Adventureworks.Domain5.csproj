@@ -38,6 +38,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -53,15 +54,15 @@
     <Compile Include="AddressType.cs">
       <DependentUpon>AdventureworksContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="AdventureworksContext1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AdventureworksContext.tt</DependentUpon>
-    </Compile>
     <Compile Include="AdventureworksContext.DbContext1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AdventureworksContext.DbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdventureworksContext1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdventureworksContext.tt</DependentUpon>
     </Compile>
     <Compile Include="AdventureworksEntities1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -83,6 +84,7 @@
     <Compile Include="ContactType.cs">
       <DependentUpon>AdventureworksContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="ContextExtensions\PurchasingContext.cs" />
     <Compile Include="CountryRegion.cs">
       <DependentUpon>AdventureworksContext.tt</DependentUpon>
     </Compile>
@@ -128,12 +130,18 @@
     <Compile Include="Illustration.cs">
       <DependentUpon>AdventureworksContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IPurchasingRepository.cs" />
+    <Compile Include="Interfaces\IVendorProposalRepository.cs" />
     <Compile Include="JobCandidate.cs">
       <DependentUpon>AdventureworksContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Location.cs">
       <DependentUpon>AdventureworksContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModelExtensions\RequestForProposal.cs" />
+    <Compile Include="ModelExtensions\ResponseForProposal.cs" />
+    <Compile Include="ModelExtensions\VendorProposal.cs" />
+    <Compile Include="ModelExtensions\VendorSubmitProposalRequest.cs" />
     <Compile Include="Password.cs">
       <DependentUpon>AdventureworksContext.tt</DependentUpon>
     </Compile>
@@ -289,6 +297,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

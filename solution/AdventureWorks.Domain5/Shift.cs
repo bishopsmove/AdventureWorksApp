@@ -11,6 +11,7 @@ namespace Adventureworks.Domain5
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Shift
     {
@@ -19,7 +20,8 @@ namespace Adventureworks.Domain5
             this.EmployeeDepartmentHistories = new HashSet<EmployeeDepartmentHistory>();
         }
     
-        public byte ShiftID { get; set; }
+        [Key]
+		public byte ShiftID { get; set; }
         public string Name { get; set; }
         public System.TimeSpan StartTime { get; set; }
         public System.TimeSpan EndTime { get; set; }

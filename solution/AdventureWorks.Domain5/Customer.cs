@@ -11,6 +11,7 @@ namespace Adventureworks.Domain5
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Customer
     {
@@ -19,7 +20,8 @@ namespace Adventureworks.Domain5
             this.SalesOrderHeaders = new HashSet<SalesOrderHeader>();
         }
     
-        public int CustomerID { get; set; }
+        [Key]
+		public int CustomerID { get; set; }
         public Nullable<int> PersonID { get; set; }
         public Nullable<int> StoreID { get; set; }
         public Nullable<int> TerritoryID { get; set; }

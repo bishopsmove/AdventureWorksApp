@@ -11,6 +11,7 @@ namespace Adventureworks.Domain5
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class ProductCategory
     {
@@ -19,7 +20,8 @@ namespace Adventureworks.Domain5
             this.ProductSubcategories = new HashSet<ProductSubcategory>();
         }
     
-        public int ProductCategoryID { get; set; }
+        [Key]
+		public int ProductCategoryID { get; set; }
         public string Name { get; set; }
         public System.Guid rowguid { get; set; }
         public System.DateTime ModifiedDate { get; set; }

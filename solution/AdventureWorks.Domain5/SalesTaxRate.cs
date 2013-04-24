@@ -11,10 +11,12 @@ namespace Adventureworks.Domain5
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class SalesTaxRate
     {
-        public int SalesTaxRateID { get; set; }
+        [Key]
+		public int SalesTaxRateID { get; set; }
         public int StateProvinceID { get; set; }
         public byte TaxType { get; set; }
         public decimal TaxRate { get; set; }

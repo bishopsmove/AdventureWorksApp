@@ -11,6 +11,7 @@ namespace Adventureworks.Domain5
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class BusinessEntity
     {
@@ -20,7 +21,8 @@ namespace Adventureworks.Domain5
             this.BusinessEntityContacts = new HashSet<BusinessEntityContact>();
         }
     
-        public int BusinessEntityID { get; set; }
+        [Key]
+		public int BusinessEntityID { get; set; }
         public System.Guid rowguid { get; set; }
         public System.DateTime ModifiedDate { get; set; }
     

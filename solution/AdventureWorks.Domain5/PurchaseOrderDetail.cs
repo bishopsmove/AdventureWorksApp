@@ -11,11 +11,13 @@ namespace Adventureworks.Domain5
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class PurchaseOrderDetail
     {
         public int PurchaseOrderID { get; set; }
-        public int PurchaseOrderDetailID { get; set; }
+        [Key]
+		public int PurchaseOrderDetailID { get; set; }
         public System.DateTime DueDate { get; set; }
         public short OrderQty { get; set; }
         public int ProductID { get; set; }

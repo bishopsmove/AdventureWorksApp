@@ -11,6 +11,7 @@ namespace Adventureworks.Domain5
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class ContactType
     {
@@ -19,7 +20,8 @@ namespace Adventureworks.Domain5
             this.BusinessEntityContacts = new HashSet<BusinessEntityContact>();
         }
     
-        public int ContactTypeID { get; set; }
+        [Key]
+		public int ContactTypeID { get; set; }
         public string Name { get; set; }
         public System.DateTime ModifiedDate { get; set; }
     
