@@ -1,0 +1,47 @@
+@model Adventureworks.Domain5.ShoppingCartItem
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.ShoppingCartID)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.ShoppingCartID)
+    @Html.ValidationMessageFor(model => model.ShoppingCartID)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Quantity)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Quantity)
+    @Html.ValidationMessageFor(model => model.Quantity)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.DateCreated)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.DateCreated)
+    @Html.ValidationMessageFor(model => model.DateCreated)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.ModifiedDate)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.ModifiedDate)
+    @Html.ValidationMessageFor(model => model.ModifiedDate)
+</div>
+
+<div class="editor-label">
+    Product
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.ProductID, ((IEnumerable<Adventureworks.Domain5.Product>)ViewBag.PossibleProducts).Select(option => new SelectListItem {
+        Text = (option == null ? "None" : option.Name), 
+        Value = option.ProductID.ToString(),
+        Selected = (Model != null) && (option.ProductID == Model.ProductID)
+    }), "Choose...")
+    @Html.ValidationMessageFor(model => model.ProductID)
+</div>

@@ -181,6 +181,7 @@
     <Compile Include="Controllers\AWContextController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\VendorProposalController.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
     <Compile Include="DependencyResolution\StructureMapDependencyResolver.cs" />
@@ -194,6 +195,7 @@
     <Compile Include="Models\ProductModelRepository.cs" />
     <Compile Include="Models\ProductRepository.cs" />
     <Compile Include="Models\ProductSubcategoryRepository.cs" />
+    <Compile Include="Models\ShoppingCartItemRepository.cs" />
     <Compile Include="Models\VendorProposalRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -357,6 +359,12 @@
     <Content Include="Views\VendorProposal\Details.cshtml" />
     <Content Include="Views\VendorProposal\Index.cshtml" />
     <Content Include="Views\VendorProposal\_CreateOrEdit.cshtml" />
+    <Content Include="Views\ShoppingCart\Create.cshtml" />
+    <Content Include="Views\ShoppingCart\Edit.cshtml" />
+    <Content Include="Views\ShoppingCart\Delete.cshtml" />
+    <Content Include="Views\ShoppingCart\Details.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\_CreateOrEdit.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using StructureMap;
 using StructureMap.Configuration.DSL;
+using MvcExtensions.StructureMap;
 using System.Collections.Specialized;
+using Adventureworks.Domain5;
 using Adventureworks.Domain5.Interfaces;
 using Adventureworks.WebMVC4.Models;
 
@@ -60,10 +63,12 @@ namespace Adventureworks.WebMVC4
     {
         public RepositoryRegistry()
         {
-            For<IVendorProposalRepository>().Use<VendorProposalRepository>();
+            For<DbContext>().HttpContextScoped().Use(() => new AdventureWorksEntitiesContainer());
+            For<IVendorProposalRepository>().HttpContextScoped().Use<VendorProposalRepository>();
             For<IProductSubcategoryRepository>().Use<ProductSubcategoryRepository>();
             For<IProductModelRepository>().Use<ProductModelRepository>();
             For<IProductRepository>().Use<ProductRepository>();
+            For<IShoppingCartItemRepository>().Use<ShoppingCartItemRepository>();
         }
     }
 }
