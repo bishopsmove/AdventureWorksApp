@@ -6,12 +6,14 @@ using System.Web.Mvc;
 using Adventureworks.Domain5;
 using Adventureworks.Domain5.Interfaces;
 using Adventureworks.WebMVC4.Models;
+using StructureMap;
+using Microsoft.Practices.ServiceLocation;
 
 namespace Adventureworks.WebMVC4.Controllers
 {   
     public class VendorProposalController : Controller
     {
-		private readonly IVendorProposalRepository vendorproposalRepository;
+		private IVendorProposalRepository vendorproposalRepository;
 
 		// If you are using Dependency Injection, you can delete the following constructor
         public VendorProposalController() : this(new VendorProposalRepository())
@@ -28,6 +30,7 @@ namespace Adventureworks.WebMVC4.Controllers
 
         public ViewResult Index()
         {
+            vendorproposalRepository = ObjectFactory.GetInstance<IVendorProposalRepository>();
             return View(vendorproposalRepository.All);
         }
 

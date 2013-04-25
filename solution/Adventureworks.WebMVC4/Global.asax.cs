@@ -23,6 +23,8 @@ namespace Adventureworks.WebMVC4
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
+            //Bootstrap StructureMap start
+            Bootstrapper.Run();
         }
     }
 }
