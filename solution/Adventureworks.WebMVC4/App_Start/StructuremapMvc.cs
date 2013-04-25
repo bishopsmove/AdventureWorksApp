@@ -25,7 +25,7 @@ using Adventureworks.WebMVC4.DependencyResolution;
 namespace Adventureworks.WebMVC4.App_Start {
     public static class StructuremapMvc {
         public static void Start() {
-			IContainer container = IoC.Initialize();
+            IContainer container = IoC.Initialize();
             DependencyResolver.SetResolver(new StructureMapDependencyResolver(container));
             GlobalConfiguration.Configuration.DependencyResolver = new StructureMapDependencyResolver(container);
         }

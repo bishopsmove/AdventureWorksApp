@@ -13,6 +13,11 @@ namespace Adventureworks.WebMVC4.Models
     {
         AdventureWorksEntitiesContainer context = new AdventureWorksEntitiesContainer();
 
+        public ProductRepository()
+        {
+
+        }
+
         public IQueryable<Product> All
         {
             get { return context.Products; }
