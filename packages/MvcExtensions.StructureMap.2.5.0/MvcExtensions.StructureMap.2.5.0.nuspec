@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>MvcExtensions.StructureMap</id>
+    <version>2.5.0</version>
+    <title>MvcExtensions.StructureMap</title>
+    <authors>Kazi Manzur Rashid,  hazzik</authors>
+    <owners>Kazi Manzur Rashid,  hazzik</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>ASP.NET MVC Extensions is framework developed on top of ASP.NET MVC extensibility point, which allows your IoC Container to rule everywhere.</description>
+    <dependencies>
+      <dependency id="StructureMap" version="2.6.3" />
+      <dependency id="MvcExtensions" version="[2.5.0, 3.0)" />
+    </dependencies>
+  </metadata>
+</package>
