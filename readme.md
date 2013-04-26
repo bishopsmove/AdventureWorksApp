@@ -1,5 +1,7 @@
 # AdventureWorksApp
 
+Currently building at [Qhode.com](http://www.qhode.com/projects/3b878cd2-5cec-42c9-99c8-a1ab017394c3)
+
 This VS2010 solution is based on the work posted by [SuperTigerZou](http://www.codeplex.com/site/users/view/supertigerzou) at https://advsampleapp.codeplex.com/. This posting of the original solution is in keeping with Section 3.1 of the [CDDL](http://advsampleapp.codeplex.com/license). It provides a working sample of ASP.Net MVC3, WF, MEF, EF and WCF technology and achitecture utillizing the AdventureWorks sample database. The solution on Codeplex was last updated (as of this posting) 23 Feb 2011.
 
 ## Solution Origins
