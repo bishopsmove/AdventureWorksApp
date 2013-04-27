@@ -5,10 +5,10 @@
 <div class="editor-label">
     @Html.LabelFor(model => model.ShoppingCartID)
 </div>
-<div class="editor-field">
+@*<div class="editor-field">
     @Html.EditorFor(model => model.ShoppingCartID)
     @Html.ValidationMessageFor(model => model.ShoppingCartID)
-</div>
+</div>*@
 
 <div class="editor-label">
     @Html.LabelFor(model => model.Quantity)
@@ -19,19 +19,28 @@
 </div>
 
 <div class="editor-label">
-    @Html.LabelFor(model => model.DateCreated)
+    @Html.HiddenFor(model => model.DateCreated)
 </div>
-<div class="editor-field">
+@*<div class="editor-field">
     @Html.EditorFor(model => model.DateCreated)
     @Html.ValidationMessageFor(model => model.DateCreated)
-</div>
+</div>*@
 
 <div class="editor-label">
-    @Html.LabelFor(model => model.ModifiedDate)
+    @Html.HiddenFor(model => model.ModifiedDate)
 </div>
-<div class="editor-field">
+@*<div class="editor-field">
     @Html.EditorFor(model => model.ModifiedDate)
     @Html.ValidationMessageFor(model => model.ModifiedDate)
+</div>*@
+
+<div class="editor-field">
+@Html.HiddenFor(model => model.ShoppingCartID)
+@Html.ValidationMessageFor(model => model.ShoppingCartID)
+@Html.HiddenFor(model => model.DateCreated)
+@Html.ValidationMessageFor(model => model.DateCreated)
+@Html.HiddenFor(model => model.ModifiedDate)
+@Html.ValidationMessageFor(model => model.ModifiedDate)
 </div>
 
 <div class="editor-label">

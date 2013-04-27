@@ -32,13 +32,42 @@ namespace Adventureworks.WebMVC4.Models
             return context.ShoppingCartItems.Find(id);
         }
 
+        public void AddToCart(string shoppingCartID, int productID, int quantity)
+        {
+            ShoppingCartItem myItem =
+                (from c in context.ShoppingCartItems
+                 where c.ShoppingCartID == shoppingCartID && c.ProductID == productID
+                 select c).FirstOrDefault();
+            if (myItem == null)
+            {
+                var cartadd = new ShoppingCartItem
+                {
+                    ShoppingCartID = shoppingCartID,
+                    Quantity = quantity,
+                    ProductID = productID,
+                    DateCreated = DateTime.Now,
+                    ModifiedDate = DateTime.Now
+                };
+                context.ShoppingCartItems.Add(cartadd);
+            }
+            else
+            {
+                myItem.Quantity += quantity;
+            }
+
+            context.SaveChanges();
+        }
+
         public void InsertOrUpdate(ShoppingCartItem shoppingcartitem)
         {
             if (shoppingcartitem.ShoppingCartItemID == default(int)) {
                 // New entity
+                shoppingcartitem.DateCreated = DateTime.Now;
+                shoppingcartitem.ModifiedDate = DateTime.Now;
                 context.ShoppingCartItems.Add(shoppingcartitem);
             } else {
                 // Existing entity
+                shoppingcartitem.ModifiedDate = DateTime.Now;
                 context.Entry(shoppingcartitem).State = EntityState.Modified;
             }
         }
@@ -98,6 +127,7 @@ namespace Adventureworks.WebMVC4.Models
         IQueryable<ShoppingCartItem> All { get; }
         IQueryable<ShoppingCartItem> AllIncluding(params Expression<Func<ShoppingCartItem, object>>[] includeProperties);
         ShoppingCartItem Find(int id);
+        void AddToCart(string shoppingCartID, int productID, int quantity);
         void InsertOrUpdate(ShoppingCartItem shoppingcartitem);
         void Delete(int id);
         IQueryable<ShoppingCartItem> FindByCartID(string shoppingCartID);

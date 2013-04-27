@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Newtonsoft.Json;
+using StructureMap;
 using Adventureworks.Domain5;
 using Adventureworks.WebMVC4.Models;
 
@@ -12,16 +14,19 @@ namespace Adventureworks.WebMVC4.Controllers
     {
 		private readonly IProductRepository productRepository;
 		private readonly IShoppingCartItemRepository shoppingcartitemRepository;
+        private readonly string _cartID;
 
-		// If you are using Dependency Injection, you can delete the following constructor
-        public ShoppingCartController() : this(new ProductRepository(), new ShoppingCartItemRepository())
-        {
-        }
+        //// If you are using Dependency Injection, you can delete the following constructor
+        //public ShoppingCartController() : this(new ProductRepository(), new ShoppingCartItemRepository())
+        //{
+        //}
 
         public ShoppingCartController(IProductRepository productRepository, IShoppingCartItemRepository shoppingcartitemRepository)
         {
-			this.productRepository = productRepository;
-			this.shoppingcartitemRepository = shoppingcartitemRepository;
+            this.productRepository = (IProductRepository)ObjectFactory.GetInstance(typeof(IProductRepository));
+            this.shoppingcartitemRepository = (IShoppingCartItemRepository)ObjectFactory.GetInstance(typeof(IShoppingCartItemRepository));
+            //Mocking for CustomerID 20621
+            this._cartID = "20621";
         }
 
         //
@@ -29,7 +34,12 @@ namespace Adventureworks.WebMVC4.Controllers
 
         public ViewResult Index()
         {
-            return View(shoppingcartitemRepository.AllIncluding(shoppingcartitem => shoppingcartitem.Product));
+           //return View(shoppingcartitemRepository.AllIncluding(shoppingcartitem => shoppingcartitem.Product));
+            //Original MVC3 site inaccurately associated the cart id with the username. 
+            //Should be associated with the CustomerID from Sales.Customer table.
+
+            
+            return View(shoppingcartitemRepository.FindByCartID(_cartID).AsEnumerable());
         }
 
         //
@@ -46,7 +56,12 @@ namespace Adventureworks.WebMVC4.Controllers
         public ActionResult Create()
         {
 			ViewBag.PossibleProducts = productRepository.All;
-            return View();
+            var _item = new ShoppingCartItem();
+            _item = SetCartID(_item, _cartID);
+            _item.DateCreated = DateTime.Now;
+            _item.ModifiedDate = DateTime.Now;
+
+            return View(_item);
         } 
 
         //
@@ -56,13 +71,41 @@ namespace Adventureworks.WebMVC4.Controllers
         public ActionResult Create(ShoppingCartItem shoppingcartitem)
         {
             if (ModelState.IsValid) {
-                shoppingcartitemRepository.InsertOrUpdate(shoppingcartitem);
+
+                shoppingcartitemRepository.InsertOrUpdate(SetCartID(shoppingcartitem, _cartID));
                 shoppingcartitemRepository.Save();
                 return RedirectToAction("Index");
             } else {
 				ViewBag.PossibleProducts = productRepository.All;
 				return View();
 			}
+        }
+
+        [HttpPost]
+        public JsonResult JsonAddToCart(int id)
+        {
+            Product product = productRepository.Find(id);
+
+            if (product != null)
+            {
+                this.shoppingcartitemRepository.AddToCart(_cartID, id, 1);
+
+                return Json(new
+                {
+                    Id = product.ProductID,
+                    product.Name,
+                    LargeUrl = VirtualPathUtility.ToAbsolute("~/Image/ProductThumbnail?productPhotoID=" + product.ProductProductPhotoes.FirstOrDefault<ProductProductPhoto>().ProductPhotoID)
+                });
+            }
+            else {
+                string _error = "Product could not be found.";
+                ModelState.AddModelError("Error", new Exception(_error));
+
+                return Json(new Exception(_error));
+
+                
+
+            }
         }
         
         //
@@ -81,7 +124,7 @@ namespace Adventureworks.WebMVC4.Controllers
         public ActionResult Edit(ShoppingCartItem shoppingcartitem)
         {
             if (ModelState.IsValid) {
-                shoppingcartitemRepository.InsertOrUpdate(shoppingcartitem);
+                shoppingcartitemRepository.InsertOrUpdate(SetCartID(shoppingcartitem, _cartID));
                 shoppingcartitemRepository.Save();
                 return RedirectToAction("Index");
             } else {
@@ -109,6 +152,13 @@ namespace Adventureworks.WebMVC4.Controllers
 
             return RedirectToAction("Index");
         }
+
+        private Func<ShoppingCartItem, string, ShoppingCartItem> SetCartID = delegate(ShoppingCartItem _item, string _ID)
+        {
+            _item.ShoppingCartID = _ID;
+
+            return _item;
+        };
 
         protected override void Dispose(bool disposing)
         {
