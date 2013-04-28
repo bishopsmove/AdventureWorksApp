@@ -64,11 +64,12 @@ namespace Adventureworks.WebMVC4
         public RepositoryRegistry()
         {
             For<DbContext>().HttpContextScoped().Use(() => new AdventureWorksEntitiesContainer());
-            For<IVendorProposalRepository>().HttpContextScoped().Use<VendorProposalRepository>();
+            For<IVendorProposalRepository>().HttpContextScoped().Use<VendorProposalRepository>(); //.Ctor<string>("connectionString").Named("VendorProposalConnection");
             For<IProductSubcategoryRepository>().Use<ProductSubcategoryRepository>();
             For<IProductModelRepository>().Use<ProductModelRepository>();
             For<IProductRepository>().Use<ProductRepository>();
             For<IShoppingCartItemRepository>().Use<ShoppingCartItemRepository>();
+            //For<PurchasingContext>().HttpContextScoped().Use(() => new IDatabaseInitializer<PurchasingContext>());
         }
     }
 }

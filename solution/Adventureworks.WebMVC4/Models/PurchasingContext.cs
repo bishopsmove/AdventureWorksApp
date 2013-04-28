@@ -1,16 +1,19 @@
 ﻿
 
-namespace Adventureworks.Domain5.ContextExtensions
+namespace Adventureworks.WebMVC4.Models
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using Adventureworks.Domain5;
+    using Adventureworks.WebMVC4.Filters;
     
     public partial class PurchasingContext : DbContext
     {
-        public PurchasingContext() : base()
+        public PurchasingContext()
         {
-
+            Database.SetInitializer(new PurchasingInitializer());
+            //PurchasingInitializer.SeedDatabase(this);
         }
 
         public DbSet<VendorProposal> VendorProposals { get; set; }

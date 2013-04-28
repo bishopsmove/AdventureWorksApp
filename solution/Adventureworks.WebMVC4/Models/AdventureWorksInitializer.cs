@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Data.Entity;
-using Adventureworks.Domain5.ContextExtensions;
+//using Adventureworks.Domain5.ContextExtensions;
 
 namespace Adventureworks.WebMVC4.Models
 {

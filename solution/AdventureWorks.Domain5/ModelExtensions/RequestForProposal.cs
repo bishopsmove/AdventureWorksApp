@@ -5,6 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
 
 namespace Adventureworks.Domain5
@@ -15,7 +16,8 @@ namespace Adventureworks.Domain5
     {
         [Key]
         [DataMember(IsRequired = true)]
-        public Guid ID { get; set; }
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        public Guid RFPID { get; set; }
 
         [DataMember(IsRequired = true)]
         public string Title { get; set; }
