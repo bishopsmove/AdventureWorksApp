@@ -19,10 +19,11 @@ namespace Adventureworks.Domain5
             : base("name=AdventureWorksEntitiesContainer")
         {
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            throw new UnintentionalCodeFirstException();
+            modelBuilder.Entity<vVendorWithAddress>()
+                .HasKey(v => v.BusinessEntityID);
         }
     
         public DbSet<DatabaseLog> DatabaseLogs { get; set; }
@@ -93,6 +94,7 @@ namespace Adventureworks.Domain5
         public DbSet<SpecialOffer> SpecialOffers { get; set; }
         public DbSet<SpecialOfferProduct> SpecialOfferProducts { get; set; }
         public DbSet<Store> Stores { get; set; }
-        public DbSet<Vendor1> Vendors1 { get; set; }
+        public DbSet<VendorPlus> VendorsPlus { get; set; }
+        public DbSet<vVendorWithAddress> vVendorWithAddresses { get; set; }
     }
 }

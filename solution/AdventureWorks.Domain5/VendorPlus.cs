@@ -13,7 +13,7 @@ namespace Adventureworks.Domain5
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     
-    public partial class Vendor1
+    public partial class VendorPlus
     {
     	public int BusinessEntityID { get; set; }
     	public string AccountNumber { get; set; }

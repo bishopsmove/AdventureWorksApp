@@ -75,6 +75,19 @@
           <EntitySet Name="WorkOrderRoutings" EntityType="AdventureWorksEntities.Store.WorkOrderRoutings" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="WorkOrders" EntityType="AdventureWorksEntities.Store.WorkOrders" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Vendor" EntityType="AdventureWorksEntities.Store.Vendor" store:Type="Tables" Schema="Purchasing" />
+          <EntitySet Name="vVendorWithAddresses" EntityType="AdventureWorksEntities.Store.vVendorWithAddresses" store:Type="Views" store:Schema="Purchasing" store:Name="vVendorWithAddresses">
+            <DefiningQuery>SELECT 
+      [vVendorWithAddresses].[BusinessEntityID] AS [BusinessEntityID], 
+      [vVendorWithAddresses].[Name] AS [Name], 
+      [vVendorWithAddresses].[AddressType] AS [AddressType], 
+      [vVendorWithAddresses].[AddressLine1] AS [AddressLine1], 
+      [vVendorWithAddresses].[AddressLine2] AS [AddressLine2], 
+      [vVendorWithAddresses].[City] AS [City], 
+      [vVendorWithAddresses].[StateProvinceName] AS [StateProvinceName], 
+      [vVendorWithAddresses].[PostalCode] AS [PostalCode], 
+      [vVendorWithAddresses].[CountryRegionName] AS [CountryRegionName]
+      FROM [Purchasing].[vVendorWithAddresses] AS [vVendorWithAddresses]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_Address_StateProvince_StateProvinceID" Association="AdventureWorksEntities.Store.FK_Address_StateProvince_StateProvinceID">
             <End Role="StateProvinces" EntitySet="StateProvinces" />
             <End Role="Addresses" EntitySet="Addresses" />
@@ -1269,6 +1282,30 @@
           <Property Name="ActiveFlag" Type="bit" Nullable="false" />
           <Property Name="PurchasingWebServiceURL" Type="nvarchar" MaxLength="1024" />
           <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'AdventureWorks2008R2.Purchasing.vVendorWithAddresses' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vVendorWithAddresses">
+          <Key>
+            <PropertyRef Name="BusinessEntityID" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="AddressType" />
+            <PropertyRef Name="AddressLine1" />
+            <PropertyRef Name="City" />
+            <PropertyRef Name="StateProvinceName" />
+            <PropertyRef Name="PostalCode" />
+            <PropertyRef Name="CountryRegionName" />
+          </Key>
+          <Property Name="BusinessEntityID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="AddressType" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="AddressLine1" Type="nvarchar" Nullable="false" MaxLength="60" />
+          <Property Name="AddressLine2" Type="nvarchar" MaxLength="60" />
+          <Property Name="City" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="StateProvinceName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="PostalCode" Type="nvarchar" Nullable="false" MaxLength="15" />
+          <Property Name="CountryRegionName" Type="nvarchar" Nullable="false" MaxLength="50" />
         </EntityType>
         <Association Name="FK_Address_StateProvince_StateProvinceID">
           <End Role="StateProvinces" Type="AdventureWorksEntities.Store.StateProvinces" Multiplicity="1" />
@@ -2737,7 +2774,8 @@
             <End Role="SpecialOffer" EntitySet="SpecialOffers" />
             <End Role="SpecialOfferProduct" EntitySet="SpecialOfferProducts" />
           </AssociationSet>
-          <EntitySet Name="Vendors1" EntityType="AdventureWorksEntities.Vendor1" />
+          <EntitySet Name="Vendors1" EntityType="AdventureWorksEntities.VendorPlus" />
+          <EntitySet Name="vVendorWithAddresses" EntityType="AdventureWorksEntities.vVendorWithAddress" />
         </EntityContainer>
         <EntityType Name="DatabaseLog">
           <Key>
@@ -4792,7 +4830,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="Vendor1">
+        <EntityType Name="VendorPlus">
           <Key>
             <PropertyRef Name="BusinessEntityID" />
           </Key>
@@ -4804,6 +4842,27 @@
           <Property Type="Boolean" Name="ActiveFlag" Nullable="false" />
           <Property Type="String" Name="PurchasingWebServiceURL" MaxLength="1024" FixedLength="false" Unicode="true" />
           <Property Type="DateTime" Name="ModifiedDate" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vVendorWithAddress">
+          <Key>
+            <PropertyRef Name="BusinessEntityID" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="AddressType" />
+            <PropertyRef Name="AddressLine1" />
+            <PropertyRef Name="City" />
+            <PropertyRef Name="StateProvinceName" />
+            <PropertyRef Name="PostalCode" />
+            <PropertyRef Name="CountryRegionName" />
+          </Key>
+          <Property Type="Int32" Name="BusinessEntityID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AddressType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AddressLine1" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AddressLine2" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StateProvinceName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PostalCode" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CountryRegionName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -5683,7 +5742,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
           <EntitySetMapping Name="Vendors1">
-            <EntityTypeMapping TypeName="AdventureWorksEntities.Vendor1">
+            <EntityTypeMapping TypeName="AdventureWorksEntities.VendorPlus">
               <MappingFragment StoreEntitySet="Vendor">
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="PurchasingWebServiceURL" ColumnName="PurchasingWebServiceURL" />
@@ -5692,6 +5751,21 @@
                 <ScalarProperty Name="CreditRating" ColumnName="CreditRating" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+                <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vVendorWithAddresses">
+            <EntityTypeMapping TypeName="AdventureWorksEntities.vVendorWithAddress">
+              <MappingFragment StoreEntitySet="vVendorWithAddresses">
+                <ScalarProperty Name="CountryRegionName" ColumnName="CountryRegionName" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="StateProvinceName" ColumnName="StateProvinceName" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+                <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+                <ScalarProperty Name="AddressType" ColumnName="AddressType" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -5765,7 +5839,7 @@
         <EntityTypeShape EntityType="AdventureWorksEntities.PurchaseOrderDetail" Width="1.5" PointX="14.25" PointY="18.75" Height="3.5186979166666674" />
         <EntityTypeShape EntityType="AdventureWorksEntities.PurchaseOrderHeader" Width="1.5" PointX="12" PointY="8.375" Height="4.287903645833353" />
         <EntityTypeShape EntityType="AdventureWorksEntities.ShipMethod" Width="1.5" PointX="9.75" PointY="10.25" Height="2.5571907552083246" />
-        <EntityTypeShape EntityType="AdventureWorksEntities.Vendor" Width="1.5" PointX="9.75" PointY="13.5" Height="3.1340950520833264" />
+        <EntityTypeShape EntityType="AdventureWorksEntities.Vendor" Width="2" PointX="9.5" PointY="13.5" Height="3.1340950520833264" />
         <EntityTypeShape EntityType="AdventureWorksEntities.CountryRegionCurrency" Width="1.5" PointX="17" PointY="59" Height="1.9802864583333246" />
         <EntityTypeShape EntityType="AdventureWorksEntities.CreditCard" Width="1.5" PointX="12" PointY="62" Height="2.5571907552083175" />
         <EntityTypeShape EntityType="AdventureWorksEntities.Currency" Width="1.5" PointX="9.75" PointY="65.625" Height="2.1725878906249818" />
@@ -5786,40 +5860,49 @@
         <EntityTypeShape EntityType="AdventureWorksEntities.SpecialOfferProduct" Width="1.5" PointX="14.25" PointY="28.375" Height="2.3648893229166674" />
         <EntityTypeShape EntityType="AdventureWorksEntities.Store" Width="1.5" PointX="9.75" PointY="69.5" Height="2.7494921874999818" />
         <AssociationConnector Association="AdventureWorksEntities.FK_EmployeeDepartmentHistory_Department_DepartmentID" >
-          <ConnectorPoint PointX="14.25" PointY="42.490143229166669" />
-          <ConnectorPoint PointX="14.416666666666666" PointY="42.490143229166669" />
-          <ConnectorPoint PointX="14.723956833333334" PointY="42.490143229166669" />
-          <ConnectorPoint PointX="14.947918666666666" PointY="42.490143229166669" />
-          <ConnectorPoint PointX="15.114585333333334" PointY="42.490143229166669" />
-          <ConnectorPoint PointX="15.822916666666666" PointY="42.490143229166669" />
-          <ConnectorPoint PointX="15.989583333333334" PointY="42.490143229166669" />
-          <ConnectorPoint PointX="16" PointY="42.490143229166669" />
-          <ConnectorPoint PointX="16" PointY="12.432190755208339" />
-          <ConnectorPoint PointX="16.5" PointY="12.432190755208339" />
-          <ConnectorPoint PointX="16.5" PointY="8.7494921875" />
-          <ConnectorPoint PointX="15.75" PointY="8.7494921875" />
-          <ConnectorPoint PointX="15.75" PointY="8.3744921875" />
+          <ConnectorPoint PointX="14.625" PointY="42.490143229166669" />
+          <ConnectorPoint PointX="14.635779963279861" PointY="42.30498687263119" />
+          <ConnectorPoint PointX="14.64546703672014" PointY="42.13860196229993" />
+          <ConnectorPoint PointX="15.24515646327986" PointY="31.838352657918591" />
+          <ConnectorPoint PointX="15.25484353672014" PointY="31.671967747587331" />
+          <ConnectorPoint PointX="15.90140646327986" PointY="20.566620480184241" />
+          <ConnectorPoint PointX="15.91109353672014" PointY="20.400235569852981" />
+          <ConnectorPoint PointX="16.120156463279859" PointY="16.8093764209394" />
+          <ConnectorPoint PointX="16.129843536720141" PointY="16.642991510608141" />
+          <ConnectorPoint PointX="16.375" PointY="12.432190755208339" />
+          <ConnectorPoint PointX="16.375" PointY="12.432190755208339" />
+          <ConnectorPoint PointX="16.738788692912212" PointY="9.7527425585357541" />
+          <ConnectorPoint PointX="16.761211307087788" PointY="9.5875911003184235" />
+          <ConnectorPoint PointX="16.875" PointY="8.7494921875" />
+          <ConnectorPoint PointX="16.125" PointY="8.7494921875" />
+          <ConnectorPoint PointX="16.125" PointY="8.3744921875" />
+          <ConnectorPoint PointX="16.125" PointY="8.7494921875" />
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_Employee_Person_BusinessEntityID" >
           <ConnectorPoint PointX="9" PointY="6.903554687499998" />
-          <ConnectorPoint PointX="9.4166666666666661" PointY="6.9035546874999971" />
-          <ConnectorPoint PointX="9.5833333333333339" PointY="6.903554687499998" />
+          <ConnectorPoint PointX="9.1666666666666661" PointY="6.9035546874999971" />
+          <ConnectorPoint PointX="9.3333333333333339" PointY="6.903554687499998" />
           <ConnectorPoint PointX="9.75" PointY="6.903554687499998" />
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_EmployeeDepartmentHistory_Employee_BusinessEntityID" >
-          <ConnectorPoint PointX="11.25" PointY="7.8047900390625" />
+          <ConnectorPoint PointX="11.625" PointY="7.8047900390625" />
           <ConnectorPoint PointX="13.666666666666666" PointY="7.8047900390624987" />
           <ConnectorPoint PointX="13.833333333333334" PointY="7.8047900390625" />
-          <ConnectorPoint PointX="15" PointY="7.8047900390625" />
+          <ConnectorPoint PointX="14.604166666666666" PointY="7.8047900390624987" />
+          <ConnectorPoint PointX="14.770833333333334" PointY="7.8047900390625" />
+          <ConnectorPoint PointX="15.375" PointY="7.8047900390625" />
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_EmployeePayHistory_Employee_BusinessEntityID" >
           <ConnectorPoint PointX="11.25" PointY="6.0862939453125" />
           <ConnectorPoint PointX="12" PointY="6.0862939453125" />
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_JobCandidate_Employee_BusinessEntityID" >
-          <ConnectorPoint PointX="11.25" PointY="9.432109375" />
-          <ConnectorPoint PointX="11.625" PointY="9.807109375" />
-          <ConnectorPoint PointX="11.625" PointY="14.865143229166666" />
+          <ConnectorPoint PointX="10.5" PointY="9.432109375" />
+          <ConnectorPoint PointX="10.5" PointY="10" />
+          <ConnectorPoint PointX="11.322916666666666" PointY="10" />
+          <ConnectorPoint PointX="11.489583333333334" PointY="10" />
+          <ConnectorPoint PointX="11.75" PointY="10" />
+          <ConnectorPoint PointX="11.75" PointY="14.865143229166666" />
           <ConnectorPoint PointX="12" PointY="14.865143229166666" />
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_PurchaseOrderHeader_Employee_EmployeeID" >
@@ -5829,17 +5912,13 @@
           <ConnectorPoint PointX="12" PointY="8.872302187499999" />
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_SalesPerson_Employee_BusinessEntityID" >
-          <ConnectorPoint PointX="9.75" PointY="8.1990840312499991" />
-          <ConnectorPoint PointX="9.5833333333333339" PointY="8.1990840312499991" />
-          <ConnectorPoint PointX="9.4166666666666661" PointY="8.1990840312499991" />
-          <ConnectorPoint PointX="9.25" PointY="8.1990840312499991" />
+          <ConnectorPoint PointX="9.75" PointY="6.271416265625" />
+          <ConnectorPoint PointX="9.25" PointY="6.271416265625" />
           <ConnectorPoint PointX="9.25" PointY="17.625" />
           <ConnectorPoint PointX="8" PointY="17.625" />
           <ConnectorPoint PointX="8" PointY="54" />
           <ConnectorPoint PointX="7.25" PointY="54" />
           <ConnectorPoint PointX="7.25" PointY="68.625" />
-          <ConnectorPoint PointX="7.7604141666666671" PointY="68.625" />
-          <ConnectorPoint PointX="7.9270808333333331" PointY="68.625" />
           <ConnectorPoint PointX="8.25" PointY="68.625" />
           <ConnectorPoint PointX="8.25" PointY="69" />
         </AssociationConnector>
@@ -5853,10 +5932,10 @@
           <ConnectorPoint PointX="15.989583333333334" PointY="45.3362939453125" />
           <ConnectorPoint PointX="16.125" PointY="45.3362939453125" />
           <ConnectorPoint PointX="16.125" PointY="12.682190755208339" />
+          <ConnectorPoint PointX="16.291666666666668" PointY="12.682190755208339" />
+          <ConnectorPoint PointX="16.458333333333332" PointY="12.682190755208339" />
           <ConnectorPoint PointX="16.75" PointY="12.682190755208339" />
           <ConnectorPoint PointX="16.75" PointY="8.9994921875" />
-          <ConnectorPoint PointX="16.583333333333332" PointY="8.9994921875" />
-          <ConnectorPoint PointX="16.416666666666668" PointY="8.9994921875" />
           <ConnectorPoint PointX="15.343748" PointY="8.9994921875" />
           <ConnectorPoint PointX="15.343748" PointY="8.3744921875" />
         </AssociationConnector>
@@ -5876,9 +5955,11 @@
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_SalesOrderHeader_Address_BillToAddressID" >
           <ConnectorPoint PointX="13.5" PointY="59.299857022836534" />
+          <ConnectorPoint PointX="13.607741101567788" PointY="59.407598124404316" />
+          <ConnectorPoint PointX="13.725592231765544" PointY="59.52544925460208" />
           <ConnectorPoint PointX="13.75" PointY="59.549857022836534" />
           <ConnectorPoint PointX="13.75" PointY="59.099616384615388" />
-          <ConnectorPoint PointX="14.275383615384616" PointY="59.625" />
+          <ConnectorPoint PointX="15" PointY="59.625" />
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_SalesOrderHeader_Address_ShipToAddressID" >
           <ConnectorPoint PointX="13.5" PointY="59.318318561298078" />
@@ -5901,7 +5982,7 @@
           <ConnectorPoint PointX="7.666666666666667" PointY="36.720896809895834" />
           <ConnectorPoint PointX="8.0833333333333339" PointY="36.720896809895834" />
           <ConnectorPoint PointX="9.9166666666666661" PointY="36.720896809895834" />
-          <ConnectorPoint PointX="10.333333333333334" PointY="36.720896809895834" />
+          <ConnectorPoint PointX="10.374999999999998" PointY="36.720896809895834" />
           <ConnectorPoint PointX="11.041666666666666" PointY="36.720896809895834" />
           <ConnectorPoint PointX="11.208333333333334" PointY="36.720896809895834" />
           <ConnectorPoint PointX="12.572919166666667" PointY="36.720896809895834" />
@@ -5914,18 +5995,16 @@
           <ConnectorPoint PointX="6.75" PointY="6.9035953776041659" />
           <ConnectorPoint PointX="7.25" PointY="6.9035953776041659" />
           <ConnectorPoint PointX="7.25" PointY="9.682109375" />
-          <ConnectorPoint PointX="7.791666666666667" PointY="9.682109375" />
-          <ConnectorPoint PointX="7.958333333333333" PointY="9.682109375" />
-          <ConnectorPoint PointX="8.1666666666666661" PointY="9.682109375" />
-          <ConnectorPoint PointX="8.3333333333333339" PointY="9.682109375" />
-          <ConnectorPoint PointX="8.5729186666666664" PointY="9.682109375" />
-          <ConnectorPoint PointX="8.7395853333333342" PointY="9.682109375" />
+          <ConnectorPoint PointX="7.760416666666667" PointY="9.682109375" />
+          <ConnectorPoint PointX="7.927083333333333" PointY="9.682109375" />
+          <ConnectorPoint PointX="8.3697936666666664" PointY="9.682109375" />
+          <ConnectorPoint PointX="8.5364603333333342" PointY="9.682109375" />
+          <ConnectorPoint PointX="8.6744821666666656" PointY="9.682109375" />
+          <ConnectorPoint PointX="8.8411488333333335" PointY="9.682109375" />
           <ConnectorPoint PointX="9.1666666666666661" PointY="9.682109375" />
           <ConnectorPoint PointX="9.3333333333333339" PointY="9.682109375" />
-          <ConnectorPoint PointX="9.4166666666666661" PointY="9.682109375" />
-          <ConnectorPoint PointX="9.5833333333333339" PointY="9.682109375" />
-          <ConnectorPoint PointX="11.416666666666666" PointY="9.682109375" />
-          <ConnectorPoint PointX="11.583333333333334" PointY="9.682109375" />
+          <ConnectorPoint PointX="10.416666666666666" PointY="9.682109375" />
+          <ConnectorPoint PointX="10.583333333333334" PointY="9.682109375" />
           <ConnectorPoint PointX="11.75" PointY="9.682109375" />
           <ConnectorPoint PointX="11.75" PointY="8.125" />
           <ConnectorPoint PointX="13.666666666666666" PointY="8.125" />
@@ -5951,17 +6030,19 @@
           <ConnectorPoint PointX="9.75" PointY="70.874746093749991" />
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_Vendor_BusinessEntity_BusinessEntityID" >
-          <ConnectorPoint PointX="5.8125025" PointY="8.1821907552083317" />
-          <ConnectorPoint PointX="5.8125025" PointY="14" />
-          <ConnectorPoint PointX="6.1354186666666672" PointY="14" />
-          <ConnectorPoint PointX="6.3020853333333333" PointY="14" />
-          <ConnectorPoint PointX="7.791666666666667" PointY="14" />
-          <ConnectorPoint PointX="7.958333333333333" PointY="14" />
-          <ConnectorPoint PointX="8.5729186666666664" PointY="14" />
-          <ConnectorPoint PointX="8.7395853333333342" PointY="14" />
-          <ConnectorPoint PointX="9.1666666666666661" PointY="14" />
-          <ConnectorPoint PointX="9.3333333333333339" PointY="14" />
-          <ConnectorPoint PointX="9.75" PointY="14" />
+          <ConnectorPoint PointX="5.4374975" PointY="8.1821907552083317" />
+          <ConnectorPoint PointX="5.4374975" PointY="14.031252499999994" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="14.031252499999994" />
+          <ConnectorPoint PointX="5.7812500000000009" PointY="14.031252499999994" />
+          <ConnectorPoint PointX="6.1354186666666672" PointY="14.031252499999994" />
+          <ConnectorPoint PointX="6.3020853333333333" PointY="14.031252499999994" />
+          <ConnectorPoint PointX="7.760416666666667" PointY="14.031252499999994" />
+          <ConnectorPoint PointX="7.927083333333333" PointY="14.031252499999994" />
+          <ConnectorPoint PointX="8.6744821666666656" PointY="14.031252499999994" />
+          <ConnectorPoint PointX="8.8411488333333335" PointY="14.031252499999994" />
+          <ConnectorPoint PointX="9.1666666666666661" PointY="14.031252499999994" />
+          <ConnectorPoint PointX="9.3333333333333339" PointY="14.031252499999994" />
+          <ConnectorPoint PointX="9.5" PointY="14.031252499999994" />
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_BusinessEntityContact_ContactType_ContactTypeID" >
           <ConnectorPoint PointX="14" PointY="48.893992513020834" />
@@ -5973,18 +6054,16 @@
           <ConnectorPoint PointX="15.90625" PointY="12.182190755208339" />
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_BusinessEntityContact_Person_PersonID" >
-          <ConnectorPoint PointX="8.25" PointY="9.432109374999996" />
-          <ConnectorPoint PointX="8.25" PointY="10" />
-          <ConnectorPoint PointX="8.5729186666666664" PointY="10" />
-          <ConnectorPoint PointX="8.7395853333333342" PointY="10" />
+          <ConnectorPoint PointX="8.453127" PointY="9.432109374999996" />
+          <ConnectorPoint PointX="8.453127" PointY="10" />
+          <ConnectorPoint PointX="8.6744821666666656" PointY="10" />
+          <ConnectorPoint PointX="8.8411488333333335" PointY="10" />
           <ConnectorPoint PointX="9.1666666666666661" PointY="10" />
           <ConnectorPoint PointX="9.3333333333333339" PointY="10" />
-          <ConnectorPoint PointX="11.541666666666666" PointY="10" />
-          <ConnectorPoint PointX="11.708333333333334" PointY="10" />
-          <ConnectorPoint PointX="11.75" PointY="10" />
-          <ConnectorPoint PointX="11.75" PointY="12.912903645833353" />
-          <ConnectorPoint PointX="11.791666666666666" PointY="12.912903645833353" />
-          <ConnectorPoint PointX="11.958333333333334" PointY="12.912903645833353" />
+          <ConnectorPoint PointX="11.322916666666666" PointY="10" />
+          <ConnectorPoint PointX="11.489583333333334" PointY="10" />
+          <ConnectorPoint PointX="11.6875" PointY="10" />
+          <ConnectorPoint PointX="11.6875" PointY="12.912903645833353" />
           <ConnectorPoint PointX="13.666666666666666" PointY="12.912903645833353" />
           <ConnectorPoint PointX="13.833333333333334" PointY="12.912903645833353" />
           <ConnectorPoint PointX="14.375" PointY="12.912903645833353" />
@@ -6026,51 +6105,63 @@
           <ConnectorPoint PointX="9.75" PointY="1.8362939453125016" />
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_Password_Person_BusinessEntityID" >
-          <ConnectorPoint PointX="7.875" PointY="9.432109374999996" />
-          <ConnectorPoint PointX="7.875" PointY="45.711293945312505" />
+          <ConnectorPoint PointX="7.84375" PointY="9.432109374999996" />
+          <ConnectorPoint PointX="7.84375" PointY="45.711293945312505" />
           <ConnectorPoint PointX="7.916666666666667" PointY="45.711293945312505" />
           <ConnectorPoint PointX="8.0833333333333339" PointY="45.711293945312505" />
           <ConnectorPoint PointX="9.75" PointY="45.711293945312505" />
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_Customer_Person_PersonID" >
-          <ConnectorPoint PointX="8.656252" PointY="9.432109374999996" />
-          <ConnectorPoint PointX="8.656252" PointY="17.375" />
+          <ConnectorPoint PointX="8.7578155" PointY="9.432109374999996" />
+          <ConnectorPoint PointX="8.7578155" PointY="17.375" />
           <ConnectorPoint PointX="9.1666666666666661" PointY="17.375" />
           <ConnectorPoint PointX="9.3333333333333339" PointY="17.375" />
           <ConnectorPoint PointX="10.75" PointY="17.375" />
-          <ConnectorPoint PointX="10.75" PointY="24" />
-          <ConnectorPoint PointX="10.458333333333334" PointY="24" />
-          <ConnectorPoint PointX="10.291666666666666" PointY="24" />
-          <ConnectorPoint PointX="10.208333333333334" PointY="24" />
-          <ConnectorPoint PointX="10.041666666666666" PointY="24" />
-          <ConnectorPoint PointX="10" PointY="24" />
+          <ConnectorPoint PointX="10.75" PointY="24.25" />
+          <ConnectorPoint PointX="10.458333333333334" PointY="24.25" />
+          <ConnectorPoint PointX="10.291666666666666" PointY="24.25" />
+          <ConnectorPoint PointX="10.208333333333334" PointY="24.25" />
+          <ConnectorPoint PointX="10.041666666666666" PointY="24.25" />
+          <ConnectorPoint PointX="10" PointY="24.25" />
           <ConnectorPoint PointX="10" PointY="37.125" />
           <ConnectorPoint PointX="10.666666666666666" PointY="37.125" />
           <ConnectorPoint PointX="10.833333333333334" PointY="37.125" />
           <ConnectorPoint PointX="11.041666666666666" PointY="37.125" />
           <ConnectorPoint PointX="11.208333333333334" PointY="37.125" />
           <ConnectorPoint PointX="11.5" PointY="37.125" />
-          <ConnectorPoint PointX="11.5" PointY="70.942047526041677" />
-          <ConnectorPoint PointX="11.541666666666666" PointY="70.942047526041677" />
-          <ConnectorPoint PointX="11.708333333333334" PointY="70.942047526041677" />
-          <ConnectorPoint PointX="12" PointY="70.942047526041677" />
+          <ConnectorPoint PointX="11.5" PointY="70.973299526041671" />
+          <ConnectorPoint PointX="11.541666666666666" PointY="70.973299526041671" />
+          <ConnectorPoint PointX="11.708333333333334" PointY="70.973299526041671" />
+          <ConnectorPoint PointX="12" PointY="70.973299526041671" />
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_PersonCreditCard_Person_BusinessEntityID" >
-          <ConnectorPoint PointX="9" PointY="5.6080253437500058" />
-          <ConnectorPoint PointX="9.5" PointY="5.6080253437500058" />
-          <ConnectorPoint PointX="9.5" PointY="9.807109375" />
-          <ConnectorPoint PointX="11.875" PointY="9.807109375" />
-          <ConnectorPoint PointX="11.875" PointY="13.162903645833353" />
-          <ConnectorPoint PointX="13.666666666666666" PointY="13.162903645833353" />
-          <ConnectorPoint PointX="13.833333333333334" PointY="13.162903645833353" />
-          <ConnectorPoint PointX="14.447916666666666" PointY="13.162903645833353" />
-          <ConnectorPoint PointX="14.614583333333334" PointY="13.162903645833353" />
-          <ConnectorPoint PointX="15.822916666666666" PointY="13.162903645833351" />
-          <ConnectorPoint PointX="16.208333333333332" PointY="13.162903645833353" />
-          <ConnectorPoint PointX="16.25" PointY="13.162903645833353" />
+          <ConnectorPoint PointX="9" PointY="8.1678315312499983" />
+          <ConnectorPoint PointX="9.1666666666666661" PointY="8.1678315312499983" />
+          <ConnectorPoint PointX="9.3333333333333339" PointY="8.1678315312499983" />
+          <ConnectorPoint PointX="9.5" PointY="8.1678315312499983" />
+          <ConnectorPoint PointX="9.5" PointY="9.697734375" />
+          <ConnectorPoint PointX="10.416666666666666" PointY="9.697734375" />
+          <ConnectorPoint PointX="10.583333333333334" PointY="9.697734375" />
+          <ConnectorPoint PointX="11.6875" PointY="9.697734375" />
+          <ConnectorPoint PointX="11.6875" PointY="7.422587890625" />
+          <ConnectorPoint PointX="13.666666666666666" PointY="7.4225878906249987" />
+          <ConnectorPoint PointX="13.833333333333334" PointY="7.422587890625" />
+          <ConnectorPoint PointX="14.6875" PointY="7.422587890625" />
+          <ConnectorPoint PointX="14.6875" PointY="8.6401171875" />
+          <ConnectorPoint PointX="15.260414666666666" PointY="8.6401171875" />
+          <ConnectorPoint PointX="15.427081333333334" PointY="8.6401171875" />
+          <ConnectorPoint PointX="16.041666666666668" PointY="8.6401171875" />
+          <ConnectorPoint PointX="16.208333333333332" PointY="8.6401171875" />
+          <ConnectorPoint PointX="17.25" PointY="8.6401171875" />
+          <ConnectorPoint PointX="17.25" PointY="27.5" />
+          <ConnectorPoint PointX="16.458333333333332" PointY="27.5" />
+          <ConnectorPoint PointX="16.291666666666668" PointY="27.5" />
+          <ConnectorPoint PointX="16.25" PointY="27.5" />
           <ConnectorPoint PointX="16.25" PointY="33.125" />
-          <ConnectorPoint PointX="17" PointY="33.125" />
-          <ConnectorPoint PointX="17" PointY="33.5" />
+          <ConnectorPoint PointX="16.291666666666668" PointY="33.125" />
+          <ConnectorPoint PointX="16.458333333333332" PointY="33.125" />
+          <ConnectorPoint PointX="17.0624995" PointY="33.125" />
+          <ConnectorPoint PointX="17.0624995" PointY="33.5" />
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_PersonPhone_Person_BusinessEntityID" >
           <ConnectorPoint PointX="8.6562525" PointY="4.375" />
@@ -6126,12 +6217,12 @@
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_ProductModelIllustration_Illustration_IllustrationID" >
           <ConnectorPoint PointX="5.25" PointY="12.850676333733976" />
-          <ConnectorPoint PointX="5.5660744349011217" PointY="13.166750768635096" />
-          <ConnectorPoint PointX="5.6839255650988791" PointY="13.284601898832854" />
-          <ConnectorPoint PointX="5.6875" PointY="13.288176333733976" />
-          <ConnectorPoint PointX="5.6875" PointY="18.990143229166669" />
+          <ConnectorPoint PointX="5.37788281839954" PointY="12.975585133100966" />
+          <ConnectorPoint PointX="5.4971121816004613" PointY="13.092041720413494" />
+          <ConnectorPoint PointX="5.56538531839954" PointY="13.158727109845152" />
+          <ConnectorPoint PointX="5.6846146816004612" PointY="13.275183697157681" />
+          <ConnectorPoint PointX="5.697916666666667" PointY="13.288176333733976" />
           <ConnectorPoint PointX="5.697916666666667" PointY="18.990143229166669" />
-          <ConnectorPoint PointX="5.864583333333333" PointY="18.990143229166669" />
           <ConnectorPoint PointX="6" PointY="18.990143229166669" />
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_ProductInventory_Location_LocationID" >
@@ -6139,8 +6230,8 @@
           <ConnectorPoint PointX="9.75" PointY="39.989889322916667" />
           <ConnectorPoint PointX="10.75" PointY="39.989889322916667" />
           <ConnectorPoint PointX="10.75" PointY="36.941793619791667" />
-          <ConnectorPoint PointX="10.25" PointY="36.941793619791667" />
-          <ConnectorPoint PointX="10.25" PointY="25.499746093750005" />
+          <ConnectorPoint PointX="10.291666666666666" PointY="36.941793619791667" />
+          <ConnectorPoint PointX="10.291666666666666" PointY="25.499746093750005" />
           <ConnectorPoint PointX="10.291666666666666" PointY="25.499746093750005" />
           <ConnectorPoint PointX="10.458333333333334" PointY="25.499746093750005" />
           <ConnectorPoint PointX="11.25" PointY="25.499746093750005" />
@@ -6182,10 +6273,8 @@
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_ProductCostHistory_Product_ProductID" >
           <ConnectorPoint PointX="7.5" PointY="21.063460538461534" />
-          <ConnectorPoint PointX="7.6910744349011209" PointY="20.872386103560412" />
-          <ConnectorPoint PointX="7.8089255650988791" PointY="20.754534973362656" />
-          <ConnectorPoint PointX="7.8160744349011209" PointY="20.747386103560412" />
-          <ConnectorPoint PointX="7.9339255650988791" PointY="20.629534973362656" />
+          <ConnectorPoint PointX="7.69107443490112" PointY="20.872386103560412" />
+          <ConnectorPoint PointX="7.9026755650988791" PointY="20.660784973362656" />
           <ConnectorPoint PointX="7.9375" PointY="20.625960538461534" />
           <ConnectorPoint PointX="7.9375" PointY="18.961293945312498" />
           <ConnectorPoint PointX="8.25" PointY="18.961293945312498" />
@@ -6209,7 +6298,7 @@
           <ConnectorPoint PointX="7.666666666666667" PointY="21.344232769230761" />
           <ConnectorPoint PointX="8.0833333333333339" PointY="21.344232769230761" />
           <ConnectorPoint PointX="10.666666666666666" PointY="21.344232769230761" />
-          <ConnectorPoint PointX="10.958333333333334" PointY="21.344232769230761" />
+          <ConnectorPoint PointX="10.979166666666666" PointY="21.344232769230761" />
           <ConnectorPoint PointX="11.041666666666666" PointY="21.344232769230761" />
           <ConnectorPoint PointX="11.208333333333334" PointY="21.344232769230761" />
           <ConnectorPoint PointX="11.25" PointY="21.344232769230761" />
@@ -6241,11 +6330,11 @@
           <ConnectorPoint PointX="7.666666666666667" PointY="20.25" />
           <ConnectorPoint PointX="8.0833333333333339" PointY="20.25" />
           <ConnectorPoint PointX="10.666666666666666" PointY="20.25" />
-          <ConnectorPoint PointX="10.958333333333334" PointY="20.25" />
+          <ConnectorPoint PointX="10.979166666666666" PointY="20.25" />
           <ConnectorPoint PointX="13.166666666666666" PointY="20.25" />
           <ConnectorPoint PointX="13.333333333333334" PointY="20.25" />
-          <ConnectorPoint PointX="13.875" PointY="20.25" />
-          <ConnectorPoint PointX="13.875" PointY="20.509348958333334" />
+          <ConnectorPoint PointX="13.916666666666666" PointY="20.25" />
+          <ConnectorPoint PointX="13.916666666666666" PointY="20.509348958333334" />
           <ConnectorPoint PointX="13.916666666666666" PointY="20.509348958333334" />
           <ConnectorPoint PointX="14.083333333333334" PointY="20.509348958333334" />
           <ConnectorPoint PointX="14.25" PointY="20.509348958333334" />
@@ -6288,7 +6377,7 @@
           <ConnectorPoint PointX="7.666666666666667" PointY="28.922719726562505" />
           <ConnectorPoint PointX="8.0833333333333339" PointY="28.922719726562505" />
           <ConnectorPoint PointX="9.9166666666666661" PointY="28.922719726562505" />
-          <ConnectorPoint PointX="10.333333333333334" PointY="28.922719726562505" />
+          <ConnectorPoint PointX="10.374999999999998" PointY="28.922719726562505" />
           <ConnectorPoint PointX="11.25" PointY="28.922719726562505" />
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_ProductSubcategory_ProductCategory_ProductCategoryID" >
@@ -6325,9 +6414,9 @@
           <ConnectorPoint PointX="10.291666666666666" PointY="23.662985026041667" />
           <ConnectorPoint PointX="10.458333333333334" PointY="23.662985026041667" />
           <ConnectorPoint PointX="10.666666666666666" PointY="23.662985026041667" />
-          <ConnectorPoint PointX="10.958333333333334" PointY="23.662985026041667" />
-          <ConnectorPoint PointX="11" PointY="23.662985026041667" />
-          <ConnectorPoint PointX="11" PointY="22.039662329927879" />
+          <ConnectorPoint PointX="10.979166666666666" PointY="23.662985026041667" />
+          <ConnectorPoint PointX="11.041666666666666" PointY="23.662985026041667" />
+          <ConnectorPoint PointX="11.041666666666666" PointY="22.039662329927879" />
           <ConnectorPoint PointX="11.041666666666666" PointY="22.039662329927879" />
           <ConnectorPoint PointX="11.208333333333334" PointY="22.039662329927879" />
           <ConnectorPoint PointX="11.25" PointY="22.039662329927879" />
@@ -6350,7 +6439,7 @@
           <ConnectorPoint PointX="7.666666666666667" PointY="20.75" />
           <ConnectorPoint PointX="8.0833333333333339" PointY="20.75" />
           <ConnectorPoint PointX="10.666666666666666" PointY="20.75" />
-          <ConnectorPoint PointX="10.958333333333334" PointY="20.75" />
+          <ConnectorPoint PointX="10.979166666666666" PointY="20.75" />
           <ConnectorPoint PointX="11.125" PointY="20.75" />
           <ConnectorPoint PointX="11.125" PointY="23.375" />
           <ConnectorPoint PointX="13.166666666666666" PointY="23.375" />
@@ -6368,13 +6457,13 @@
           <ConnectorPoint PointX="13.84375" PointY="31.625" />
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_ProductVendor_Vendor_BusinessEntityID" >
-          <ConnectorPoint PointX="10.875" PointY="16.634095052083325" />
-          <ConnectorPoint PointX="10.875" PointY="23.831492513020834" />
-          <ConnectorPoint PointX="13.166666666666666" PointY="23.831492513020834" />
-          <ConnectorPoint PointX="13.333333333333334" PointY="23.831492513020834" />
-          <ConnectorPoint PointX="13.916666666666666" PointY="23.831492513020834" />
-          <ConnectorPoint PointX="14.083333333333334" PointY="23.831492513020834" />
-          <ConnectorPoint PointX="14.25" PointY="23.831492513020834" />
+          <ConnectorPoint PointX="10.895833333333332" PointY="16.634095052083325" />
+          <ConnectorPoint PointX="10.895833333333332" PointY="23.862742513020834" />
+          <ConnectorPoint PointX="13.166666666666666" PointY="23.862742513020834" />
+          <ConnectorPoint PointX="13.333333333333334" PointY="23.862742513020834" />
+          <ConnectorPoint PointX="13.916666666666666" PointY="23.862742513020834" />
+          <ConnectorPoint PointX="14.083333333333334" PointY="23.862742513020834" />
+          <ConnectorPoint PointX="14.25" PointY="23.862742513020834" />
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_PurchaseOrderDetail_PurchaseOrderHeader_PurchaseOrderID" >
           <ConnectorPoint PointX="13.5" PointY="9.28099609375" />
@@ -6385,26 +6474,23 @@
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_PurchaseOrderHeader_ShipMethod_ShipMethodID" >
           <ConnectorPoint PointX="11.25" PointY="11.456451822916677" />
-          <ConnectorPoint PointX="11.541666666666666" PointY="11.456451822916675" />
-          <ConnectorPoint PointX="11.958333333333334" PointY="11.456451822916677" />
+          <ConnectorPoint PointX="11.322916666666666" PointY="11.456451822916677" />
+          <ConnectorPoint PointX="11.489583333333334" PointY="11.456451822916677" />
+          <ConnectorPoint PointX="11.604166666666666" PointY="11.456451822916677" />
+          <ConnectorPoint PointX="11.833333333333334" PointY="11.456451822916677" />
           <ConnectorPoint PointX="12" PointY="11.456451822916677" />
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_PurchaseOrderHeader_Vendor_VendorID" >
-          <ConnectorPoint PointX="11.25" PointY="13.562306692307692" />
-          <ConnectorPoint PointX="11.44107443490112" PointY="13.37123225740657" />
-          <ConnectorPoint PointX="11.558925565098878" PointY="13.253381127208813" />
-          <ConnectorPoint PointX="11.56607443490112" PointY="13.24623225740657" />
-          <ConnectorPoint PointX="11.683925565098878" PointY="13.128381127208813" />
-          <ConnectorPoint PointX="11.6875" PointY="13.124806692307693" />
-          <ConnectorPoint PointX="11.6875" PointY="10.696973411458345" />
-          <ConnectorPoint PointX="11.791666666666666" PointY="10.696973411458345" />
-          <ConnectorPoint PointX="11.958333333333334" PointY="10.696973411458345" />
-          <ConnectorPoint PointX="12" PointY="10.696973411458345" />
+          <ConnectorPoint PointX="11.40625" PointY="13.5" />
+          <ConnectorPoint PointX="11.40625" PointY="9.8488671875" />
+          <ConnectorPoint PointX="12" PointY="9.8488671875" />
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_SalesOrderHeader_ShipMethod_ShipMethodID" >
-          <ConnectorPoint PointX="11.25" PointY="12.163073289062496" />
-          <ConnectorPoint PointX="11.5" PointY="12.163073289062496" />
-          <ConnectorPoint PointX="11.5" PointY="18.5" />
+          <ConnectorPoint PointX="11.25" PointY="11.528595377604162" />
+          <ConnectorPoint PointX="11.322916666666666" PointY="11.528595377604162" />
+          <ConnectorPoint PointX="11.489583333333334" PointY="11.528595377604162" />
+          <ConnectorPoint PointX="11.625" PointY="11.528595377604162" />
+          <ConnectorPoint PointX="11.625" PointY="18.5" />
           <ConnectorPoint PointX="13.166666666666666" PointY="18.5" />
           <ConnectorPoint PointX="13.333333333333334" PointY="18.5" />
           <ConnectorPoint PointX="14" PointY="18.5" />
@@ -6417,26 +6503,26 @@
           <ConnectorPoint PointX="14.5" PointY="56.25" />
           <ConnectorPoint PointX="14.125" PointY="56.25" />
           <ConnectorPoint PointX="14.125" PointY="59.25" />
-          <ConnectorPoint PointX="15.043943807692308" PointY="59.25" />
-          <ConnectorPoint PointX="15.043943807692308" PointY="59.625" />
+          <ConnectorPoint PointX="15" PointY="59.25" />
+          <ConnectorPoint PointX="15" PointY="59.625" />
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_CountryRegionCurrency_Currency_CurrencyCode" >
           <ConnectorPoint PointX="10.5" PointY="65.625" />
           <ConnectorPoint PointX="10.5" PointY="64.557190755208325" />
-          <ConnectorPoint PointX="11.375" PointY="64.557190755208325" />
-          <ConnectorPoint PointX="11.375" PointY="59.990143229166662" />
+          <ConnectorPoint PointX="11.416666666666666" PointY="64.557190755208325" />
+          <ConnectorPoint PointX="11.416666666666666" PointY="59.990143229166662" />
           <ConnectorPoint PointX="11.416666666666666" PointY="59.990143229166662" />
           <ConnectorPoint PointX="11.708333333333334" PointY="59.990143229166662" />
-          <ConnectorPoint PointX="13.625" PointY="59.990143229166662" />
-          <ConnectorPoint PointX="13.625" PointY="59.375" />
+          <ConnectorPoint PointX="13.666666666666666" PointY="59.990143229166662" />
+          <ConnectorPoint PointX="13.666666666666666" PointY="59.375" />
           <ConnectorPoint PointX="13.666666666666666" PointY="59.375" />
           <ConnectorPoint PointX="13.833333333333334" PointY="59.375" />
           <ConnectorPoint PointX="13.892435897435897" PointY="59.375" />
-          <ConnectorPoint PointX="14.108716948717946" PointY="59.375" />
-          <ConnectorPoint PointX="14.960610474358974" PointY="59.375" />
-          <ConnectorPoint PointX="15.127277141025642" PointY="59.375" />
-          <ConnectorPoint PointX="15.344890570512821" PointY="59.375" />
-          <ConnectorPoint PointX="15.511557237179488" PointY="59.375" />
+          <ConnectorPoint PointX="14.059102564102565" PointY="59.375" />
+          <ConnectorPoint PointX="14.321863191930913" PointY="59.375" />
+          <ConnectorPoint PointX="14.48852985859758" PointY="59.375" />
+          <ConnectorPoint PointX="14.916666666666666" PointY="59.375" />
+          <ConnectorPoint PointX="15.083333333333334" PointY="59.375" />
           <ConnectorPoint PointX="16.625" PointY="59.375" />
           <ConnectorPoint PointX="16.625" PointY="59.990143229166662" />
           <ConnectorPoint PointX="16.760416666666668" PointY="59.990143229166662" />
@@ -6445,14 +6531,14 @@
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_PersonCreditCard_CreditCard_CreditCardID" >
           <ConnectorPoint PointX="13.5" PointY="63.278595377604162" />
-          <ConnectorPoint PointX="14" PointY="63.278595377604162" />
-          <ConnectorPoint PointX="14" PointY="59.5" />
+          <ConnectorPoint PointX="14.017435897435897" PointY="63.278595377604162" />
           <ConnectorPoint PointX="14.017435897435897" PointY="59.5" />
-          <ConnectorPoint PointX="14.23371694871795" PointY="59.5" />
-          <ConnectorPoint PointX="14.960610474358974" PointY="59.5" />
-          <ConnectorPoint PointX="15.127277141025642" PointY="59.5" />
-          <ConnectorPoint PointX="15.344890570512821" PointY="59.5" />
-          <ConnectorPoint PointX="15.511557237179488" PointY="59.5" />
+          <ConnectorPoint PointX="14.017435897435897" PointY="59.5" />
+          <ConnectorPoint PointX="14.184102564102565" PointY="59.5" />
+          <ConnectorPoint PointX="14.619264929298788" PointY="59.5" />
+          <ConnectorPoint PointX="14.785931595965456" PointY="59.5" />
+          <ConnectorPoint PointX="14.916666666666666" PointY="59.5" />
+          <ConnectorPoint PointX="15.083333333333334" PointY="59.5" />
           <ConnectorPoint PointX="16.541666666666668" PointY="59.5" />
           <ConnectorPoint PointX="16.708333333333332" PointY="59.5" />
           <ConnectorPoint PointX="16.75" PointY="59.5" />
@@ -6507,18 +6593,18 @@
           <ConnectorPoint PointX="15" PointY="67.566630859374982" />
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_SalesOrderDetail_SalesOrderHeader_SalesOrderID" >
-          <ConnectorPoint PointX="15.428223903846154" PointY="59.625" />
-          <ConnectorPoint PointX="15.428223903846154" PointY="58.730286458333353" />
+          <ConnectorPoint PointX="15" PointY="59.625" />
+          <ConnectorPoint PointX="15" PointY="58.730286458333353" />
           <ConnectorPoint PointX="16.0625" PointY="58.730286458333353" />
           <ConnectorPoint PointX="16.0625" PointY="29.509348958333334" />
           <ConnectorPoint PointX="16.166666666666668" PointY="29.509348958333334" />
-          <ConnectorPoint PointX="16.333333333333332" PointY="29.509348958333334" />
+          <ConnectorPoint PointX="16.458333333333332" PointY="29.509348958333334" />
           <ConnectorPoint PointX="16.5" PointY="29.509348958333334" />
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_SalesOrderDetail_SpecialOfferProduct_SpecialOfferIDProductID" >
           <ConnectorPoint PointX="15.75" PointY="30.187119140625" />
           <ConnectorPoint PointX="15.822916666666666" PointY="30.187119140624997" />
-          <ConnectorPoint PointX="16.333333333333332" PointY="30.187119140625" />
+          <ConnectorPoint PointX="16.458333333333332" PointY="30.187119140625" />
           <ConnectorPoint PointX="16.5" PointY="30.187119140625" />
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_SalesOrderHeader_SalesPerson_SalesPersonID" >
@@ -6532,10 +6618,10 @@
           <ConnectorPoint PointX="9" PointY="60.636042798277245" />
           <ConnectorPoint PointX="9.1666666666666661" PointY="60.636042798277245" />
           <ConnectorPoint PointX="9.3333333333333339" PointY="60.636042798277245" />
-          <ConnectorPoint PointX="11.291666666666666" PointY="60.636042798277245" />
-          <ConnectorPoint PointX="11.708333333333334" PointY="60.636042798277245" />
-          <ConnectorPoint PointX="13.916666666666666" PointY="60.636042798277245" />
-          <ConnectorPoint PointX="14.083333333333334" PointY="60.636042798277245" />
+          <ConnectorPoint PointX="11.333333333333332" PointY="60.636042798277245" />
+          <ConnectorPoint PointX="11.708333333333332" PointY="60.636042798277245" />
+          <ConnectorPoint PointX="13.934102564102563" PointY="60.636042798277245" />
+          <ConnectorPoint PointX="14.100769230769231" PointY="60.636042798277245" />
           <ConnectorPoint PointX="14.25" PointY="60.636042798277245" />
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_SalesOrderHeaderSalesReason_SalesOrderHeader_SalesOrderID" >
@@ -6561,8 +6647,8 @@
           <ConnectorPoint PointX="9.75" PointY="74.961293945312491" />
         </AssociationConnector>
         <AssociationConnector Association="AdventureWorksEntities.FK_SalesTerritoryHistory_SalesPerson_BusinessEntityID" >
-          <ConnectorPoint PointX="7.8437475" PointY="69" />
-          <ConnectorPoint PointX="7.8437475" PointY="63.028595377604162" />
+          <ConnectorPoint PointX="8.25" PointY="69" />
+          <ConnectorPoint PointX="8.25" PointY="63.028595377604162" />
           <ConnectorPoint PointX="8.6041666666666661" PointY="63.028595377604162" />
           <ConnectorPoint PointX="8.7708333333333339" PointY="63.028595377604162" />
           <ConnectorPoint PointX="9.1666666666666661" PointY="63.028595377604162" />
@@ -6595,7 +6681,8 @@
           <ConnectorPoint PointX="14.083333333333334" PointY="29.557444661458334" />
           <ConnectorPoint PointX="14.25" PointY="29.557444661458334" />
         </AssociationConnector>
-        <EntityTypeShape EntityType="AdventureWorksEntities.Vendor1" Width="1.5" PointX="0.75" PointY="5.75" Height="2.5571907552083246" />
+        <EntityTypeShape EntityType="AdventureWorksEntities.VendorPlus" Width="2.75" PointX="0.75" PointY="5.75" Height="2.5571907552083246" />
+        <EntityTypeShape EntityType="AdventureWorksEntities.vVendorWithAddress" Width="2.625" PointX="0.75" PointY="9.75" Height="2.7494921874999818" />
       </Diagram>
     </Diagrams>
   </Designer>

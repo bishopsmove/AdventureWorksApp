@@ -268,7 +268,10 @@
     <Compile Include="Vendor.cs">
       <DependentUpon>AdventureworksContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Vendor1.cs">
+    <Compile Include="VendorPlus.cs">
+      <DependentUpon>AdventureworksContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vVendorWithAddress.cs">
       <DependentUpon>AdventureworksContext.tt</DependentUpon>
     </Compile>
     <Compile Include="WorkOrder.cs">

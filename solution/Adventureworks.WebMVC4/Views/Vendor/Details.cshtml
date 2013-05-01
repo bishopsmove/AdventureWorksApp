@@ -1,0 +1,41 @@
+@model Adventureworks.Domain5.vVendorWithAddress
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>vVendorWithAddress</legend>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">@Model.Name</div>
+
+    <div class="display-label">AddressType</div>
+    <div class="display-field">@Model.AddressType</div>
+
+    <div class="display-label">AddressLine1</div>
+    <div class="display-field">@Model.AddressLine1</div>
+
+    <div class="display-label">AddressLine2</div>
+    <div class="display-field">@Model.AddressLine2</div>
+
+    <div class="display-label">City</div>
+    <div class="display-field">@Model.City</div>
+
+    <div class="display-label">StateProvinceName</div>
+    <div class="display-field">@Model.StateProvinceName</div>
+
+    <div class="display-label">PostalCode</div>
+    <div class="display-field">@Model.PostalCode</div>
+
+    <div class="display-label">CountryRegionName</div>
+    <div class="display-field">@Model.CountryRegionName</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.BusinessEntityID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

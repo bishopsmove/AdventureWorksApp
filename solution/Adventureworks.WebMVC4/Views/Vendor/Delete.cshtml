@@ -1,0 +1,44 @@
+@model Adventureworks.Domain5.vVendorWithAddress
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>vVendorWithAddress</legend>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">@Model.Name</div>
+
+    <div class="display-label">AddressType</div>
+    <div class="display-field">@Model.AddressType</div>
+
+    <div class="display-label">AddressLine1</div>
+    <div class="display-field">@Model.AddressLine1</div>
+
+    <div class="display-label">AddressLine2</div>
+    <div class="display-field">@Model.AddressLine2</div>
+
+    <div class="display-label">City</div>
+    <div class="display-field">@Model.City</div>
+
+    <div class="display-label">StateProvinceName</div>
+    <div class="display-field">@Model.StateProvinceName</div>
+
+    <div class="display-label">PostalCode</div>
+    <div class="display-field">@Model.PostalCode</div>
+
+    <div class="display-label">CountryRegionName</div>
+    <div class="display-field">@Model.CountryRegionName</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+

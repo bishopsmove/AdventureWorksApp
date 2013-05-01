@@ -1,0 +1,77 @@
+@model IEnumerable<Adventureworks.Domain5.vVendorWithAddress>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Name
+        </th>
+        <th>
+            AddressType
+        </th>
+        <th>
+            AddressLine1
+        </th>
+        <th>
+            AddressLine2
+        </th>
+        <th>
+            City
+        </th>
+        <th>
+            StateProvinceName
+        </th>
+        <th>
+            PostalCode
+        </th>
+        <th>
+            CountryRegionName
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BusinessEntityID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BusinessEntityID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BusinessEntityID })
+        </td>
+        <td>
+			@item.Name
+        </td>
+        <td>
+			@item.AddressType
+        </td>
+        <td>
+			@item.AddressLine1
+        </td>
+        <td>
+			@item.AddressLine2
+        </td>
+        <td>
+			@item.City
+        </td>
+        <td>
+			@item.StateProvinceName
+        </td>
+        <td>
+			@item.PostalCode
+        </td>
+        <td>
+			@item.CountryRegionName
+        </td>
+    </tr>
+}
+
+</table>
+
+
