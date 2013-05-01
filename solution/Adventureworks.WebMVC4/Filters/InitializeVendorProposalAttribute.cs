@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using WebMatrix.WebData;
 using StructureMap;
 using Adventureworks.WebMVC4.Models;
+using Adventureworks.WebMVC4.StructureMap;
 //using Adventureworks.Domain5.ContextExtensions;
 using Adventureworks.Domain5;
 
@@ -27,15 +28,16 @@ namespace Adventureworks.WebMVC4.Filters
         
     }
 
-    public class PurchasingInitializer : DropCreateDatabaseAlways<PurchasingContext>
-       // DropCreateDatabaseIfModelChanges<PurchasingContext>
+    public class PurchasingInitializer : //DropCreateDatabaseAlways<PurchasingContext>
+       DropCreateDatabaseIfModelChanges<PurchaseMessageSender>
     {
-        protected override void Seed(PurchasingContext context)
+
+        protected override void Seed(PurchaseMessageSender context)
         {
             SeedDatabase(context);
         }
 
-        public static void SeedDatabase(PurchasingContext context)
+        public static void SeedDatabase(PurchaseMessageSender context)
         {
             _baseCreatedAtDate = new DateTime(2013, 4, 3, 14, 30, 0);
 

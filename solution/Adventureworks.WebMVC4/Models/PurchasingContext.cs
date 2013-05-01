@@ -20,5 +20,7 @@ namespace Adventureworks.WebMVC4.Models
         public DbSet<RequestForProposal> RequestForProposals { get; set; }
         public DbSet<ResponseForProposal> ResponseForProposals { get; set; }
         public DbSet<VendorSubmitProposalRequest> VendorSubmitProposalRequests { get; set; }
+
+        public DbSet<Adventureworks.WebMVC4.Models.VendorProposalRepository> VendorProposalRepositories { get; set; }
     }
 }

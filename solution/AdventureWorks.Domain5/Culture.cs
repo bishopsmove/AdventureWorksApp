@@ -15,15 +15,15 @@ namespace Adventureworks.Domain5
     
     public partial class Culture
     {
-        public Culture()
-        {
-            this.ProductModelProductDescriptionCultures = new HashSet<ProductModelProductDescriptionCulture>();
-        }
+    	public Culture()
+    	{
+    		this.ProductModelProductDescriptionCultures = new HashSet<ProductModelProductDescriptionCulture>();
+    	}
     
-        public string CultureID { get; set; }
-        public string Name { get; set; }
-        public System.DateTime ModifiedDate { get; set; }
+    	public string CultureID { get; set; }
+    	public string Name { get; set; }
+    	public System.DateTime ModifiedDate { get; set; }
     
-        public virtual ICollection<ProductModelProductDescriptionCulture> ProductModelProductDescriptionCultures { get; set; }
+    	public virtual ICollection<ProductModelProductDescriptionCulture> ProductModelProductDescriptionCultures { get; set; }
     }
 }

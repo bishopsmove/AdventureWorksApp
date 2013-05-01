@@ -1,0 +1,28 @@
+@model Adventureworks.Domain5.VendorProposal
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.VendorId)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.VendorId)
+    @Html.ValidationMessageFor(model => model.VendorId)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Date)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Date)
+    @Html.ValidationMessageFor(model => model.Date)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Value)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Value)
+    @Html.ValidationMessageFor(model => model.Value)
+</div>
+

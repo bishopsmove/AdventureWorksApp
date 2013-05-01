@@ -268,6 +268,9 @@
     <Compile Include="Vendor.cs">
       <DependentUpon>AdventureworksContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Vendor1.cs">
+      <DependentUpon>AdventureworksContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="WorkOrder.cs">
       <DependentUpon>AdventureworksContext.tt</DependentUpon>
     </Compile>
@@ -298,6 +301,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ContextExtensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdventureworksEntities.edmx.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

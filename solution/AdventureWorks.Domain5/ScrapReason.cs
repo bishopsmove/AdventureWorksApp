@@ -15,16 +15,16 @@ namespace Adventureworks.Domain5
     
     public partial class ScrapReason
     {
-        public ScrapReason()
-        {
-            this.WorkOrders = new HashSet<WorkOrder>();
-        }
+    	public ScrapReason()
+    	{
+    		this.WorkOrders = new HashSet<WorkOrder>();
+    	}
     
-        [Key]
+    	[Key]
 		public short ScrapReasonID { get; set; }
-        public string Name { get; set; }
-        public System.DateTime ModifiedDate { get; set; }
+    	public string Name { get; set; }
+    	public System.DateTime ModifiedDate { get; set; }
     
-        public virtual ICollection<WorkOrder> WorkOrders { get; set; }
+    	public virtual ICollection<WorkOrder> WorkOrders { get; set; }
     }
 }

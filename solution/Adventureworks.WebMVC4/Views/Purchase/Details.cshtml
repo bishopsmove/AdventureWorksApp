@@ -1,0 +1,26 @@
+@model Adventureworks.Domain5.VendorProposal
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>VendorProposal</legend>
+
+    <div class="display-label">VendorId</div>
+    <div class="display-field">@Model.VendorId</div>
+
+    <div class="display-label">Date</div>
+    <div class="display-field">@String.Format("{0:g}", Model.Date)</div>
+
+    <div class="display-label">Value</div>
+    <div class="display-field">@String.Format("{0:F}", Model.Value)</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.VendorProposalId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

@@ -15,16 +15,16 @@ namespace Adventureworks.Domain5
     
     public partial class PhoneNumberType
     {
-        public PhoneNumberType()
-        {
-            this.PersonPhones = new HashSet<PersonPhone>();
-        }
+    	public PhoneNumberType()
+    	{
+    		this.PersonPhones = new HashSet<PersonPhone>();
+    	}
     
-        [Key]
+    	[Key]
 		public int PhoneNumberTypeID { get; set; }
-        public string Name { get; set; }
-        public System.DateTime ModifiedDate { get; set; }
+    	public string Name { get; set; }
+    	public System.DateTime ModifiedDate { get; set; }
     
-        public virtual ICollection<PersonPhone> PersonPhones { get; set; }
+    	public virtual ICollection<PersonPhone> PersonPhones { get; set; }
     }
 }

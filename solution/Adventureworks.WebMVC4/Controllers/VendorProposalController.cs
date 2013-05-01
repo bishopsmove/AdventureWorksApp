@@ -24,7 +24,7 @@ namespace Adventureworks.WebMVC4.Controllers
 
 		public VendorProposalController(IVendorProposalRepository vendorproposalRepository)
 		{
-			this.vendorproposalRepository = (IVendorProposalRepository)ObjectFactory.GetInstance(typeof(IVendorProposalRepository));
+			this.vendorproposalRepository = vendorproposalRepository; //(IVendorProposalRepository)ObjectFactory.GetInstance(typeof(IVendorProposalRepository));
 		}
 
 		//

@@ -13,19 +13,15 @@ namespace Adventureworks.Domain5
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     
-    public partial class Department
+    public partial class Vendor1
     {
-    	public Department()
-    	{
-    		this.EmployeeDepartmentHistories = new HashSet<EmployeeDepartmentHistory>();
-    	}
-    
-    	[Key]
-		public short DepartmentID { get; set; }
+    	public int BusinessEntityID { get; set; }
+    	public string AccountNumber { get; set; }
     	public string Name { get; set; }
-    	public string GroupName { get; set; }
+    	public byte CreditRating { get; set; }
+    	public bool PreferredVendorStatus { get; set; }
+    	public bool ActiveFlag { get; set; }
+    	public string PurchasingWebServiceURL { get; set; }
     	public System.DateTime ModifiedDate { get; set; }
-    
-    	public virtual ICollection<EmployeeDepartmentHistory> EmployeeDepartmentHistories { get; set; }
     }
 }

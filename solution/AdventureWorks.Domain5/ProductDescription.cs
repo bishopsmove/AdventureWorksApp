@@ -15,17 +15,17 @@ namespace Adventureworks.Domain5
     
     public partial class ProductDescription
     {
-        public ProductDescription()
-        {
-            this.ProductModelProductDescriptionCultures = new HashSet<ProductModelProductDescriptionCulture>();
-        }
+    	public ProductDescription()
+    	{
+    		this.ProductModelProductDescriptionCultures = new HashSet<ProductModelProductDescriptionCulture>();
+    	}
     
-        [Key]
+    	[Key]
 		public int ProductDescriptionID { get; set; }
-        public string Description { get; set; }
-        public System.Guid rowguid { get; set; }
-        public System.DateTime ModifiedDate { get; set; }
+    	public string Description { get; set; }
+    	public System.Guid rowguid { get; set; }
+    	public System.DateTime ModifiedDate { get; set; }
     
-        public virtual ICollection<ProductModelProductDescriptionCulture> ProductModelProductDescriptionCultures { get; set; }
+    	public virtual ICollection<ProductModelProductDescriptionCulture> ProductModelProductDescriptionCultures { get; set; }
     }
 }

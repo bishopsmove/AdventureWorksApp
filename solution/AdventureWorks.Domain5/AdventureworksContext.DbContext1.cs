@@ -93,5 +93,6 @@ namespace Adventureworks.Domain5
         public DbSet<SpecialOffer> SpecialOffers { get; set; }
         public DbSet<SpecialOfferProduct> SpecialOfferProducts { get; set; }
         public DbSet<Store> Stores { get; set; }
+        public DbSet<Vendor1> Vendors1 { get; set; }
     }
 }

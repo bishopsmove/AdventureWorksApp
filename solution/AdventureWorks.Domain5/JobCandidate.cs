@@ -15,12 +15,12 @@ namespace Adventureworks.Domain5
     
     public partial class JobCandidate
     {
-        [Key]
+    	[Key]
 		public int JobCandidateID { get; set; }
-        public Nullable<int> BusinessEntityID { get; set; }
-        public string Resume { get; set; }
-        public System.DateTime ModifiedDate { get; set; }
+    	public Nullable<int> BusinessEntityID { get; set; }
+    	public string Resume { get; set; }
+    	public System.DateTime ModifiedDate { get; set; }
     
-        public virtual Employee Employee { get; set; }
+    	public virtual Employee Employee { get; set; }
     }
 }
