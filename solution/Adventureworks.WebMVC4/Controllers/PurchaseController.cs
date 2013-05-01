@@ -12,7 +12,7 @@ using Adventureworks.WebMVC4.StructureMap;
 
 namespace Adventureworks.WebMVC4.Controllers
 {   
-    
+    [InitializePurchaseContext]
     public class PurchaseController : Controller
     {
         private PurchaseMessageSender context = (PurchaseMessageSender)ObjectFactory.GetInstance(typeof(PurchaseMessageSender));

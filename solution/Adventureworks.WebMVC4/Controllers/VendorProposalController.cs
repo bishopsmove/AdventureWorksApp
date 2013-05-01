@@ -12,7 +12,7 @@ using Microsoft.Practices.ServiceLocation;
 
 namespace Adventureworks.WebMVC4.Controllers
 {   
-	[InitializeVendorProposal]
+	[InitializePurchaseContext]
 	public class VendorProposalController : Controller
 	{
 		private readonly IVendorProposalRepository vendorproposalRepository;

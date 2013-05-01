@@ -13,23 +13,24 @@ using Adventureworks.Domain5;
 namespace Adventureworks.WebMVC4.Filters
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
-    public class InitializeVendorProposalAttribute : ActionFilterAttribute
+    public class InitializePurchaseContextAttribute : ActionFilterAttribute
     {
-        private static PurchasingInitializer _initializer;
-        private static object _initializerLock = new object();
-        private static bool _isInitialized;
+        //private static PurchasingInitializer _initializer;
+        //private static object _initializerLock = new object();
+        //private static bool _isInitialized;
 
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             // Ensure Purchasing LocalDB is initialized only once per app start
-            LazyInitializer.EnsureInitialized(ref _initializer, ref _isInitialized, ref _initializerLock);
+            //LazyInitializer.EnsureInitialized(ref _initializer, ref _isInitialized, ref _initializerLock);
+            Database.SetInitializer(new PurchasingInitializer());
         }
 
         
     }
 
-    public class PurchasingInitializer : DropCreateDatabaseAlways<PurchaseMessageSender>
-       //DropCreateDatabaseIfModelChanges<PurchaseMessageSender>
+    public class PurchasingInitializer : //DropCreateDatabaseAlways<PurchaseMessageSender>
+       DropCreateDatabaseIfModelChanges<PurchaseMessageSender>
     {
 
         protected override void Seed(PurchaseMessageSender context)
