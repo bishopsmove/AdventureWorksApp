@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using Adventureworks.WebMVC4.Filters;
+using Adventureworks.WebMVC4.StructureMap;
 
 namespace Adventureworks.WebMVC4
 {

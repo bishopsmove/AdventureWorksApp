@@ -68,8 +68,9 @@ namespace Adventureworks.WebMVC4.Models
             } else {
                 // Existing entity
                 shoppingcartitem.ModifiedDate = DateTime.Now;
-                context.Entry(shoppingcartitem).State = EntityState.Modified;
+                
             }
+            Save();
         }
 
         public void Delete(int id)

@@ -75,7 +75,7 @@ namespace Adventureworks.WebMVC4.Controllers
         {
             if (ModelState.IsValid)
             {
-                context.Entry(vendorproposal).State = EntityState.Modified;
+                //context.Entry(vendorproposal).State = EntityState.Modified;
                 context.SaveChanges();
                 return RedirectToAction("Index");
             }

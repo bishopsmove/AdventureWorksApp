@@ -28,8 +28,8 @@ namespace Adventureworks.WebMVC4.Filters
         
     }
 
-    public class PurchasingInitializer : //DropCreateDatabaseAlways<PurchasingContext>
-       DropCreateDatabaseIfModelChanges<PurchaseMessageSender>
+    public class PurchasingInitializer : DropCreateDatabaseAlways<PurchaseMessageSender>
+       //DropCreateDatabaseIfModelChanges<PurchaseMessageSender>
     {
 
         protected override void Seed(PurchaseMessageSender context)
