@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Jquery.UI.Theme.uidarkness</id>
+    <version>1.8.23</version>
+    <title>Jquery UI Themes : ui-darkness</title>
+    <authors>Gleidson Rodrigues Nunes</authors>
+    <owners>Gleidson Rodrigues Nunes</owners>
+    <iconUrl>http://nuget.org/Media/Default/Packages/jQuery.UI.Combined/1.8.9/jQueryUILogo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Jquery UI Themes : ui-darkness</description>
+    <language>pt-BR</language>
+    <tags>Jquery UI Themes : ui-darkness</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.0">
+        <dependency id="jQuery" version="1.8.1" />
+        <dependency id="jQuery.UI.Combined" version="1.8.23" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework4.0" />
+    </frameworkAssemblies>
+  </metadata>
+</package>
