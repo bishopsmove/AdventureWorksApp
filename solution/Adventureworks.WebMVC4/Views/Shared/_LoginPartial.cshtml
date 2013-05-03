@@ -9,6 +9,9 @@
 } else {
     <ul>
         <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        <li>@*@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })*@
+            @Html.ActionLink("Sign in", "Login", "Account", routeValues: null, htmlAttributes: new { style = "background: url('" + Url.Content("~/Images/Keys.png") + "') no-repeat center right; display:block; height:50px;width:50px",@class = "SiteLinkBold"})
+        @*<img src="@Url.Content("~/Content/Images/Keys.png")" alt="" /><br />Sign In</a> ,class = "SiteLinkBold"*@
+        </li>
     </ul>
 }
