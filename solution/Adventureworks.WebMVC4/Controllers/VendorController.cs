@@ -14,7 +14,7 @@ namespace Adventureworks.WebMVC4.Controllers
     public class VendorController : Controller
     {
         //private AdventureWorksEntitiesContainer context = ObjectFactory.GetInstance(typeof())
-        private readonly IvVendorWithAddressRepository vendorContext = (IvVendorWithAddressRepository)ObjectFactory.GetInstance(typeof(IvVendorWithAddressRepository));
+        private readonly IVendorPlusRepository vendorContext = (IVendorPlusRepository)ObjectFactory.GetInstance(typeof(IVendorPlusRepository));
 
         //
         // GET: /Vendor/
@@ -29,7 +29,7 @@ namespace Adventureworks.WebMVC4.Controllers
 
         public ViewResult Details(int id)
         {
-            vVendorWithAddress vvendorwithaddress = vendorContext.Find(id);
+            VendorPlus vvendorwithaddress = vendorContext.Find(id);
             return View(vvendorwithaddress);
         }
 
@@ -45,7 +45,7 @@ namespace Adventureworks.WebMVC4.Controllers
         // POST: /Vendor/Create
 
         [HttpPost]
-        public ActionResult Create(vVendorWithAddress vvendorwithaddress)
+        public ActionResult Create(VendorPlus vvendorwithaddress)
         {
             if (ModelState.IsValid)
             {
@@ -62,7 +62,7 @@ namespace Adventureworks.WebMVC4.Controllers
  
         public ActionResult Edit(int id)
         {
-            vVendorWithAddress vvendorwithaddress = vendorContext.Find(id);
+            VendorPlus vvendorwithaddress = vendorContext.Find(id);
             return View(vvendorwithaddress);
         }
 
@@ -70,11 +70,11 @@ namespace Adventureworks.WebMVC4.Controllers
         // POST: /Vendor/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(vVendorWithAddress vvendorwithaddress)
+        public ActionResult Edit(VendorPlus vvendorwithaddress)
         {
             if (ModelState.IsValid)
             {
-                //(db(vendorContext.Find(vvendorwithaddress.BusinessEntityID)).State = EntityState.Modified;
+                //vendorContext.Find(vvendorwithaddress.BusinessEntityID)).State = EntityState.Modified;
                 vendorContext.Save();
                 return RedirectToAction("Index");
             }
@@ -86,7 +86,7 @@ namespace Adventureworks.WebMVC4.Controllers
  
         public ActionResult Delete(int id)
         {
-            vVendorWithAddress vvendorwithaddress = vendorContext.Find(id);
+            VendorPlus vvendorwithaddress = vendorContext.Find(id);
             return View(vvendorwithaddress);
         }
 

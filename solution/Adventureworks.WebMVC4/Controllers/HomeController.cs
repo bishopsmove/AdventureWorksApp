@@ -3,16 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using StructureMap;
+using Adventureworks.WebMVC4.Models;
 
 namespace Adventureworks.WebMVC4.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IProductRepository _productRepository;
+
+        public HomeController(IProductRepository productRepository)
+        {
+
+            this._productRepository = (IProductRepository)ObjectFactory.GetInstance(typeof(IProductRepository));
+        }
+
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            ViewBag.Message = "Welcome to AdventureWorks cycle store";
 
-            return View();
+            var products = _productRepository.GetFeaturedProducts();
+
+            return View(products);
         }
 
         public ActionResult About()

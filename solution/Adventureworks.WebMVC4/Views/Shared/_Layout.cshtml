@@ -2,47 +2,75 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+         <title>@ViewBag.Title</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/ui-darkness")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jquery-ui")
     </head>
     <body>
         <header>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
+            <div class="header">
+                <div class="header-logo">
+                    @{
+                        //#if Full
+                            <text><a class="logo">&nbsp; </a></text>
+                        //#endif
+                    }
                 </div>
-                <div class="float-right">
-                    <section id="login">
-                        @Html.Partial("_LoginPartial")
-                    </section>
-                    <nav>
-                        <ul id="menu">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        </ul>
-                    </nav>
+                @Html.Partial("_LoginPartial")
+            </div>
+            <div class="headermenu">
+                <ul id="menu">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Admin", "Index", "Admin")</li>
+                    <li>@Html.ActionLink("Purchasing", "Index", "Purchasing")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                </ul>
+            </div>
+            <div class="master-wrapper-leftside">
+                <div class="block block-category-navigation">
+                    @{Html.RenderAction("Index", "ProductCategory");}
                 </div>
             </div>
         </header>
-        <div id="body">
+        <div id="body master-wrapper-center">
             @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix">
+            <section class="content-wrapper main-content clear-fix master-wrapper-cph">
                 @RenderBody()
             </section>
-        </div>
-        <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+            <div class="master-wrapper-rightside">
+                <div class="block-shoppingcart">
+                    <div class="title">
+                        Shopping Cart
+                    </div>
+                    <div class="clear">
+                    </div>
+                    <table id="bookingsList">
+                        <tbody>
+                            <tr class="cart">
+                                <td class="cart-false" colspan="4">
+                                    <span class="text">0 items in Cart...</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
+        </div>
+        <footer>
+            <div class="footer">
+            <div class="footer-disclaimer">
+                Updated to <a href="http://asp.net/mvc">ASP.NET MVC 4</a>
+                <p>Originally developed by <a href="http://www.codeplex.com/site/users/view/supertigerzou">supertigerzou with MVC 3</a></p>
+                <p>Updated by <a href="http://www.codeplex.com/site/users/view/Bishops_move">Bishops_move</a></p></div>
+        </div>
         </footer>
 
-        @Scripts.Render("~/bundles/jquery")
+        
         @RenderSection("scripts", required: false)
     </body>
 </html>

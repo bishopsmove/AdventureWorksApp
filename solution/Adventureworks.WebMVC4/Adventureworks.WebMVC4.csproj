@@ -183,6 +183,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AWContextController.cs" />
+    <Compile Include="Controllers\ImageController.cs" />
+    <Compile Include="Controllers\ProductCategoryController.cs" />
     <Compile Include="Controllers\PurchaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
@@ -198,7 +200,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ImageResult.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\ProductCategoryRepository.cs" />
     <Compile Include="Models\ProductModelRepository.cs" />
     <Compile Include="Models\ProductRepository.cs" />
     <Compile Include="Models\ProductSubcategoryRepository.cs" />
@@ -210,6 +214,7 @@
     <Compile Include="StructureMap\PurchaseMessageSender.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\products.css" />
     <Content Include="Content\themes\base\images\animated-overlay.gif" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -272,13 +277,75 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="Content\themes\ui-darkness\images\ui-bg_flat_30_cccccc_40x100.png" />
+    <Content Include="Content\themes\ui-darkness\images\ui-bg_flat_50_5c5c5c_40x100.png" />
+    <Content Include="Content\themes\ui-darkness\images\ui-bg_glass_20_555555_1x400.png" />
+    <Content Include="Content\themes\ui-darkness\images\ui-bg_glass_40_0078a3_1x400.png" />
+    <Content Include="Content\themes\ui-darkness\images\ui-bg_glass_40_ffc73d_1x400.png" />
+    <Content Include="Content\themes\ui-darkness\images\ui-bg_gloss-wave_25_333333_500x100.png" />
+    <Content Include="Content\themes\ui-darkness\images\ui-bg_highlight-soft_80_eeeeee_1x100.png" />
+    <Content Include="Content\themes\ui-darkness\images\ui-bg_inset-soft_25_000000_1x100.png" />
+    <Content Include="Content\themes\ui-darkness\images\ui-bg_inset-soft_30_f58400_1x100.png" />
+    <Content Include="Content\themes\ui-darkness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\ui-darkness\images\ui-icons_4b8e0b_256x240.png" />
+    <Content Include="Content\themes\ui-darkness\images\ui-icons_a83300_256x240.png" />
+    <Content Include="Content\themes\ui-darkness\images\ui-icons_cccccc_256x240.png" />
+    <Content Include="Content\themes\ui-darkness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\ui-darkness\jquery-ui-1.8.16.custom.css" />
+    <Content Include="Content\themes\ui-darkness\jquery-ui-1.8.23.custom.css" />
+    <Content Include="Content\themes\ui-darkness\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\ui-darkness\jquery.ui.all.css" />
+    <Content Include="Content\themes\ui-darkness\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\ui-darkness\jquery.ui.base.css" />
+    <Content Include="Content\themes\ui-darkness\jquery.ui.button.css" />
+    <Content Include="Content\themes\ui-darkness\jquery.ui.core.css" />
+    <Content Include="Content\themes\ui-darkness\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\ui-darkness\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\ui-darkness\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\ui-darkness\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\ui-darkness\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\ui-darkness\jquery.ui.slider.css" />
+    <Content Include="Content\themes\ui-darkness\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\ui-darkness\jquery.ui.theme.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\add_to_cart.gif" />
+    <Content Include="Images\admin-gvw-bg.gif" />
+    <Content Include="Images\arrow-down.gif" />
+    <Content Include="Images\arrow-none.gif" />
+    <Content Include="Images\arrow-up.gif" />
+    <Content Include="Images\bg_body.gif" />
+    <Content Include="Images\bg_container.gif" />
+    <Content Include="Images\bg_maincolumn_3.gif" />
+    <Content Include="Images\bg_sidebar_block.gif" />
+    <Content Include="Images\bg_sidebar_title.gif" />
+    <Content Include="Images\checked.gif" />
+    <Content Include="Images\deal_box_hl.gif" />
+    <Content Include="Images\deal_box_hr.gif" />
+    <Content Include="Images\grey_button_bg.gif" />
+    <Content Include="Images\grid_header_back.png" />
+    <Content Include="Images\ico-help.gif" />
+    <Content Include="Images\Keys.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\orange_button_bg.gif" />
+    <Content Include="Images\pb_s_bg.gif" />
+    <Content Include="Images\prod_grid_box_bg.gif" />
+    <Content Include="Images\SampleCycles\cycle1.gif" />
+    <Content Include="Images\SampleCycles\cycle2.gif" />
+    <Content Include="Images\SampleCycles\cycle3.gif" />
+    <Content Include="Images\SampleCycles\cycle4.jpg" />
+    <Content Include="Images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Images\unchecked.gif" />
+    <Content Include="Scripts\App\login.js" />
     <Content Include="Scripts\jquery-2.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-2.0.0.js" />
     <Content Include="Scripts\jquery-2.0.0.min.js" />
     <Content Include="Scripts\jquery-ui-1.10.2.js" />
     <Content Include="Scripts\jquery-ui-1.10.2.min.js" />
+    <Content Include="Scripts\jQuery.tmpl.js" />
+    <Content Include="Scripts\jQuery.tmpl.min.js" />
+    <Content Include="Scripts\jquery.tmplPlus.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate-vsdoc.js" />
@@ -342,6 +409,17 @@
     <Content Include="Views\Vendor\Details.cshtml" />
     <Content Include="Views\Vendor\Index.cshtml" />
     <Content Include="Views\Vendor\_CreateOrEdit.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\ProductGrid.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\ProductCategory\Create.cshtml" />
+    <Content Include="Views\ProductCategory\Edit.cshtml" />
+    <Content Include="Views\ProductCategory\Delete.cshtml" />
+    <Content Include="Views\ProductCategory\Details.cshtml" />
+    <Content Include="Views\ProductCategory\Index_old.cshtml" />
+    <Content Include="Views\ProductCategory\_CreateOrEdit.cshtml" />
+    <Content Include="Views\ProductCategory\Index.cshtml" />
+    <Content Include="Views\ProductCategory\Browse.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
@@ -371,6 +449,10 @@
       <Project>{F2205BCA-71E7-4A9C-9919-9AC9DE5118A3}</Project>
       <Name>Adventureworks.Domain5</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Adventureworks.Infrastructure\Adventureworks.Infrastructure.csproj">
+      <Project>{1AF19E2C-C0A4-4502-A59D-6150A3562848}</Project>
+      <Name>Adventureworks.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Products\Create.cshtml" />
@@ -382,10 +464,10 @@
     <Content Include="Views\Products\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Details_old.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Products\Index_old.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Products\_CreateOrEdit.cshtml" />

@@ -16,28 +16,33 @@ namespace Adventureworks.WebMVC4.Controllers
 		private readonly IProductRepository productRepository; 
 
 		// If you are using Dependency Injection, you can delete the following constructor
-		public ProductsController()
-			//: this(new ProductSubcategoryRepository(), new ProductModelRepository(), new ProductRepository())
+		//public ProductsController()
+		//    //: this(new ProductSubcategoryRepository(), new ProductModelRepository(), new ProductRepository())
+		//{
+		//    this.productsubcategoryRepository = (IProductSubcategoryRepository)ObjectFactory.GetInstance(typeof(IProductSubcategoryRepository));
+		//    this.productmodelRepository = (IProductModelRepository)ObjectFactory.GetInstance(typeof(IProductModelRepository));
+		//    this.productRepository = (IProductRepository)ObjectFactory.GetInstance(typeof(IProductRepository));
+		//}
+
+		public ProductsController(IProductSubcategoryRepository productsubcategoryRepository, IProductModelRepository productmodelRepository, IProductRepository productRepository)
 		{
 			this.productsubcategoryRepository = (IProductSubcategoryRepository)ObjectFactory.GetInstance(typeof(IProductSubcategoryRepository));
 			this.productmodelRepository = (IProductModelRepository)ObjectFactory.GetInstance(typeof(IProductModelRepository));
 			this.productRepository = (IProductRepository)ObjectFactory.GetInstance(typeof(IProductRepository));
 		}
 
-		public ProductsController(IProductSubcategoryRepository productsubcategoryRepository, IProductModelRepository productmodelRepository, IProductRepository productRepository)
-		{
-			this.productsubcategoryRepository = productsubcategoryRepository;
-			this.productmodelRepository = productmodelRepository;
-			this.productRepository = productRepository;
-		}
-
 		//
 		// GET: /Products/
 
-		public ViewResult Index()
+		public ViewResult Index(int subcategoryId)
 		{
-			
-			return View(productRepository.AllIncluding(product => product.ProductSubcategory, product => product.ProductModel, product => product.ProductReviews, product => product.ShoppingCartItems)); //, product => product.PurchaseOrderDetails , product => product.WorkOrders
+			var products = productRepository.AllIncluding(product => product.ProductSubcategory, product => product.ProductModel, product => product.ProductReviews, product => product.ShoppingCartItems)
+							.Where(product => product.ProductSubcategoryID == subcategoryId);
+			ViewBag.TotalCount = products.Count();
+			ViewBag.SubcategoryName = productsubcategoryRepository.Find(subcategoryId).Name; // _categoryRepository.GetProductSubcategoryById(subcategoryId).Name;
+			ViewBag.ProductSubcategoryId = subcategoryId;
+
+            return View(products); //, product => product.PurchaseOrderDetails , product => product.WorkOrders
 		}
 
 		//
@@ -47,6 +52,18 @@ namespace Adventureworks.WebMVC4.Controllers
 		{
 			
 			return View(productRepository.Find(id));
+		}
+
+		public PartialViewResult ProductGrid(int subcategoryId, int? page)
+		{
+			int currentPage = page.GetValueOrDefault(1);
+			IQueryable<Product> products = productRepository.GetProductsByCategory(subcategoryId);
+
+			ViewBag.CurrentPage = currentPage;
+			ViewBag.TotalCount = products.Count();
+			ViewBag.ProductSubcategoryId = subcategoryId;
+
+			return PartialView(products.Skip((currentPage - 1) * 3).Take(3));
 		}
 
 		//

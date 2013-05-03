@@ -14,7 +14,7 @@ namespace Adventureworks.WebMVC4.Controllers
     {
 		private readonly IProductRepository productRepository;
 		private readonly IShoppingCartItemRepository shoppingcartitemRepository;
-        private readonly string _cartID;
+        private string _cartID;
 
         //// If you are using Dependency Injection, you can delete the following constructor
         //public ShoppingCartController() : this(new ProductRepository(), new ShoppingCartItemRepository())
@@ -40,6 +40,27 @@ namespace Adventureworks.WebMVC4.Controllers
 
             
             return View(shoppingcartitemRepository.FindByCartID(_cartID).AsEnumerable());
+        }
+
+        public JsonResult GetCartItems(int? cartID)
+        {
+            this._cartID = cartID.HasValue ? string.Format("{0}",cartID.Value) : _cartID; 
+            var cartItems =
+                this.shoppingcartitemRepository.FindByCartID(_cartID).AsEnumerable();
+
+            var dataRows = (cartItems.Select(cartItem => new
+            {
+                product = new
+                {
+                    Id = cartItem.ProductID,
+                    cartItem.Product.Name,
+                    LargeUrl = VirtualPathUtility.ToAbsolute("~/Image/ProductThumbnail?productPhotoID=" + cartItem.Product.ProductProductPhotoes.FirstOrDefault<ProductProductPhoto>().ProductPhotoID)
+                },
+                date = cartItem.DateCreated,
+                quantity = cartItem.Quantity
+            })).ToArray();
+
+            return Json(dataRows, JsonRequestBehavior.AllowGet);
         }
 
         //

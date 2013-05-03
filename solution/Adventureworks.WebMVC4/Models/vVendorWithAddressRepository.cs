@@ -9,37 +9,38 @@ using Adventureworks.Domain5;
 
 namespace Adventureworks.WebMVC4.Models
 { 
-    public class vVendorWithAddressRepository : IvVendorWithAddressRepository
+    public class VendorPlusRepository : IVendorPlusRepository
     {
         AdventureWorksEntitiesContainer context = new AdventureWorksEntitiesContainer();
 
-        public IQueryable<vVendorWithAddress> All
+        public IQueryable<VendorPlus> All
         {
-            get { return context.vVendorWithAddresses; }
+            get { return context.VendorsPlus; }
         }
 
-        public IQueryable<vVendorWithAddress> AllIncluding(params Expression<Func<vVendorWithAddress, object>>[] includeProperties)
+        public IQueryable<VendorPlus> AllIncluding(params Expression<Func<VendorPlus, object>>[] includeProperties)
         {
-            IQueryable<vVendorWithAddress> query = context.vVendorWithAddresses;
+            IQueryable<VendorPlus> query = context.VendorsPlus;
             foreach (var includeProperty in includeProperties) {
                 query = query.Include(includeProperty);
             }
             return query;
         }
 
-        public vVendorWithAddress Find(int id)
+        public VendorPlus Find(int id)
         {
-            return context.vVendorWithAddresses.Find(id);
+            return context.VendorsPlus.Find(id);
         }
 
-        public void InsertOrUpdate(vVendorWithAddress vvendorwithaddress)
+        public void InsertOrUpdate(VendorPlus vendorPlus)
         {
-            if (vvendorwithaddress.BusinessEntityID == default(int)) {
+            if (vendorPlus.BusinessEntityID == default(int))
+            {
                 // New entity
-                context.vVendorWithAddresses.Add(vvendorwithaddress);
+                context.VendorsPlus.Add(vendorPlus);
             } else {
                 // Existing entity
-                context.Entry(vvendorwithaddress).State = EntityState.Modified;
+                context.Entry(vendorPlus).State = EntityState.Modified;
             }
         }
 
@@ -60,12 +61,12 @@ namespace Adventureworks.WebMVC4.Models
         }
     }
 
-    public interface IvVendorWithAddressRepository : IDisposable
+    public interface IVendorPlusRepository : IDisposable
     {
-        IQueryable<vVendorWithAddress> All { get; }
-        IQueryable<vVendorWithAddress> AllIncluding(params Expression<Func<vVendorWithAddress, object>>[] includeProperties);
-        vVendorWithAddress Find(int id);
-        void InsertOrUpdate(vVendorWithAddress vvendorwithaddress);
+        IQueryable<VendorPlus> All { get; }
+        IQueryable<VendorPlus> AllIncluding(params Expression<Func<VendorPlus, object>>[] includeProperties);
+        VendorPlus Find(int id);
+        void InsertOrUpdate(VendorPlus vendorPlus);
         void Delete(int id);
         void Save();
     }

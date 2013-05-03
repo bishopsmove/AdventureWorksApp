@@ -63,13 +63,14 @@ namespace Adventureworks.WebMVC4
     {
         public RepositoryRegistry()
         {
-            For<DbContext>().HttpContextScoped().Use(() => new AdventureWorksEntitiesContainer());
+            //For<DbContext>().HttpContextScoped().Use(() => new AdventureWorksEntitiesContainer());
             //For<IVendorProposalRepository>().HttpContextScoped().Use<VendorProposalRepository>(); //.Ctor<string>("connectionString").Named("VendorProposalConnection");
-            For<IProductSubcategoryRepository>().HttpContextScoped().Use<ProductSubcategoryRepository>();
+            For<IProductSubcategoryRepository>().Use<ProductSubcategoryRepository>();
             For<IProductModelRepository>().HttpContextScoped().Use<ProductModelRepository>();
             For<IProductRepository>().HttpContextScoped().Use<ProductRepository>();
             For<IShoppingCartItemRepository>().HttpContextScoped().Use<ShoppingCartItemRepository>();
-            For<IvVendorWithAddressRepository>().HttpContextScoped().Use<vVendorWithAddressRepository>();
+            For<IVendorPlusRepository>().HttpContextScoped().Use<VendorPlusRepository>();
+            For<IProductCategoryRepository>().HttpContextScoped().Use<ProductCategoryRepository>();
             //For<PurchasingContext>().HttpContextScoped().Use(() => new IDatabaseInitializer<PurchasingContext>());
         }
     }

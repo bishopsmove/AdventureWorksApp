@@ -1,0 +1,263 @@
+@model IEnumerable<Adventureworks.Domain5.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Name
+        </th>
+        <th>
+            ProductNumber
+        </th>
+        <th>
+            MakeFlag
+        </th>
+        <th>
+            FinishedGoodsFlag
+        </th>
+        <th>
+            Color
+        </th>
+        <th>
+            SafetyStockLevel
+        </th>
+        <th>
+            ReorderPoint
+        </th>
+        <th>
+            StandardCost
+        </th>
+        <th>
+            ListPrice
+        </th>
+        <th>
+            Size
+        </th>
+        <th>
+            SizeUnitMeasureCode
+        </th>
+        <th>
+            WeightUnitMeasureCode
+        </th>
+        <th>
+            Weight
+        </th>
+        <th>
+            DaysToManufacture
+        </th>
+        <th>
+            ProductLine
+        </th>
+        <th>
+            Class
+        </th>
+        <th>
+            Style
+        </th>
+        <th>
+            SellStartDate
+        </th>
+        <th>
+            SellEndDate
+        </th>
+        <th>
+            DiscontinuedDate
+        </th>
+        <th>
+            rowguid
+        </th>
+        <th>
+            ModifiedDate
+        </th>
+        <th>
+            BillOfMaterials
+        </th>
+        <th>
+            BillOfMaterials1
+        </th>
+        <th>
+            ProductModel
+        </th>
+        <th>
+            ProductSubcategory
+        </th>
+        <th>
+            UnitMeasure
+        </th>
+        <th>
+            UnitMeasure1
+        </th>
+        <th>
+            ProductCostHistories
+        </th>
+        <th>
+            ProductInventories
+        </th>
+        <th>
+            ProductListPriceHistories
+        </th>
+        <th>
+            ProductProductPhotoes
+        </th>
+        <th>
+            ProductReviews
+        </th>
+        <th>
+            ProductVendors
+        </th>
+        <th>
+            PurchaseOrderDetails
+        </th>
+        <th>
+            ShoppingCartItems
+        </th>
+        <th>
+            SpecialOfferProducts
+        </th>
+        <th>
+            TransactionHistories
+        </th>
+        <th>
+            WorkOrders
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProductID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProductID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProductID })
+        </td>
+        <td>
+			@item.Name
+        </td>
+        <td>
+			@item.ProductNumber
+        </td>
+        <td>
+			@item.MakeFlag
+        </td>
+        <td>
+			@item.FinishedGoodsFlag
+        </td>
+        <td>
+			@item.Color
+        </td>
+        <td>
+			@item.SafetyStockLevel
+        </td>
+        <td>
+			@item.ReorderPoint
+        </td>
+        <td>
+			@String.Format("{0:F}", item.StandardCost)
+        </td>
+        <td>
+			@String.Format("{0:F}", item.ListPrice)
+        </td>
+        <td>
+			@item.Size
+        </td>
+        <td>
+			@item.SizeUnitMeasureCode
+        </td>
+        <td>
+			@item.WeightUnitMeasureCode
+        </td>
+        <td>
+			@String.Format("{0:F}", item.Weight)
+        </td>
+        <td>
+			@item.DaysToManufacture
+        </td>
+        <td>
+			@item.ProductLine
+        </td>
+        <td>
+			@item.Class
+        </td>
+        <td>
+			@item.Style
+        </td>
+        <td>
+			@String.Format("{0:g}", item.SellStartDate)
+        </td>
+        <td>
+			@String.Format("{0:g}", item.SellEndDate)
+        </td>
+        <td>
+			@String.Format("{0:g}", item.DiscontinuedDate)
+        </td>
+        <td>
+			@item.rowguid
+        </td>
+        <td>
+			@String.Format("{0:g}", item.ModifiedDate)
+        </td>
+        <td>
+			@(item.BillOfMaterials == null ? "None" : item.BillOfMaterials.Count.ToString())
+        </td>
+        <td>
+			@(item.BillOfMaterials1 == null ? "None" : item.BillOfMaterials1.Count.ToString())
+        </td>
+        <td>
+			@(item.ProductModel == null ? "None" : item.ProductModel.Name)
+        </td>
+        <td>
+			@(item.ProductSubcategory == null ? "None" : item.ProductSubcategory.Name)
+        </td>
+        <td>
+			@(item.UnitMeasure == null ? "None" : item.UnitMeasure.Name)
+        </td>
+        <td>
+			@(item.UnitMeasure1 == null ? "None" : item.UnitMeasure1.Name)
+        </td>
+        <td>
+			@(item.ProductCostHistories == null ? "None" : item.ProductCostHistories.Count.ToString())
+        </td>
+        <td>
+			@(item.ProductInventories == null ? "None" : item.ProductInventories.Count.ToString())
+        </td>
+        <td>
+			@(item.ProductListPriceHistories == null ? "None" : item.ProductListPriceHistories.Count.ToString())
+        </td>
+        <td>
+			@(item.ProductProductPhotoes == null ? "None" : item.ProductProductPhotoes.Count.ToString())
+        </td>
+        <td>
+			@(item.ProductReviews == null ? "None" : item.ProductReviews.Count.ToString())
+        </td>
+        <td>
+			@(item.ProductVendors == null ? "None" : item.ProductVendors.Count.ToString())
+        </td>
+        <td>
+			@(item.PurchaseOrderDetails == null ? "None" : item.PurchaseOrderDetails.Count.ToString())
+        </td>
+        <td>
+			@(item.ShoppingCartItems == null ? "None" : item.ShoppingCartItems.Count.ToString())
+        </td>
+        <td>
+			@(item.SpecialOfferProducts == null ? "None" : item.SpecialOfferProducts.Count.ToString())
+        </td>
+        <td>
+			@(item.TransactionHistories == null ? "None" : item.TransactionHistories.Count.ToString())
+        </td>
+        <td>
+			@(item.WorkOrders == null ? "None" : item.WorkOrders.Count.ToString())
+        </td>
+    </tr>
+}
+
+</table>
+
+

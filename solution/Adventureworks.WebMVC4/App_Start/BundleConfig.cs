@@ -13,7 +13,7 @@ namespace Adventureworks.WebMVC4
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
+            bundles.Add(new ScriptBundle("~/bundles/jquery-ui").Include(
                         "~/Scripts/jquery-ui-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -36,12 +36,12 @@ namespace Adventureworks.WebMVC4
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
 
-            bundles.Add(new StyleBundle("~/Content/ui-darkness").Include("~/Content/themes/ui-darkness/jquery.ui.*.css"));
+            bundles.Add(new StyleBundle("~/Content/ui-darkness").IncludeDirectory("~/Content/themes/ui-darkness","jquery.ui.*",false));
 #else
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.min.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
+            bundles.Add(new ScriptBundle("~/bundles/jquery-ui").Include(
                         "~/Scripts/jquery-ui-{version}.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -56,9 +56,11 @@ namespace Adventureworks.WebMVC4
 #endif
 
 
-            bundles.Add(new ScriptBundle("~/Scripts/jquery.template").Include(
+            bundles.Add(new ScriptBundle("~/bundles/jquery.template").Include(
                        "~/Scripts/jquery.tmpl.min.js",
                        "~/Scripts/jquery.tmplPlus.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/login").Include("~/Scripts/App/login.js"));
 
              // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
