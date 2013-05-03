@@ -10,6 +10,21 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jquery-ui")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            adjustMidColWidth();
+
+            $(window).resize(function () {
+                adjustMidColWidth();
+            });
+        });
+
+        function adjustMidColWidth() {
+            $("div.master-wrapper-center").width($(window).width() - 410);
+            $("master-wrapper-cph").width($(window).width() - 435);
+        }
+    </script>
     </head>
     <body>
         <header>
@@ -31,12 +46,13 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                 </ul>
             </div>
-            <div class="master-wrapper-leftside">
+            
+        </header>
+        <div class="master-wrapper-leftside">
                 <div class="block block-category-navigation">
                     @{Html.RenderAction("Index", "ProductCategory");}
                 </div>
-            </div>
-        </header>
+        </div>
         <div id="body master-wrapper-center">
             @RenderSection("featured", required: false)
             <section class="content-wrapper main-content clear-fix master-wrapper-cph">
