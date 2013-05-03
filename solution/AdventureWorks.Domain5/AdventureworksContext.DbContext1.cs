@@ -22,7 +22,7 @@ namespace Adventureworks.Domain5
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<vVendorWithAddress>()
+            modelBuilder.Entity<VendorPlus>()
                 .HasKey(v => v.BusinessEntityID);
         }
     
