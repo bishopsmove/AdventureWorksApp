@@ -1,0 +1,29 @@
+@model Adventureworks.Domain5.ProductCategory
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ProductCategory</legend>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">@Model.Name</div>
+
+    <div class="display-label">rowguid</div>
+    <div class="display-field">@Model.rowguid</div>
+
+    <div class="display-label">ModifiedDate</div>
+    <div class="display-field">@String.Format("{0:g}", Model.ModifiedDate)</div>
+
+    <div class="display-label">ProductSubcategories</div>
+    <div class="display-field">@(Model.ProductSubcategories == null ? "None" : Model.ProductSubcategories.Count.ToString())</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ProductCategoryID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

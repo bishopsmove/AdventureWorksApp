@@ -1,0 +1,53 @@
+@model IEnumerable<Adventureworks.Domain5.ProductCategory>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Name
+        </th>
+        <th>
+            rowguid
+        </th>
+        <th>
+            ModifiedDate
+        </th>
+        <th>
+            ProductSubcategories
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProductCategoryID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProductCategoryID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProductCategoryID })
+        </td>
+        <td>
+			@item.Name
+        </td>
+        <td>
+			@item.rowguid
+        </td>
+        <td>
+			@String.Format("{0:g}", item.ModifiedDate)
+        </td>
+        <td>
+			@(item.ProductSubcategories == null ? "None" : item.ProductSubcategories.Count.ToString())
+        </td>
+    </tr>
+}
+
+</table>
+
+
