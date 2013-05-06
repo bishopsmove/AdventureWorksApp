@@ -1,4 +1,4 @@
-﻿@using Adventureworks.Domain;
+﻿@using Adventureworks.Domain5;
 @model Product
            
 @{
@@ -13,12 +13,17 @@
                 border="0">
         </td>
         <td style="vertical-align: top;font-size:large">
-            @Model.ProductModel.ProductModelProductDescriptionCultures.First().ProductDescription.Description<br />
+            @*@Model.ProductModel.ProductModelProductDescriptionCultures.First().ProductDescription.Description*@
+            @( 
+                    Model.ProductModel.ProductModelProductDescriptionCultures.Count != 0 ?
+                    Model.ProductModel.ProductModelProductDescriptionCultures.First().ProductDescription.Description :
+                    Model.Color + " " + Model.Name
+                        )<br />
         </td>
     </tr>
 </table>
 
 <span class="UnitCost"><b>Your Price:</b>&nbsp;@Model.ListPrice.ToString("c")</span><br />
 <a href='/ShoppingCart/AddToCart/@Model.ProductID' style="border: 0 none white">
-    <img id="Img1" src="/Content/Images/add_to_cart.gif" alt="" style="border-width: 0" />
+    <img id="Img1" src="/Images/add_to_cart.gif" alt="" style="border-width: 0" />
 </a>
