@@ -104,20 +104,20 @@
 {
 	color: #2F5071;
 	font-weight: bold;
-	background: url(../images/ui-bg_highlight-hard_100_eeeeee_1x100.png) #e6e6e6 repeat-x 50% 50%;
+	background: url(themes/ui-darkness/images/ui-bg_highlight-soft_80_eeeeee_1x100.png) #e6e6e6 repeat-x 50% 50%;
 	cursor: pointer;
 }
 
 .bookingTitle:hover, .bookingTitleEdit:hover
 {
-	background: url(../images/ui-bg_glass_75_dadada_1x400.png) #dadada repeat-x 50% 50%;
+	background: url(/images/ui-bg_glass_75_dadada_1x400.png) #dadada repeat-x 50% 50%;
 }
 
 .bookingTitleEdit
 {
 	color: #042CCA;
 	font-weight: bold;
-	background: url(../images/ui-bg_highlight-hard_100_eeeeee_1x100.png) #e6e6e6 repeat-x 50% 50%;
+	background: url(themes/ui-darkness/images/ui-bg_highlight-soft_80_eeeeee_1x100.png) #e6e6e6 repeat-x 50% 50%;
 	cursor: pointer;
 }
 
@@ -175,5 +175,5 @@
 {
 	width: 16px;
 	height: 16px;
-	background-image: url(images/ui-icons_cc0000_256x240.png);
+	background-image: url(/images/ui-icons_cc0000_256x240.png);
 }
