@@ -66,79 +66,85 @@ namespace Adventureworks.WebMVC4.Controllers
 			return PartialView(products.Skip((currentPage - 1) * 3).Take(3));
 		}
 
-		//
-		// GET: /Products/Create
+        //
+        // GET: /Products/Create
 
-		public ActionResult Create()
-		{
-			ViewBag.PossibleProductSubcategories = productsubcategoryRepository.All;
-			ViewBag.PossibleProductModels = productmodelRepository.All;
-			return View();
-		} 
+        public ActionResult Create()
+        {
+            ViewBag.PossibleProductSubcategories = productsubcategoryRepository.All;
+            ViewBag.PossibleProductModels = productmodelRepository.All;
+            return View();
+        }
 
-		//
-		// POST: /Products/Create
+        //
+        // POST: /Products/Create
 
-		[HttpPost]
-		public ActionResult Create(Product product)
-		{
-			if (ModelState.IsValid) {
-				productRepository.InsertOrUpdate(product);
-				productRepository.Save();
-				return RedirectToAction("Index");
-			} else {
-				ViewBag.PossibleProductSubcategories = productsubcategoryRepository.All;
-				ViewBag.PossibleProductModels = productmodelRepository.All;
-				return View();
-			}
-		}
-		
-		//
-		// GET: /Products/Edit/5
- 
-		public ActionResult Edit(int id)
-		{
-			ViewBag.PossibleProductSubcategories = productsubcategoryRepository.All;
-			ViewBag.PossibleProductModels = productmodelRepository.All;
-			 return View(productRepository.Find(id));
-		}
+        [HttpPost]
+        public ActionResult Create(Product product)
+        {
+            if (ModelState.IsValid)
+            {
+                productRepository.InsertOrUpdate(product);
+                productRepository.Save();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                ViewBag.PossibleProductSubcategories = productsubcategoryRepository.All;
+                ViewBag.PossibleProductModels = productmodelRepository.All;
+                return View();
+            }
+        }
 
-		//
-		// POST: /Products/Edit/5
+        //
+        // GET: /Products/Edit/5
 
-		[HttpPost]
-		public ActionResult Edit(Product product)
-		{
-			if (ModelState.IsValid) {
-				productRepository.InsertOrUpdate(product);
-				productRepository.Save();
-				return RedirectToAction("Index");
-			} else {
-				ViewBag.PossibleProductSubcategories = productsubcategoryRepository.All;
-				ViewBag.PossibleProductModels = productmodelRepository.All;
-				return View();
-			}
-		}
+        public ActionResult Edit(int id)
+        {
+            ViewBag.PossibleProductSubcategories = productsubcategoryRepository.All;
+            ViewBag.PossibleProductModels = productmodelRepository.All;
+            return View(productRepository.Find(id));
+        }
 
-		//
-		// GET: /Products/Delete/5
- 
-		public ActionResult Delete(int id)
-		{
-			return View(productRepository.Find(id));
-		}
+        //
+        // POST: /Products/Edit/5
 
-		//
-		// POST: /Products/Delete/5
+        [HttpPost]
+        public ActionResult Edit(Product product)
+        {
+            if (ModelState.IsValid)
+            {
+                productRepository.InsertOrUpdate(product);
+                productRepository.Save();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                ViewBag.PossibleProductSubcategories = productsubcategoryRepository.All;
+                ViewBag.PossibleProductModels = productmodelRepository.All;
+                return View();
+            }
+        }
 
-		[HttpPost, ActionName("Delete")]
-		public ActionResult DeleteConfirmed(int id)
-		{
-			productRepository.Delete(id);
-			productRepository.Save();
+        //
+        // GET: /Products/Delete/5
 
-			return RedirectToAction("Index");
-		}
+        public ActionResult Delete(int id)
+        {
+            return View(productRepository.Find(id));
+        }
+
+        //
+        // POST: /Products/Delete/5
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            productRepository.Delete(id);
+            productRepository.Save();
+
+            return RedirectToAction("Index");
+        }
 
 		protected override void Dispose(bool disposing)
 		{
