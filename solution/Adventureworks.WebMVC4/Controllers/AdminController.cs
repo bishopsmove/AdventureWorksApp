@@ -30,6 +30,7 @@ namespace Adventureworks.WebMVC4.Controllers
         // POST api/admin
         public void Add([FromBody]Product value)
         {
+            productRepository = (IProductRepository)ObjectFactory.GetInstance(typeof(IProductRepository));
             if (ModelState.IsValid)
             {
                 productRepository.InsertOrUpdate(value);
@@ -45,7 +46,7 @@ namespace Adventureworks.WebMVC4.Controllers
         // PUT api/admin/5
         public void Edit(int id, [FromBody]Product value)
         {
-
+            productRepository = (IProductRepository)ObjectFactory.GetInstance(typeof(IProductRepository));
             if (ModelState.IsValid)
             {
                 productRepository.InsertOrUpdate(value);
@@ -60,6 +61,7 @@ namespace Adventureworks.WebMVC4.Controllers
         // DELETE api/admin/5
         public void Delete(int id)
         {
+            productRepository = (IProductRepository)ObjectFactory.GetInstance(typeof(IProductRepository));
             productRepository.Delete(id);
             productRepository.Save();
         }
