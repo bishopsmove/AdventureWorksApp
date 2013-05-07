@@ -28,7 +28,6 @@ namespace Adventureworks.WebMVC4
             AuthConfig.RegisterAuth();
             //Bootstrap StructureMap start
             Bootstrapper.Run();
-            //Database.SetInitializer(new PurchasingInitializer());
         }
     }
 }
