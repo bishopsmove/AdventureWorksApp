@@ -1,0 +1,123 @@
+﻿@{
+    ViewBag.Title = "BrowseProducts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>BrowseProducts</h2>
+<p>
+    @Html.ActionLink("Create New", "CreateProduct")
+</p>
+<table class="tablestyle" style="width: 100%; border-collapse: collapse;">
+    <thead>
+        <tr id="productHeader" class="headerstyle">
+            <th scope="col">
+                <span class="cbHeader">
+                    <input type="checkbox" /></span>
+            </th>
+        </tr>
+    </thead>
+    <tbody id="productBody">
+        
+    </tbody>
+    <tfoot>
+        <tr class="PagerStyle">
+            <td colspan="4">
+                <div id="pager"><ul class="pages"><li class="pgEmpty">first</li><li class="pgEmpty">prev</li></ul></div>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+<div id="pageContent">
+    <h1>
+        ASP.NET Bookstore</h1>
+    <div id="bookContainer">
+    </div>
+</div>
+<script id="headerTemplate" type="text/html">        
+    <th scope="col">
+        <a class="sortheader" onclick="ts_resortTable(this, 3);return false;" href="#">
+            Currency
+            <span class="sortarrow" sortdir="up">&nbsp;&nbsp;<img alt="↓" src="@Url.Content("~/images/arrow-down.gif")" /></span>
+        </a>
+    </th>
+</script>
+<script id="bookTemplate" type="text/html">        
+    <tr class="${alternate(this.data, products)}">
+        <td align="center" style="width: 10%;">
+            <span class="cbRowItem"><input type="checkbox" /></span>
+            <input type="hidden" value="78" />
+        </td>
+        <td style="width: 60%;">${Name}</td>
+        <td align="center" style="width: 15%;">
+            {{if this.data.salable}}
+			    <img style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; 
+                        border-left-width: 0px;" alt="True" src="@Url.Content("~/images/checked.gif")" />
+            {{else}}
+                <img style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; 
+                        border-left-width: 0px;" alt="True" src="@Url.Content("~/images/unchecked.gif")" />
+		    {{/if}}            
+            <span style="display: none;">
+                <input type="checkbox" CHECKED="checked" />
+            </span>
+        </td>
+        <td align="center" style="width: 15%;">
+            <a title="Click to edit product" href="ProductDetails.aspx?ProductId=78">Edit</a>
+        </td>
+    </tr>
+</script>
+<script id="pagerTemplate" type="text/html"> 
+    <td>
+        <a href="">1</a>
+    </td>
+</script>
+<script type="text/javascript">
+    var pageIndex = 1;
+    var pageSize = 10;
+    var pageCount = 0;
+    var products;
+    var sortingByCol = 'Name';
+    var sortingDir = 'asc';
+    var headerInitialized = false;
+
+    getProducts(pageIndex);
+
+    function formatPrice(size) {
+        return "$" + size.toFixed(2);
+    }
+
+    function alternate(item, array) {
+        return ($.inArray(item, array) % 2) ? "rowstyle" : "altrowstyle";
+    }
+
+    function getProducts(index) {
+        pageIndex = index;
+        $.ajax({
+            type: "POST",
+            url: '@(VirtualPathUtility.ToAbsolute("~/Admin/DynamicGridData"))',
+            data: "sidx=" + sortingByCol + "&sord=" + sortingDir + "&page=" + pageIndex + "&rows=" + pageSize,
+            success: function (data) {
+                // Render the books using the template        
+                products = data.rows;
+
+                if (!headerInitialized) {
+                    $.each(products[0], function (key, value) {
+                        if (key != "id")
+                            $("#productHeader").append($('<th scope="col"><a class="sortheader">' + key + '<span class="sortarrow" sortdir="up">&nbsp;&nbsp;<img alt="↓" src="@Url.Content("~/images/arrow-down.gif")" /></span></a></th>'));
+                    });
+                    $(".sortheader").click(function () {
+                        sortingDir = (sortingDir == 'asc') ? 'desc' : 'asc';
+                        sortingByCol = $(this).text().trim();
+                        getProducts(pageIndex);
+                    });
+                    headerInitialized = true;
+                }
+
+                $("#productBody").empty();
+                $("#bookTemplate").tmpl(products).appendTo("#productBody");
+
+                pageCount = Math.ceil(data.records / pageSize);
+                $("#pager").pager({ pagenumber: pageIndex, pagecount: pageCount, buttonClickCallback: getProducts });
+            }
+        });
+    }
+</script>
